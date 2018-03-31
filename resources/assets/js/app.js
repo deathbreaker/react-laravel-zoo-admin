@@ -8,7 +8,6 @@ import Home from './components/home'
 import Forgot from './components/forgot'
 import Reset from './components/reset'
 
-
 let routes = (
     <Switch>
         <Route exact path='/' component={Index}/>
@@ -25,8 +24,6 @@ if ( this.props.isAuthenticated ) {
         <Switch>
             <Route exact path='/' component={Index}/>
             <Route path='/home' component={Home}/>
-            <Route path='/forgotpassword' component={Forgot}/>
-            <Route path='/password/reset/:token' component={Reset}/>
         </Switch>
     );
 }

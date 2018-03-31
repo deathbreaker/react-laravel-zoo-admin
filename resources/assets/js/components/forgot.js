@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Nav from './navbar'
-import axios from 'axios'
+import axios from './../axios-customized'
 
 
 class Forgot extends Component{
