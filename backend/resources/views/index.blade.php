@@ -9,13 +9,6 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <title>React + Laravel</title>
 
-
-        <style>
-               .title{
-                    margin-top: 230px;
-                    color: cadetblue;
-               } 
-        </style>
     </head>
     <body>
         <div id="app"></div>

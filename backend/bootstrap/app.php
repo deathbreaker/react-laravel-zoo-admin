@@ -10,8 +10,14 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
-
+/*
 $app = new Illuminate\Foundation\Application(
+    realpath(__DIR__.'/../')
+);
+*/
+
+
+$app = new App\Application(
     realpath(__DIR__.'/../')
 );
 
