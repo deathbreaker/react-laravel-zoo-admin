@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from './navbar'
+import Nav from './mynavbar'
 import { Link } from 'react-router-dom'
 import axios from './../axios-customized'
 

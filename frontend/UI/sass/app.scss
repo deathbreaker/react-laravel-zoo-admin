@@ -4,10 +4,10 @@
 
 
 // Additional styles
-@import "index";
+@import "_index";
 
 // Variables
-@import "variables";
+@import "_variables";
 
 // Bootstrap
-@import "~bootstrap/dist/css/bootstrap";
+@import "~bootstrap/scss/bootstrap";

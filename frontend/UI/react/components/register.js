@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Nav from './navbar'
-import axios from './../axios-customized'
+import Nav from './mynavbar'
 
 class Register extends Component {
 

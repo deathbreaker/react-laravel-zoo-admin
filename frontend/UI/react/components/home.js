@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from './navbar'
+import Nav from './mynavbar'
 
 
 class Home extends Component {
@@ -8,10 +8,10 @@ class Home extends Component {
     return (
          <div> 
             <Nav link="Logout" />       
-            <div className="container text-center title">
+            <div className="container text-center my-title">
                <h1>Hey, You are logged in !</h1>
             </div>
-          </div>   
+          </div>
     )
   }
 }
