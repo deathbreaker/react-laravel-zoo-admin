@@ -1,9 +1,9 @@
-# react-laravel-auth
-A basic authentication application with Reactjs frontend + Laravel api.This application covers basic auth flows like login , register, reset password, forgot password and include API authentication with Laravel Passport.
+# Basic zoo admin app
+A basic authentication application with Reactjs frontend + Laravel api.This application covers basic auth flows like login , register, reset password, forgot password and include API authentication with Laravel Passport..
 
 Please follow the below steps to run the project.This steps are for those who have laravel , composer and node installed in your local machine.If not, please proceed with the steps after installing the same.
 
-1) Run: composer install to install your php dependencies.
+1) Go to backend folder and run: composer install, to install your php dependencies.
 2) Run: yarn, to instal the node packages.
 3) Create a database of your own choice in mysql and configure your db in the .env file.
         a) If you are try using SQLite database, in root folder run: touch backend/database/database.sqlite
