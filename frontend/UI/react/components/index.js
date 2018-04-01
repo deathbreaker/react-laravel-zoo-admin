@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from './mynavbar'
+import Mynavbar from './Mynavbar'
 
 
 class Index extends Component {
@@ -7,9 +7,9 @@ class Index extends Component {
   render() {
     return (
        <div> 
-          <Nav />       
+          <Mynavbar/>
           <div className="container text-center my-title">
-               <h1>Laravel + React 	Basic Authenticatin</h1>
+               <h1>Basic admin zoo app</h1>
         </div> 
        </div>   
     )

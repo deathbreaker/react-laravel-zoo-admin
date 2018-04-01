@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import ReactDOM from 'react-dom'
 import {  BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import Index from './components/Index'
@@ -23,7 +22,6 @@ class Root extends Component {
                 <Route path='/password/reset/:token' component={Reset}/>
             </Switch>
         );
-
 
         if (this.props.isAuthenticated) {
             routes = (

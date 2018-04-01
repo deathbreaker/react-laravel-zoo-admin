@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
-import { NavbarBrand, Navbar, Nav, NavLink, NavItem } from 'reactstrap'
-import { withRouter, Link as RRNavLink } from 'react-router-dom'
+import { withRouter, NavLink as RRNavLink } from 'react-router-dom'
+import {
+    NavbarBrand,
+    Navbar,
+    Nav,
+    NavLink,
+    NavItem } from 'reactstrap'
 
-
-class Mynavbar extends Component {
+class MyNavbar extends Component {
 
   constructor(props){
       super(props);
@@ -31,10 +35,10 @@ class Mynavbar extends Component {
     if (this.props.link) {
       return (
           <div>
-              <Navbar color="faded" light expand="md">
+              <Navbar color="success" success expand="md">
+                  <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Zoo app</NavbarBrand>
                   <Nav className="ml-auto" navbar>
-                      <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Basic Authentication</NavbarBrand>
-                      <NavItem className="navbar-right">
+                      <NavItem>
                           <NavLink href="#" onClick={this.logout.bind(this) }>{this.props.link}</NavLink>
                       </NavItem>
                 </Nav>
@@ -44,13 +48,13 @@ class Mynavbar extends Component {
     }
     return (
         <div>
-            <Navbar color="faded" light expand="md">
+            <Navbar color="success" dark expand="md">
+                <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Zoo app</NavbarBrand>
                 <Nav className="ml-auto" navbar>
-                    <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Basic Authentication</NavbarBrand>
-                    <NavItem className="navbar-right">
+                    <NavItem>
                         <NavLink to="/login" onClick={this.logout.bind(this) } tag={RRNavLink}>Login</NavLink>
                     </NavItem>
-                    <NavItem className="navbar-right">
+                    <NavItem>
                         <NavLink to="/register" onClick={this.logout.bind(this) } tag={RRNavLink}>Register</NavLink>
                     </NavItem>
                 </Nav>
@@ -63,4 +67,4 @@ class Mynavbar extends Component {
 
 
 
-export default withRouter(Mynavbar)
+export default withRouter(MyNavbar)

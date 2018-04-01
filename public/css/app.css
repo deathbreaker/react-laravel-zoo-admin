@@ -1,6 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);.my-title {
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);body {
+  background-color: darkolivegreen !important;
+}
+
+.my-title {
   margin-top: 230px !important;
-  color: cadetblue;
+  color: #ffffff;
 }
 
 /*!
