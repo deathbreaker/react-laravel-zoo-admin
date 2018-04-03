@@ -7,7 +7,7 @@ Please follow the below steps to run the project.This steps are for those who ha
 2) Run: yarn, to instal the node packages.
 3) Create a database of your own choice in mysql and configure your db in the .env file.
         a) If you are try using SQLite database, in root folder run: touch backend/database/database.sqlite
-        b) After run: cp .env.example .env
+        b) After run: cp backend/.env.example backend/.env
         c) And then change in .env file that line - DB_CONNECTION= to DB_CONNECTION=sqlite, and remove that lines -
                 DB_DATABASE= 
                 DB_USERNAME= 

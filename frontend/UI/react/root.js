@@ -10,6 +10,7 @@ import Reset from './components/Reset'
 import './axios-customized'
 
 class Root extends Component {
+
     render() {
 
         let routes = (
@@ -20,9 +21,11 @@ class Root extends Component {
                 <Route path='/home' component={Home}/>
                 <Route path='/forgotpassword' component={Forgot}/>
                 <Route path='/password/reset/:token' component={Reset}/>
+                <Route exact path='/' component={Index}/>
+                <Route path='/home' component={Home}/>
             </Switch>
         );
-
+/*
         if (this.props.isAuthenticated) {
             routes = (
                 <Switch>
@@ -30,7 +33,7 @@ class Root extends Component {
                     <Route path='/home' component={Home}/>
                 </Switch>
             );
-        }
+        }*/
 
         return(
             <Router>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Mynavbar from './Mynavbar'
+import { Container } from "reactstrap"
+import Mynavbar from './Navigation'
 
 
 class Index extends Component {
@@ -7,10 +8,10 @@ class Index extends Component {
   render() {
     return (
        <div> 
-          <Mynavbar/>
-          <div className="container text-center my-title">
-               <h1>Basic admin zoo app</h1>
-        </div> 
+           <Mynavbar/>
+           <Container className="text-center app-title">
+               <h1 className="header1-size">Basic admin zoo app</h1>
+           </Container>
        </div>   
     )
   }

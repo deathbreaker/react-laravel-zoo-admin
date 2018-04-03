@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import Nav from './Mynavbar'
+import { Container } from 'reactstrap'
+
+import Navigation from './Navigation'
 
 
 class Home extends Component {
@@ -7,13 +9,14 @@ class Home extends Component {
   render() {
     return (
          <div> 
-            <Nav link="Logout" />       
-            <div className="container text-center my-title">
-               <h1>Hey, You are logged in !</h1>
-            </div>
+            <Navigation logoutLink="true" />
+             <Container fluid className="container text-center app-title">
+                 <h1 className="header1-size">Hey, You are logged in !</h1>
+            </Container>
           </div>
     )
   }
 }
+
 
 export default Home

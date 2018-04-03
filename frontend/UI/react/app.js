@@ -5,6 +5,6 @@ import Root from './root'
 window._ = require('lodash');
 
 ReactDOM.render(
-	<Root isAuthenticated={false}/>,
+	<Root/>,
     document.getElementById('app')
 );

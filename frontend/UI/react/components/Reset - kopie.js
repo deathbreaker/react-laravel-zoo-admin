@@ -56,14 +56,14 @@ class Reset extends Component{
 			        <div className="row">
 			            <div className="col-md-8 col-md-offset-2">
 			                <div className="panel panel-default">
-								<h2>Reset Password</h2>
+			                    <div className="panel-heading">Reset Password</div>
 			                    <div className="panel-body">
 			                    	<div className="col-md-offset-2 col-md-8 col-md-offset-2">
                                         {error != undefined && <div className={name} role="alert">{msg}</div>}
                                     </div>  
 			                        <form className="form-horizontal" role="form"  onSubmit= {this.onSubmit.bind(this)}>
 			                            <div className="form-group">
-			                                <label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>
+			                                <label for="email" className="col-md-4 control-label">E-Mail Address</label>
 
 			                                <div className="col-md-6">
 			                                    <input id="email" type="email" className="form-control" ref="email" name="email" onChange={this.onChange.bind(this)} required autofocus />
@@ -71,7 +71,7 @@ class Reset extends Component{
 			                            </div>
 
 			                            <div className="form-group">
-			                                <label htmlFor="password" className="col-md-4 control-label">Password</label>
+			                                <label for="password" className="col-md-4 control-label">Password</label>
 
 			                                <div className="col-md-6">
 			                                    <input id="password" type="password" className="form-control" ref="password" name="password" onChange={this.onChange.bind(this)} required />
@@ -79,7 +79,7 @@ class Reset extends Component{
 			                            </div>
 
 			                            <div className="form-group">
-			                                <label htmlFor="password-confirm" className="col-md-4 control-label">Confirm Password</label>
+			                                <label for="password-confirm" className="col-md-4 control-label">Confirm Password</label>
 			                                <div className="col-md-6">
 			                                    <input id="password-confirm" type="password" className="form-control" ref="confirm" name="password_confirmation"onChange={this.onChange.bind(this)}  required />
 			                                </div>

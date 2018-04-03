@@ -1,11 +1,5 @@
 import React, { Component } from 'react'
-import {
-    Button,
-    Container,
-    Row
-} from 'reactstrap'
 import { Link } from 'react-router-dom'
-
 import Nav from './Navigation'
 
 class Register extends Component {
@@ -17,19 +11,17 @@ class Register extends Component {
             email : '',
             password: '',
             password_confirmation: '',
-            age: ''
         }
      }
 
     onSubmit(e){
         e.preventDefault();
-        const {name, email, password, password_confirmation, age} = this.state ;
+        const {name, email, password, password_confirmation} = this.state ;
         axios.post('api/register', {
             name,
             email,
             password,
-            password_confirmation,
-            age,
+            password_confirmation
           })
           .then(response=> {
            this.setState({err: false});
@@ -40,7 +32,6 @@ class Register extends Component {
             this.refs.password.value="";
             this.refs.email.value="";
             this.refs.confirm.value="";
-            this.refs.age.value="";
             this.setState({err: true});
           });
      }
@@ -57,11 +48,11 @@ class Register extends Component {
         return (   
              <div>   
                 <Nav />
-                <Container fluid className="container-customized">
-                    <Row>
+                <div className="container">
+                    <div className="row">
                         <div className="col-md-8 col-md-offset-2">
                             <div className="panel panel-default">
-                                <h2>Register</h2>
+                                <div className="panel-heading">Register</div>
                                 <div className="panel-body">
                                     <div className="col-md-offset-2 col-md-8 col-md-offset-2">
                                         {error != undefined && <div className={name} role="alert">{msg}</div>}
@@ -72,14 +63,6 @@ class Register extends Component {
 
                                             <div className="col-md-6">
                                                 <input id="name" type="text" className="form-control" ref="name" name="name" onChange={this.onChange.bind(this)} required autoFocus />
-                                            </div>
-                                        </div>
-
-                                        <div className="form-group">
-                                            <label htmlFor="age" className="col-md-4 control-label">Age</label>
-
-                                            <div className="col-md-6">
-                                                <input id="age" type="text" className="form-control" ref="age" name="age" onChange={this.onChange.bind(this)} required autoFocus />
                                             </div>
                                         </div>
 
@@ -107,12 +90,9 @@ class Register extends Component {
                                             </div>
                                         </div>
 
-
                                         <div className="form-group">
                                             <div className="col-md-6 col-md-offset-4">
-                                                {/*button with type submit */}
-                                                {/*<Button color="success">Register</Button>*/}
-                                                <button type="submit" className="btn btn-success">
+                                                <button type="submit" className="btn btn-primary">
                                                     Register
                                                 </button>
                                             </div>
@@ -121,8 +101,8 @@ class Register extends Component {
                                 </div>
                             </div>
                         </div>
-                    </Row>
-                </Container>
+                    </div>
+                </div>
             </div>    
         )
       }

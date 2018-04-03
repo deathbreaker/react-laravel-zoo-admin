@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import {
-    Button,
-    Container
-} from 'reactstrap'
-
 import Nav from './Navigation'
 import { Link } from 'react-router-dom'
+import axios from './../axios-customized'
+
 
 class Login extends Component {
     
@@ -49,33 +46,33 @@ class Login extends Component {
 	    return (
             <div >
                 <Nav />
-                <Container fluid className="container-customized">
+                <div className="container-fluid">
                     <div className="row">
-                        <div className="absolute-center mx-auto is-responsive col-md-8 col-md-offset-2">
+                        <div className="col-md-8 col-md-offset-2">
                             <div className="panel panel-default">
-                                <h2>Login</h2>
+                                <div className="panel-heading">Login</div>
                                 <div className="panel-body">   
                                     <div className="col-md-offset-2 col-md-8 col-md-offset-2">
                                         {error != undefined && <div className={name} role="alert">{msg}</div>}
                                     </div>  
-                                    <form className="form-horizontal" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
-                                        <div className="form-group">
+                                    <htmlForm className="htmlForm-horizontal" role="htmlForm" method="POST" onSubmit= {this.onSubmit.bind(this)}>
+                                        <div className="htmlForm-group">
                                             <label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>
 
                                             <div className="col-md-6">
-                                                <input id="email" type="email" ref="email" className="form-control" name="email"  onChange={this.onChange.bind(this)} required />
+                                                <input id="email" type="email" ref="email" className="htmlForm-control" name="email"  onChange={this.onChange.bind(this)} required />
                                             </div>
                                         </div>
 
-                                        <div className="form-group">
+                                        <div className="htmlForm-group">
                                             <label htmlFor="password" className="col-md-4 control-label">Password</label>
 
                                             <div className="col-md-6">
-                                                <input id="password" type="password" ref="password" className="form-control" name="password"  onChange={this.onChange.bind(this)}  required />
+                                                <input id="password" type="password" ref="password" className="htmlForm-control" name="password"  onChange={this.onChange.bind(this)}  required />
                                             </div>
                                         </div>
 
-                                        <div className="form-group">
+                                        <div className="htmlForm-group">
                                             <div className="col-md-6 col-md-offset-4">
                                                 <div className="checkbox">
                                                     <label>
@@ -85,24 +82,23 @@ class Login extends Component {
                                             </div>
                                         </div>
 
-                                        <div className="form-group">
+                                        <div className="htmlForm-group">
                                             <div className="col-md-8 col-md-offset-4">
-                                                {/*button with type submit */}
-                                                {/*<Button color="success">Login</Button>*/}
-                                                <button type="submit" className="btn btn-success">
+                                                <button type="submit" className="btn btn-primary">
                                                     Login
                                                 </button>
+
                                                 <li className="btn btn-link">
-                                                    <Link to="forgotpassword">Forgot Your Password?</Link>
+                                                    <Link to = "htmlForgotpassword">Forgot Your Password?</Link>
                                                 </li>
                                             </div>
                                         </div>
-                                    </form>
+                                    </htmlForm>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </Container>
+                </div>
             </div>
            
 	);

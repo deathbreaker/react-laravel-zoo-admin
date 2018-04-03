@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, NavLink as RRNavLink } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 import {
     NavbarBrand,
     Navbar,
@@ -7,7 +7,7 @@ import {
     NavLink,
     NavItem } from 'reactstrap'
 
-class MyNavbar extends Component {
+class Navigation extends Component {
 
   constructor(props){
       super(props);
@@ -32,14 +32,14 @@ class MyNavbar extends Component {
   }
   render() {
 
-    if (this.props.link) {
+    if (this.props.logoutLink) {
       return (
           <div>
-              <Navbar color="success" success expand="md">
+              <Navbar color="success" dark expand="md">
                   <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Zoo app</NavbarBrand>
                   <Nav className="ml-auto" navbar>
                       <NavItem>
-                          <NavLink href="#" onClick={this.logout.bind(this) }>{this.props.link}</NavLink>
+                          <NavLink to="/" tag={Link} onClick={this.logout.bind(this) }> Logout </NavLink>
                       </NavItem>
                 </Nav>
               </Navbar>
@@ -52,14 +52,15 @@ class MyNavbar extends Component {
                 <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Zoo app</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                     <NavItem>
-                        <NavLink to="/login" onClick={this.logout.bind(this) } tag={RRNavLink}>Login</NavLink>
+                        <NavLink to="/login" tag={Link}>Login</NavLink>
                     </NavItem>
                     <NavItem>
-                        <NavLink to="/register" onClick={this.logout.bind(this) } tag={RRNavLink}>Register</NavLink>
+                        <NavLink  to="/register" tag={Link}>Register</NavLink>
                     </NavItem>
                 </Nav>
             </Navbar>
         </div>
+
     )
   }
 
@@ -67,4 +68,4 @@ class MyNavbar extends Component {
 
 
 
-export default withRouter(MyNavbar)
+export default withRouter(Navigation)
