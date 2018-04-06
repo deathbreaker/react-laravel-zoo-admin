@@ -1,13 +1,25 @@
 import React, {Component} from 'react'
 import {  BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Loadable from 'react-loadable';
+import 'babel-plugin-syntax-dynamic-import';
 
-import Index from './components/Index'
+
+//import Index from './components/Index'
 import Login from './components/Login'
 import Register from './components/Register'
 import Home from './components/Home'
 import Forgot from './components/Forgot'
 import Reset from './components/Reset'
 import './axios-customized'
+
+
+const Loading = () => <div>Loading...</div>;
+
+
+const Index = Loadable({
+    loader: () => import('./components/Index'),
+    loading: Loading,
+});
 
 class Root extends Component {
 
@@ -21,7 +33,6 @@ class Root extends Component {
                 <Route path='/home' component={Home}/>
                 <Route path='/forgotpassword' component={Forgot}/>
                 <Route path='/password/reset/:token' component={Reset}/>
-                <Route exact path='/' component={Index}/>
                 <Route path='/home' component={Home}/>
             </Switch>
         );
