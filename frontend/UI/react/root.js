@@ -1,25 +1,19 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import {  BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import Loadable from 'react-loadable';
-import 'babel-plugin-syntax-dynamic-import';
 
 
-//import Index from './components/Index'
+import {
+    Index,
+    Home,
+    splashscreen
+} from './components/Loaders'
 import Login from './components/Login'
 import Register from './components/Register'
-import Home from './components/Home'
 import Forgot from './components/Forgot'
 import Reset from './components/Reset'
+
 import './axios-customized'
 
-
-const Loading = () => <div>Loading...</div>;
-
-
-const Index = Loadable({
-    loader: () => import('./components/Index'),
-    loading: Loading,
-});
 
 class Root extends Component {
 
@@ -27,7 +21,7 @@ class Root extends Component {
 
         let routes = (
             <Switch>
-                <Route exact path='/' component={Index}/>
+                <Route exact path='/' component={splashscreen}/>
                 <Route path='/login' component={Login}/>
                 <Route path='/register' component={Register}/>
                 <Route path='/home' component={Home}/>
@@ -36,23 +30,29 @@ class Root extends Component {
                 <Route path='/home' component={Home}/>
             </Switch>
         );
+
+        return(
+                <Router>
+                    {routes}
+                </Router>
+        )
+    }
+}
+
+export default Root;
+
+
+
+
+
+
 /*
-        if (this.props.isAuthenticated) {
+      if (this.props.isAuthenticated) {
             routes = (
                 <Switch>
                     <Route exact path='/' component={Index}/>
                     <Route path='/home' component={Home}/>
                 </Switch>
             );
-        }*/
-
-        return(
-            <Router>
-                {routes}
-            </Router>
-        )
-    }
-}
-
-
-export default Root
+       )
+*/

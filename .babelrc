@@ -1,8 +1,7 @@
 {
   "plugins": [
     "syntax-dynamic-import",
-    "transform-react-jsx-source",
-    "transform-class-properties"
+    "transform-react-jsx-source"
   ],
   "presets": [
     [
@@ -20,4 +19,7 @@
     "react"
   ]
 }
+
+
+
 
