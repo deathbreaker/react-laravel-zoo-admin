@@ -1,18 +1,14 @@
 import React, {Component} from 'react';
 import {  BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+import Home from './components/Home';
+import Index from './components/Index';
+import Login from './components/Login';
+import Register from './components/Register';
+import Forgot from './components/Forgot';
+import Reset from './components/Reset';
 
-import {
-    Index,
-    Home,
-    splashscreen
-} from './components/Loaders'
-import Login from './components/Login'
-import Register from './components/Register'
-import Forgot from './components/Forgot'
-import Reset from './components/Reset'
-
-import './axios-customized'
+import './utils/axios-customized';
 
 
 class Root extends Component {
@@ -21,7 +17,7 @@ class Root extends Component {
 
         let routes = (
             <Switch>
-                <Route exact path='/' component={splashscreen}/>
+                <Route exact path='/' component={Index}/>
                 <Route path='/login' component={Login}/>
                 <Route path='/register' component={Register}/>
                 <Route path='/home' component={Home}/>

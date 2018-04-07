@@ -1,8 +1,6 @@
 import React from 'react';
-import Loadable from "react-loadable";
 
-
-const splashscreen = () => (
+const Loader = () => (
     <div className="body-color">
         <div className="page-loader">
             <div className="border-radius-for-icon">
@@ -13,6 +11,24 @@ const splashscreen = () => (
     </div>
 );
 
+
+export default Loader;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import Loadable from "react-loadable";
+/*
 const Index = Loadable({
     loader: () => import('./Index'),
     loading: splashscreen,
@@ -24,5 +40,4 @@ const Home= Loadable({
     loading: splashscreen,
     delay:  50000000000000
 });
-
-export {Index, Home, splashscreen};
+*/

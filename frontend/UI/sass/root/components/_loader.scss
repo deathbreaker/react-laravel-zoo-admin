@@ -1,0 +1,73 @@
+
+.body-color {
+  background-color: darkolivegreen;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+.page-loader {
+  padding-top: 11.5%;
+  background-color: darkolivegreen;
+  position: fixed;
+  z-index: 99;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loader-icon {
+  line-height: inherit !important;
+  color: #20c997;
+  font-size: 10rem;
+}
+
+.header2-size {
+  color: #20c997;
+  font-size: 3rem !important;
+  font-family: 'Nothing You Could Do', cursive;
+  font-weight: bolder;
+
+}
+
+.border-radius-for-icon {
+  text-align:center;
+  vertical-align:middle;
+  display:inline-block;
+  margin: 0 auto;
+  border-radius: 100%;
+  background-color: #2b542c;
+  width: 14rem;
+  height: 14rem;
+  animation: loading-effect 1.1s infinite linear;
+  -moz-animation: loading-effect 1s infinite linear;
+  -o-animation: loading-effect 1s infinite linear;
+  -webkit-animation: loading-effect 1s infinite linear;
+  position: relative;
+}
+
+@-webkit-keyframes loading-effect  {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes loading-effect  {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes loading-effect  {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-ms-keyframes loading-effect  {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes loading-effect  {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from './Navigation'
+import Nav from '../../components/Navigation'
 
 class Forgot extends Component{
 
