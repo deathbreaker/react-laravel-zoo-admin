@@ -52195,6 +52195,7 @@ var Navigation = function (_Component) {
             var _this2 = this;
 
             e.preventDefault();
+
             axios.post('api/logout').then(function (response) {
                 _this2.props.history.push('/');
             }).catch(function (error) {
@@ -52204,7 +52205,6 @@ var Navigation = function (_Component) {
     }, {
         key: 'handleClick',
         value: function handleClick(e) {
-
             e.preventDefault();
             this.props.history.push('/');
         }
@@ -52213,26 +52213,26 @@ var Navigation = function (_Component) {
         value: function render() {
 
             if (this.props.logoutLink) {
-                return _react2.default.createElement(
+                var navigation = _react2.default.createElement(
                     'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 37
+                            lineNumber: 38
                         }
                     },
                     _react2.default.createElement(
                         _reactstrap.Navbar,
                         { color: 'success', dark: true, expand: 'md', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 38
+                                lineNumber: 39
                             }
                         },
                         _react2.default.createElement(
                             _reactstrap.NavbarBrand,
                             { href: '#', onClick: this.handleClick.bind(this), __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 39
+                                    lineNumber: 40
                                 }
                             },
                             'Zoo app'
@@ -52241,7 +52241,7 @@ var Navigation = function (_Component) {
                             _reactstrap.Nav,
                             { className: 'ml-auto', navbar: true, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 40
+                                    lineNumber: 41
                                 }
                             },
                             _react2.default.createElement(
@@ -52249,14 +52249,14 @@ var Navigation = function (_Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 41
+                                        lineNumber: 42
                                     }
                                 },
                                 _react2.default.createElement(
                                     _reactstrap.NavLink,
                                     { to: '/', tag: _reactRouterDom.Link, onClick: this.logout.bind(this), __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 42
+                                            lineNumber: 43
                                         }
                                     },
                                     ' Logout '
@@ -52265,27 +52265,30 @@ var Navigation = function (_Component) {
                         )
                     )
                 );
+
+                return navigation;
             }
+
             return _react2.default.createElement(
                 'div',
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 50
+                        lineNumber: 56
                     }
                 },
                 _react2.default.createElement(
                     _reactstrap.Navbar,
                     { color: 'success', dark: true, expand: 'md', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 51
+                            lineNumber: 57
                         }
                     },
                     _react2.default.createElement(
                         _reactstrap.NavbarBrand,
                         { href: '#', onClick: this.handleClick.bind(this), __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 52
+                                lineNumber: 58
                             }
                         },
                         'Zoo app'
@@ -52294,7 +52297,7 @@ var Navigation = function (_Component) {
                         _reactstrap.Nav,
                         { className: 'ml-auto', navbar: true, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 53
+                                lineNumber: 59
                             }
                         },
                         _react2.default.createElement(
@@ -52302,14 +52305,14 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 54
+                                    lineNumber: 60
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/login', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 55
+                                        lineNumber: 61
                                     }
                                 },
                                 'Login'
@@ -52320,14 +52323,14 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 57
+                                    lineNumber: 63
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/register', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 58
+                                        lineNumber: 64
                                     }
                                 },
                                 'Register'
@@ -52364,29 +52367,39 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(12);
 
-var _Home = __webpack_require__(142);
+var _Home = __webpack_require__(157);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Index = __webpack_require__(141);
+var _Index = __webpack_require__(158);
 
 var _Index2 = _interopRequireDefault(_Index);
 
-var _Login = __webpack_require__(136);
+var _UserLogin = __webpack_require__(159);
 
-var _Login2 = _interopRequireDefault(_Login);
+var _UserLogin2 = _interopRequireDefault(_UserLogin);
 
-var _Register = __webpack_require__(137);
+var _Register = __webpack_require__(160);
 
 var _Register2 = _interopRequireDefault(_Register);
 
-var _Forgot = __webpack_require__(138);
+var _Forgot = __webpack_require__(161);
 
 var _Forgot2 = _interopRequireDefault(_Forgot);
 
-var _Reset = __webpack_require__(139);
+var _Reset = __webpack_require__(162);
 
 var _Reset2 = _interopRequireDefault(_Reset);
+
+var _AdminLogin = __webpack_require__(164);
+
+var _AdminLogin2 = _interopRequireDefault(_AdminLogin);
+
+var _NotFound = __webpack_require__(163);
+
+var _NotFound2 = _interopRequireDefault(_NotFound);
+
+var _homeContext = __webpack_require__(145);
 
 __webpack_require__(140);
 
@@ -52416,35 +52429,20 @@ var Root = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 19
+                        lineNumber: 22
                     }
                 },
                 _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Index2.default, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 20
-                    }
-                }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _Login2.default, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 21
-                    }
-                }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/register', component: _Register2.default, __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 22
-                    }
-                }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _Home2.default, __source: {
-                        fileName: _jsxFileName,
                         lineNumber: 23
                     }
                 }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/forgotpassword', component: _Forgot2.default, __source: {
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _UserLogin2.default, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 24
                     }
                 }),
-                _react2.default.createElement(_reactRouterDom.Route, { path: '/password/reset/:token', component: _Reset2.default, __source: {
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/register', component: _Register2.default, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 25
                     }
@@ -52452,6 +52450,31 @@ var Root = function (_Component) {
                 _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _Home2.default, __source: {
                         fileName: _jsxFileName,
                         lineNumber: 26
+                    }
+                }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/forgotpassword', component: _Forgot2.default, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 27
+                    }
+                }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/password/reset/:token', component: _Reset2.default, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 28
+                    }
+                }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/home', component: _Home2.default, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 29
+                    }
+                }),
+                _react2.default.createElement(_reactRouterDom.Route, { path: '/admin', component: _AdminLogin2.default, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 30
+                    }
+                }),
+                _react2.default.createElement(_reactRouterDom.Route, { component: _NotFound2.default, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 32
                     }
                 })
             );
@@ -52461,7 +52484,7 @@ var Root = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 31
+                        lineNumber: 37
                     }
                 },
                 routes
@@ -52487,7 +52510,54 @@ exports.default = Root;
 
 /***/ }),
 /* 135 */,
-/* 136 */
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+window.axios = __webpack_require__(98);
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+var token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (token) {
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+} else {
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
+/*
+import axios from 'axios';
+
+const instance = axios.create({
+    baseURL: 'https://react-burger.firebaseio.com/'
+});
+
+window.axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest',
+};
+
+const csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+instance.defaults.headers.common['X-CSRF-TOKEN'] = csrf_token;
+instance.defaults.headers.common['X-Requested-With'] =  'XMLHttpRequest';
+
+
+export default instance;
+*/
+
+/***/ }),
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52496,7 +52566,117 @@ exports.default = Root;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\Login.js';
+exports.loadingContext = exports.homeThemes = undefined;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var homeThemes = exports.homeThemes = {
+    loading: false
+};
+
+var loadingContext = exports.loadingContext = _react2.default.createContext(homeThemes.loading);
+
+/***/ }),
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = "D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\Loader\\LoaderIn.js";
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var LoaderIn = function LoaderIn() {
+    return _react2.default.createElement(
+        "div",
+        { className: "body-color", __source: {
+                fileName: _jsxFileName,
+                lineNumber: 4
+            }
+        },
+        _react2.default.createElement(
+            "div",
+            { className: "page-loader", __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 5
+                }
+            },
+            _react2.default.createElement(
+                "div",
+                { className: "border-radius-for-icon", __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 6
+                    }
+                },
+                _react2.default.createElement("i", { className: "loader-icon ra ra-lion ra-fw", __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 7
+                    }
+                })
+            ),
+            _react2.default.createElement(
+                "h2",
+                { className: "header2 h2-size", __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 9
+                    }
+                },
+                "Admin Zoo App"
+            )
+        )
+    );
+};
+
+exports.default = LoaderIn;
+
+// import Loadable from "react-loadable";
+/*
+const Index = Loadable({
+    loader: () => import('./Index'),
+    loading: splashscreen,
+    delay: 50000000000000
+});
+
+const Home= Loadable({
+    loader: () => import('./Home'),
+    loading: splashscreen,
+    delay:  50000000000000
+});
+*/
+
+/***/ }),
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\ROLES\\User\\Home.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -52510,9 +52690,202 @@ var _Navigation = __webpack_require__(133);
 
 var _Navigation2 = _interopRequireDefault(_Navigation);
 
-var _Loader = __webpack_require__(144);
+var _LoaderIn = __webpack_require__(150);
 
-var _Loader2 = _interopRequireDefault(_Loader);
+var _LoaderIn2 = _interopRequireDefault(_LoaderIn);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_Component) {
+  _inherits(Home, _Component);
+
+  function Home() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Home);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Home.__proto__ || Object.getPrototypeOf(Home)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      loading: false
+    }, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Home, [{
+    key: 'render',
+    value: function render() {
+      var loading = this.state.loading;
+
+
+      var splashscreen = _react2.default.createElement(_LoaderIn2.default, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 16
+        }
+      });
+
+      var home = _react2.default.createElement(
+        'div',
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 19
+          }
+        },
+        _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', loading: loading, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 20
+          }
+        }),
+        _react2.default.createElement(
+          _reactstrap.Container,
+          { fluid: true, className: 'container text-center app-title', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 21
+            }
+          },
+          _react2.default.createElement(
+            'h1',
+            { className: 'header1-size', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 22
+              }
+            },
+            'Hey, You are logged in !'
+          )
+        )
+      );
+
+      return loading ? splashscreen : home;
+    }
+  }]);
+
+  return Home;
+}(_react.Component);
+
+exports.default = Home;
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\ROLES\\Guest\\Index.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactstrap = __webpack_require__(7);
+
+var _Navigation = __webpack_require__(133);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Index = function (_Component) {
+    _inherits(Index, _Component);
+
+    function Index() {
+        _classCallCheck(this, Index);
+
+        return _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).apply(this, arguments));
+    }
+
+    _createClass(Index, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 10
+                    }
+                },
+                _react2.default.createElement(_Navigation2.default, {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 11
+                    }
+                }),
+                _react2.default.createElement(
+                    _reactstrap.Container,
+                    { className: 'text-center app-title', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 12
+                        }
+                    },
+                    _react2.default.createElement(
+                        'h1',
+                        { className: 'header1-size', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 13
+                            }
+                        },
+                        'Basic admin zoo app'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Index;
+}(_react.Component);
+
+exports.default = Index;
+
+/***/ }),
+/* 159 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\ROLES\\User\\UserLogin.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactstrap = __webpack_require__(7);
+
+var _Navigation = __webpack_require__(133);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+var _LoaderIn = __webpack_require__(150);
+
+var _LoaderIn2 = _interopRequireDefault(_LoaderIn);
 
 var _reactRouterDom = __webpack_require__(12);
 
@@ -52526,13 +52899,13 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Login = function (_Component) {
-    _inherits(Login, _Component);
+var UserLogin = function (_Component) {
+    _inherits(UserLogin, _Component);
 
-    function Login(props) {
-        _classCallCheck(this, Login);
+    function UserLogin(props) {
+        _classCallCheck(this, UserLogin);
 
-        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (UserLogin.__proto__ || Object.getPrototypeOf(UserLogin)).call(this, props));
 
         _this.state = {
             email: '',
@@ -52542,7 +52915,7 @@ var Login = function (_Component) {
         return _this;
     }
 
-    _createClass(Login, [{
+    _createClass(UserLogin, [{
         key: 'onSubmit',
         value: function onSubmit(e) {
             var _this2 = this;
@@ -52554,7 +52927,7 @@ var Login = function (_Component) {
                 password = _state.password;
 
 
-            axios.post('api/login', {
+            axios.post('api/user-login', {
                 email: email,
                 password: password
             }).then(function (response) {
@@ -52583,10 +52956,10 @@ var Login = function (_Component) {
             var msg = !error ? 'Login Successful' : 'Wrong Credentials';
             var name = !error ? 'alert alert-success' : 'alert alert-danger';
 
-            var splashscreen = _react2.default.createElement(_Loader2.default, {
+            var splashscreen = _react2.default.createElement(_LoaderIn2.default, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 54
+                    lineNumber: 55
                 }
             });
 
@@ -52595,224 +52968,200 @@ var Login = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 57
+                        lineNumber: 58
                     }
                 },
                 _react2.default.createElement(_Navigation2.default, {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 58
+                        lineNumber: 59
                     }
                 }),
                 _react2.default.createElement(
                     _reactstrap.Container,
                     { fluid: true, className: 'container-customized', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 59
+                            lineNumber: 60
                         }
                     },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'row', __source: {
+                        _reactstrap.Col,
+                        { sm: { size: 8, order: 2, offset: 4 }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 60
+                                lineNumber: 62
                             }
                         },
                         _react2.default.createElement(
-                            'div',
-                            { className: 'absolute-center mx-auto is-responsive col-md-8 col-md-offset-2', __source: {
+                            'h2',
+                            {
+                                __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 61
+                                    lineNumber: 63
+                                }
+                            },
+                            'Login'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-offset-2 col-md-8 col-md-offset-2', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 66
+                                }
+                            },
+                            error !== undefined && _react2.default.createElement(
+                                'div',
+                                { className: name, role: 'alert', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 67
+                                    }
+                                },
+                                msg
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'form',
+                            { className: 'form-horizontal', role: 'form', method: 'POST', onSubmit: this.onSubmit.bind(this), __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 69
                                 }
                             },
                             _react2.default.createElement(
                                 'div',
-                                { className: 'panel panel-default', __source: {
+                                { className: 'form-group', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 62
+                                        lineNumber: 70
                                     }
                                 },
                                 _react2.default.createElement(
-                                    'h2',
-                                    {
-                                        __source: {
+                                    'label',
+                                    { htmlFor: 'email', className: 'col-md-4 control-label', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 64
+                                            lineNumber: 72
                                         }
                                     },
-                                    'Login'
+                                    'E-Mail Address'
                                 ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'panel-body', __source: {
+                                    { className: 'col-md-6', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 66
+                                            lineNumber: 74
+                                        }
+                                    },
+                                    _react2.default.createElement('input', { id: 'email', type: 'email', ref: 'email', className: 'form-control', name: 'email', onChange: this.onChange.bind(this), required: true, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 75
+                                        }
+                                    })
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 79
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'password', className: 'col-md-4 control-label', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 80
+                                        }
+                                    },
+                                    'Password'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-6', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 82
+                                        }
+                                    },
+                                    _react2.default.createElement('input', { id: 'password', type: 'password', ref: 'password', className: 'form-control', name: 'password', onChange: this.onChange.bind(this), required: true, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 83
+                                        }
+                                    })
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 87
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-6 col-md-offset-4', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 88
                                         }
                                     },
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'col-md-offset-2 col-md-8 col-md-offset-2', __source: {
+                                        { className: 'checkbox', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 67
+                                                lineNumber: 89
                                             }
                                         },
-                                        error != undefined && _react2.default.createElement(
-                                            'div',
-                                            { className: name, role: 'alert', __source: {
+                                        _react2.default.createElement(
+                                            'label',
+                                            {
+                                                __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 68
+                                                    lineNumber: 90
                                                 }
                                             },
-                                            msg
+                                            _react2.default.createElement('input', { type: 'checkbox', name: 'remember', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 91
+                                                }
+                                            }),
+                                            ' Remember Me'
                                         )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 98
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-8 col-md-offset-4', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 99
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'button',
+                                        { type: 'submit', className: 'btn btn-success', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 102
+                                            }
+                                        },
+                                        'Login'
                                     ),
                                     _react2.default.createElement(
-                                        'form',
-                                        { className: 'form-horizontal', role: 'form', method: 'POST', onSubmit: this.onSubmit.bind(this), __source: {
+                                        'li',
+                                        { className: 'btn btn-link', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 70
+                                                lineNumber: 106
                                             }
                                         },
                                         _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
+                                            _reactRouterDom.Link,
+                                            { to: 'forgotpassword', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 71
+                                                    lineNumber: 107
                                                 }
                                             },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { htmlFor: 'email', className: 'col-md-4 control-label', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 73
-                                                    }
-                                                },
-                                                'E-Mail Address'
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 75
-                                                    }
-                                                },
-                                                _react2.default.createElement('input', { id: 'email', type: 'email', ref: 'email', className: 'form-control', name: 'email', onChange: this.onChange.bind(this), required: true, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 76
-                                                    }
-                                                })
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 80
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { htmlFor: 'password', className: 'col-md-4 control-label', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 81
-                                                    }
-                                                },
-                                                'Password'
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 83
-                                                    }
-                                                },
-                                                _react2.default.createElement('input', { id: 'password', type: 'password', ref: 'password', className: 'form-control', name: 'password', onChange: this.onChange.bind(this), required: true, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 84
-                                                    }
-                                                })
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 88
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6 col-md-offset-4', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 89
-                                                    }
-                                                },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'checkbox', __source: {
-                                                            fileName: _jsxFileName,
-                                                            lineNumber: 90
-                                                        }
-                                                    },
-                                                    _react2.default.createElement(
-                                                        'label',
-                                                        {
-                                                            __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 91
-                                                            }
-                                                        },
-                                                        _react2.default.createElement('input', { type: 'checkbox', name: 'remember', __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 92
-                                                            }
-                                                        }),
-                                                        ' Remember Me'
-                                                    )
-                                                )
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 99
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-8 col-md-offset-4', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 100
-                                                    }
-                                                },
-                                                _react2.default.createElement(
-                                                    'button',
-                                                    { type: 'submit', className: 'btn btn-success', __source: {
-                                                            fileName: _jsxFileName,
-                                                            lineNumber: 103
-                                                        }
-                                                    },
-                                                    'Login'
-                                                ),
-                                                _react2.default.createElement(
-                                                    'li',
-                                                    { className: 'btn btn-link', __source: {
-                                                            fileName: _jsxFileName,
-                                                            lineNumber: 107
-                                                        }
-                                                    },
-                                                    _react2.default.createElement(
-                                                        _reactRouterDom.Link,
-                                                        { to: 'forgotpassword', __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 108
-                                                            }
-                                                        },
-                                                        'Forgot Your Password?'
-                                                    )
-                                                )
-                                            )
+                                            'Forgot Your Password?'
                                         )
                                     )
                                 )
@@ -52826,13 +53175,13 @@ var Login = function (_Component) {
         }
     }]);
 
-    return Login;
+    return UserLogin;
 }(_react.Component);
 
-exports.default = Login;
+exports.default = UserLogin;
 
 /***/ }),
-/* 137 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52841,7 +53190,7 @@ exports.default = Login;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\Register.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\ROLES\\Guest\\Register.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -52936,20 +53285,20 @@ var Register = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 58
+                        lineNumber: 59
                     }
                 },
                 _react2.default.createElement(_Navigation2.default, {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 59
+                        lineNumber: 60
                     }
                 }),
                 _react2.default.createElement(
                     _reactstrap.Container,
                     { fluid: true, className: 'container-customized', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 60
+                            lineNumber: 61
                         }
                     },
                     _react2.default.createElement(
@@ -52957,238 +53306,222 @@ var Register = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 61
+                                lineNumber: 62
                             }
                         },
                         _react2.default.createElement(
-                            'div',
-                            { className: 'col-md-8 col-md-offset-2', __source: {
+                            _reactstrap.Col,
+                            { sm: { size: 8, order: 2, offset: 4 }, __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 62
+                                    lineNumber: 63
                                 }
                             },
                             _react2.default.createElement(
-                                'div',
-                                { className: 'panel panel-default', __source: {
+                                'h2',
+                                {
+                                    __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 63
+                                        lineNumber: 64
+                                    }
+                                },
+                                'Register'
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-md-offset-2 col-md-8 col-md-offset-2', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 68
+                                    }
+                                },
+                                error !== undefined && _react2.default.createElement(
+                                    'div',
+                                    { className: name, role: 'alert', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 69
+                                        }
+                                    },
+                                    msg
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'form',
+                                { className: 'form-horizontal', role: 'form', method: 'POST', onSubmit: this.onSubmit.bind(this), __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 71
                                     }
                                 },
                                 _react2.default.createElement(
-                                    'h2',
-                                    {
-                                        __source: {
+                                    'div',
+                                    { className: 'form-group', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 64
+                                            lineNumber: 73
                                         }
                                     },
-                                    'Register'
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'name', className: 'col-md-4 control-label', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 74
+                                            }
+                                        },
+                                        'Name'
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-6', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 76
+                                            }
+                                        },
+                                        _react2.default.createElement('input', { id: 'name', type: 'text', className: 'form-control', ref: 'name', name: 'name', onChange: this.onChange.bind(this), required: true, autoFocus: true, __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 77
+                                            }
+                                        })
+                                    )
                                 ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'panel-body', __source: {
+                                    { className: 'form-group', __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 65
+                                            lineNumber: 81
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'age', className: 'col-md-4 control-label', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 82
+                                            }
+                                        },
+                                        'Age'
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-6', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 84
+                                            }
+                                        },
+                                        _react2.default.createElement('input', { id: 'age', type: 'number', className: 'form-control', ref: 'age', name: 'age', onChange: this.onChange.bind(this), required: true, autoFocus: true, __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 85
+                                            }
+                                        })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'form-group', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 89
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'email', className: 'col-md-4 control-label', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 90
+                                            }
+                                        },
+                                        'E-Mail Address'
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-6', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 92
+                                            }
+                                        },
+                                        _react2.default.createElement('input', { id: 'email', type: 'email', className: 'form-control', ref: 'email', name: 'email', onChange: this.onChange.bind(this), required: true, __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 93
+                                            }
+                                        })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'form-group', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 97
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'password', className: 'col-md-4 control-label', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 98
+                                            }
+                                        },
+                                        'Password'
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-6', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 100
+                                            }
+                                        },
+                                        _react2.default.createElement('input', { id: 'password', type: 'password', className: 'form-control', ref: 'password', name: 'password', onChange: this.onChange.bind(this), required: true, __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 101
+                                            }
+                                        })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'form-group', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 105
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'label',
+                                        { htmlFor: 'password-confirm', className: 'without-word-break col-md-5 control-label', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 106
+                                            }
+                                        },
+                                        'Confirm Password'
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-md-6', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 108
+                                            }
+                                        },
+                                        _react2.default.createElement('input', { id: 'password-confirm', type: 'password', className: 'form-control', ref: 'confirm', name: 'password_confirmation', onChange: this.onChange.bind(this), required: true, __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 109
+                                            }
+                                        })
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'form-group', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 114
                                         }
                                     },
                                     _react2.default.createElement(
                                         'div',
-                                        { className: 'col-md-offset-2 col-md-8 col-md-offset-2', __source: {
+                                        { className: 'col-md-6 col-md-offset-4', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 66
-                                            }
-                                        },
-                                        error != undefined && _react2.default.createElement(
-                                            'div',
-                                            { className: name, role: 'alert', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 67
-                                                }
-                                            },
-                                            msg
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        'form',
-                                        { className: 'form-horizontal', role: 'form', method: 'POST', onSubmit: this.onSubmit.bind(this), __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 69
+                                                lineNumber: 115
                                             }
                                         },
                                         _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
+                                            'button',
+                                            { type: 'submit', className: 'btn btn-success', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 70
+                                                    lineNumber: 118
                                                 }
                                             },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { htmlFor: 'name', className: 'col-md-4 control-label', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 71
-                                                    }
-                                                },
-                                                'Name'
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 73
-                                                    }
-                                                },
-                                                _react2.default.createElement('input', { id: 'name', type: 'text', className: 'form-control', ref: 'name', name: 'name', onChange: this.onChange.bind(this), required: true, autoFocus: true, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 74
-                                                    }
-                                                })
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 78
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { htmlFor: 'age', className: 'col-md-4 control-label', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 79
-                                                    }
-                                                },
-                                                'Age'
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 81
-                                                    }
-                                                },
-                                                _react2.default.createElement('input', { id: 'age', type: 'text', className: 'form-control', ref: 'age', name: 'age', onChange: this.onChange.bind(this), required: true, autoFocus: true, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 82
-                                                    }
-                                                })
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 86
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { htmlFor: 'email', className: 'col-md-4 control-label', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 87
-                                                    }
-                                                },
-                                                'E-Mail Address'
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 89
-                                                    }
-                                                },
-                                                _react2.default.createElement('input', { id: 'email', type: 'email', className: 'form-control', ref: 'email', name: 'email', onChange: this.onChange.bind(this), required: true, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 90
-                                                    }
-                                                })
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 94
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { htmlFor: 'password', className: 'col-md-4 control-label', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 95
-                                                    }
-                                                },
-                                                'Password'
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 97
-                                                    }
-                                                },
-                                                _react2.default.createElement('input', { id: 'password', type: 'password', className: 'form-control', ref: 'password', name: 'password', onChange: this.onChange.bind(this), required: true, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 98
-                                                    }
-                                                })
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 102
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'label',
-                                                { htmlFor: 'password-confirm', className: 'col-md-4 control-label', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 103
-                                                    }
-                                                },
-                                                'Confirm Password'
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 105
-                                                    }
-                                                },
-                                                _react2.default.createElement('input', { id: 'password-confirm', type: 'password', className: 'form-control', ref: 'confirm', name: 'password_confirmation', onChange: this.onChange.bind(this), required: true, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 106
-                                                    }
-                                                })
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'form-group', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 111
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-md-6 col-md-offset-4', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 112
-                                                    }
-                                                },
-                                                _react2.default.createElement(
-                                                    'button',
-                                                    { type: 'submit', className: 'btn btn-success', __source: {
-                                                            fileName: _jsxFileName,
-                                                            lineNumber: 115
-                                                        }
-                                                    },
-                                                    'Register'
-                                                )
-                                            )
+                                            'Register'
                                         )
                                     )
                                 )
@@ -53206,7 +53539,7 @@ var Register = function (_Component) {
 exports.default = Register;
 
 /***/ }),
-/* 138 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53215,7 +53548,7 @@ exports.default = Register;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\Forgot.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\ROLES\\Guest\\Forgot.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -53437,7 +53770,7 @@ var Forgot = function (_Component) {
 exports.default = Forgot;
 
 /***/ }),
-/* 139 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53446,7 +53779,7 @@ exports.default = Forgot;
 Object.defineProperty(exports, "__esModule", {
 			value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\Reset.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\ROLES\\Guest\\Reset.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -53745,46 +54078,7 @@ var Reset = function (_Component) {
 exports.default = Reset;
 
 /***/ }),
-/* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-window.axios = __webpack_require__(98);
-
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
-var token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (token) {
-    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
-} else {
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
-
-/*
-import axios from 'axios';
-
-const instance = axios.create({
-    baseURL: 'https://react-burger.firebaseio.com/'
-});
-
-window.axios.defaults.headers.common = {
-    'X-Requested-With': 'XMLHttpRequest',
-};
-
-const csrf_token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-
-instance.defaults.headers.common['X-CSRF-TOKEN'] = csrf_token;
-instance.defaults.headers.common['X-Requested-With'] =  'XMLHttpRequest';
-
-
-export default instance;
-*/
-
-/***/ }),
-/* 141 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53793,15 +54087,11 @@ export default instance;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\Index.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\PageNotFound\\NotFound.js';
 
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
-
-var _reactstrap = __webpack_require__(7);
 
 var _Navigation = __webpack_require__(133);
 
@@ -53809,223 +54099,362 @@ var _Navigation2 = _interopRequireDefault(_Navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Index = function (_Component) {
-    _inherits(Index, _Component);
-
-    function Index() {
-        _classCallCheck(this, Index);
-
-        return _possibleConstructorReturn(this, (Index.__proto__ || Object.getPrototypeOf(Index)).apply(this, arguments));
-    }
-
-    _createClass(Index, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 10
-                    }
-                },
-                _react2.default.createElement(_Navigation2.default, {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 11
-                    }
-                }),
-                _react2.default.createElement(
-                    _reactstrap.Container,
-                    { className: 'text-center app-title', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 12
-                        }
-                    },
-                    _react2.default.createElement(
-                        'h1',
-                        { className: 'header1-size', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 13
-                            }
-                        },
-                        'Basic admin zoo app'
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Index;
-}(_react.Component);
-
-exports.default = Index;
-
-/***/ }),
-/* 142 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\Home.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactstrap = __webpack_require__(7);
-
-var _Navigation = __webpack_require__(133);
-
-var _Navigation2 = _interopRequireDefault(_Navigation);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Home = function (_Component) {
-  _inherits(Home, _Component);
-
-  function Home() {
-    _classCallCheck(this, Home);
-
-    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
-  }
-
-  _createClass(Home, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
+var NotFound = function NotFound() {
+    return _react2.default.createElement(
         'div',
-        {
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 11
-          }
+        { className: 'body-color', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 5
+            }
         },
-        _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          }
+        _react2.default.createElement(_Navigation2.default, {
+            __source: {
+                fileName: _jsxFileName,
+                lineNumber: 6
+            }
         }),
         _react2.default.createElement(
-          _reactstrap.Container,
-          { fluid: true, className: 'container text-center app-title', __source: {
-              fileName: _jsxFileName,
-              lineNumber: 13
-            }
-          },
-          _react2.default.createElement(
-            'h1',
-            { className: 'header1-size', __source: {
-                fileName: _jsxFileName,
-                lineNumber: 14
-              }
-            },
-            'Hey, You are logged in !'
-          )
-        )
-      );
-    }
-  }]);
-
-  return Home;
-}(_react.Component);
-
-exports.default = Home;
-
-/***/ }),
-/* 143 */,
-/* 144 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var _jsxFileName = "D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\Loader.js";
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Loader = function Loader() {
-    return _react2.default.createElement(
-        "div",
-        { className: "body-color", __source: {
-                fileName: _jsxFileName,
-                lineNumber: 4
-            }
-        },
-        _react2.default.createElement(
-            "div",
-            { className: "page-loader", __source: {
+            'div',
+            { className: 'app-title text-center', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 5
+                    lineNumber: 7
                 }
             },
             _react2.default.createElement(
-                "div",
-                { className: "border-radius-for-icon", __source: {
+                'h1',
+                { className: 'header2 h2-size', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 6
+                        lineNumber: 8
                     }
                 },
-                _react2.default.createElement("i", { className: "loader-icon ra ra-lion ra-fw", __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 7
-                    }
-                })
-            ),
-            _react2.default.createElement(
-                "h2",
-                { className: "header2-size", __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 9
-                    }
-                },
-                "Admin Zoo App"
+                '404 Error - Page not found'
             )
         )
     );
 };
 
-exports.default = Loader;
+exports.default = NotFound;
 
-// import Loadable from "react-loadable";
-/*
-const Index = Loadable({
-    loader: () => import('./Index'),
-    loading: splashscreen,
-    delay: 50000000000000
-});
+/***/ }),
+/* 164 */
+/***/ (function(module, exports, __webpack_require__) {
 
-const Home= Loadable({
-    loader: () => import('./Home'),
-    loading: splashscreen,
-    delay:  50000000000000
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
 });
-*/
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\root\\components\\ROLES\\Admin\\AdminLogin.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactstrap = __webpack_require__(7);
+
+var _Navigation = __webpack_require__(133);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+var _LoaderIn = __webpack_require__(150);
+
+var _LoaderIn2 = _interopRequireDefault(_LoaderIn);
+
+var _reactRouterDom = __webpack_require__(12);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AdminLogin = function (_Component) {
+    _inherits(AdminLogin, _Component);
+
+    function AdminLogin(props) {
+        _classCallCheck(this, AdminLogin);
+
+        var _this = _possibleConstructorReturn(this, (AdminLogin.__proto__ || Object.getPrototypeOf(AdminLogin)).call(this, props));
+
+        _this.state = {
+            email: '',
+            password: '',
+            loading: false
+        };
+        return _this;
+    }
+
+    _createClass(AdminLogin, [{
+        key: 'onSubmit',
+        value: function onSubmit(e) {
+            var _this2 = this;
+
+            e.preventDefault();
+            this.setState({ loading: true });
+            var _state = this.state,
+                email = _state.email,
+                password = _state.password;
+
+
+            axios.post('api/admin-login', {
+                email: email,
+                password: password
+            }).then(function (response) {
+                _this2.setState({ err: false });
+                _this2.props.history.push("home");
+            }).catch(function (error) {
+                _this2.refs.email.value = "";
+                _this2.refs.password.value = "";
+                _this2.setState({ err: true });
+            });
+        }
+    }, {
+        key: 'onChange',
+        value: function onChange(e) {
+            var _e$target = e.target,
+                name = _e$target.name,
+                value = _e$target.value;
+
+            this.setState(_defineProperty({}, name, value));
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var loading = this.state.loading;
+            var error = this.state.err;
+            var msg = !error ? 'Login Successful' : 'Wrong Credentials';
+            var name = !error ? 'alert alert-success' : 'alert alert-danger';
+
+            var splashscreen = _react2.default.createElement(_LoaderIn2.default, {
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 55
+                }
+            });
+
+            var login = _react2.default.createElement(
+                'div',
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 58
+                    }
+                },
+                _react2.default.createElement(_Navigation2.default, {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 59
+                    }
+                }),
+                _react2.default.createElement(
+                    _reactstrap.Container,
+                    { fluid: true, className: 'container-customized', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 60
+                        }
+                    },
+                    _react2.default.createElement(
+                        _reactstrap.Col,
+                        { sm: { size: 8, order: 2, offset: 4 }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 62
+                            }
+                        },
+                        _react2.default.createElement(
+                            'h2',
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 63
+                                }
+                            },
+                            'Admin Login'
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-md-offset-2 col-md-8 col-md-offset-2', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 65
+                                }
+                            },
+                            error !== undefined && _react2.default.createElement(
+                                'div',
+                                { className: name, role: 'alert', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 66
+                                    }
+                                },
+                                msg
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'form',
+                            { className: 'form-horizontal', role: 'form', method: 'POST', onSubmit: this.onSubmit.bind(this), __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 68
+                                }
+                            },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 69
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'email', className: 'col-md-4 control-label', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 71
+                                        }
+                                    },
+                                    'E-Mail Address'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-6', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 73
+                                        }
+                                    },
+                                    _react2.default.createElement('input', { id: 'email', type: 'email', ref: 'email', className: 'form-control', name: 'email', onChange: this.onChange.bind(this), required: true, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 74
+                                        }
+                                    })
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 78
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'label',
+                                    { htmlFor: 'password', className: 'col-md-4 control-label', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 79
+                                        }
+                                    },
+                                    'Password'
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-6', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 81
+                                        }
+                                    },
+                                    _react2.default.createElement('input', { id: 'password', type: 'password', ref: 'password', className: 'form-control', name: 'password', onChange: this.onChange.bind(this), required: true, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 82
+                                        }
+                                    })
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 86
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-6 col-md-offset-4', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 87
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'checkbox', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 88
+                                            }
+                                        },
+                                        _react2.default.createElement(
+                                            'label',
+                                            {
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 89
+                                                }
+                                            },
+                                            _react2.default.createElement('input', { type: 'checkbox', name: 'remember', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 90
+                                                }
+                                            }),
+                                            ' Remember Me'
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 97
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-8 col-md-offset-4', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 98
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'button',
+                                        { type: 'submit', className: 'btn btn-success', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 101
+                                            }
+                                        },
+                                        'Login'
+                                    ),
+                                    _react2.default.createElement(
+                                        'li',
+                                        { className: 'btn btn-link', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 105
+                                            }
+                                        },
+                                        _react2.default.createElement(
+                                            _reactRouterDom.Link,
+                                            { to: 'forgotpassword', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 106
+                                                }
+                                            },
+                                            'Forgot Your Password?'
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+
+            return loading ? splashscreen : login;
+        }
+    }]);
+
+    return AdminLogin;
+}(_react.Component);
+
+exports.default = AdminLogin;
 
 /***/ })
 /******/ ]);

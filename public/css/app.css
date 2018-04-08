@@ -12184,6 +12184,7 @@ body {
   color: #cccccc;
   width: 55% !important;
   margin: 0 auto;
+  font-size: 1rem;
 }
 
 .app-title {
@@ -12219,11 +12220,14 @@ body {
   font-size: 10rem;
 }
 
-.header2-size {
+.header2 {
   color: #20c997;
-  font-size: 3rem !important;
   font-family: 'Nothing You Could Do', cursive;
   font-weight: bolder;
+}
+
+.h2-size {
+  font-size: 3rem !important;
 }
 
 .border-radius-for-icon {

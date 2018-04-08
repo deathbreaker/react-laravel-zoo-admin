@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from './Navigation'
+import Nav from '../../Navigation'
 
 
 const BASE_URL = 'http://localhost';

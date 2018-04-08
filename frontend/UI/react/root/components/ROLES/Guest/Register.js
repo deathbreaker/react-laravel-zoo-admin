@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import {
     Button,
     Container,
-    Row
+    Row,
+    Col
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
 
-import Nav from './Navigation'
+import Nav from '../../Navigation'
 
 class Register extends Component {
 
@@ -17,7 +18,7 @@ class Register extends Component {
             email : '',
             password: '',
             password_confirmation: '',
-            age: ''
+            age: '',
         }
      }
 
@@ -51,7 +52,7 @@ class Register extends Component {
      }
 
     render() {
-        let error = this.state.err ;
+        let error = this.state.err;
         let msg = (!error) ? 'Registered Successfully' : 'Oops! , Something went wrong.' ;
         let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
         return (   
@@ -59,14 +60,16 @@ class Register extends Component {
                 <Nav />
                 <Container fluid className="container-customized">
                     <Row>
-                        <div className="col-md-8 col-md-offset-2">
-                            <div className="panel panel-default">
-                                <h2>Register</h2>
-                                <div className="panel-body">
+                        <Col sm={{ size: 8, order: 2, offset: 4 }}>
+                            <h2>Register</h2>
+                                {/*<div className="panel panel-default">
+
+                                <div className="panel-body">*/}
                                     <div className="col-md-offset-2 col-md-8 col-md-offset-2">
-                                        {error != undefined && <div className={name} role="alert">{msg}</div>}
+                                        {error !== undefined && <div className={name} role="alert">{msg}</div>}
                                     </div>   
                                     <form className="form-horizontal" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
+
                                         <div className="form-group">
                                             <label htmlFor="name" className="col-md-4 control-label">Name</label>
 
@@ -79,7 +82,7 @@ class Register extends Component {
                                             <label htmlFor="age" className="col-md-4 control-label">Age</label>
 
                                             <div className="col-md-6">
-                                                <input id="age" type="text" className="form-control" ref="age" name="age" onChange={this.onChange.bind(this)} required autoFocus />
+                                                <input id="age" type="number" className="form-control" ref="age" name="age" onChange={this.onChange.bind(this)} required autoFocus />
                                             </div>
                                         </div>
 
@@ -100,7 +103,7 @@ class Register extends Component {
                                         </div>
 
                                         <div className="form-group">
-                                            <label htmlFor="password-confirm" className="col-md-4 control-label">Confirm Password</label>
+                                            <label htmlFor="password-confirm" className="without-word-break col-md-5 control-label">Confirm Password</label>
 
                                             <div className="col-md-6">
                                                 <input id="password-confirm" type="password" className="form-control" ref="confirm" name="password_confirmation" onChange={this.onChange.bind(this)} required/>
@@ -118,9 +121,9 @@ class Register extends Component {
                                             </div>
                                         </div>
                                     </form>
-                                </div>
-                            </div>
-                        </div>
+{/*                                </div>
+                            </div>*/}
+                        </Col>
                     </Row>
                 </Container>
             </div>    
@@ -128,4 +131,4 @@ class Register extends Component {
       }
 }
 
-export default Register
+export default Register;

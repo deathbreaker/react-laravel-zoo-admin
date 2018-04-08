@@ -1,18 +1,17 @@
 import React from 'react';
 
-const Loader = () => (
+const LoaderIn = () => (
     <div className="body-color">
         <div className="page-loader">
             <div className="border-radius-for-icon">
                 <i className="loader-icon ra ra-lion ra-fw"></i>
             </div>
-            <h2 className="header2-size">Admin Zoo App</h2>
+            <h2 className="header2 h2-size">Admin Zoo App</h2>
         </div>
     </div>
 );
 
-
-export default Loader;
+export default LoaderIn;
 
 
 

@@ -5,7 +5,7 @@ import {
 
 } from 'reactstrap'
 
-import Nav from './Navigation'
+import Nav from '../../Navigation'
 
 class Forgot extends Component{
 

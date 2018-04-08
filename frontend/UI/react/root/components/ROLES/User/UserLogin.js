@@ -1,14 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
     Button,
-    Container
-} from 'reactstrap'
+    Container,
+    Col
+} from 'reactstrap';
 
-import Nav from './Navigation'
-import Loader from './Loader'
-import { Link } from 'react-router-dom'
+import Nav from '../../Navigation';
+import LoaderIn from '../../Loader/LoaderIn';
+import { Link } from 'react-router-dom';
 
-class Login extends Component {
+class UserLogin extends Component {
     
      constructor(props){
         super(props);
@@ -24,7 +25,7 @@ class Login extends Component {
         this.setState({loading: true});
         const {email , password} = this.state;
 
-        axios.post('api/login', {
+        axios.post('api/user-login', {
                 email,
                 password
              })
@@ -51,21 +52,19 @@ class Login extends Component {
         let msg = (!error) ? 'Login Successful' : 'Wrong Credentials' ;
         let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
 
-        const splashscreen = <Loader/>;
+        const splashscreen = <LoaderIn/>;
 
         const login =
             <div>
                 <Nav />
                     <Container fluid className="container-customized">
-                        <div className="row">
-                            <div className="absolute-center mx-auto is-responsive col-md-8 col-md-offset-2">
-                                <div className="panel panel-default">
 
-                                    <h2>Login</h2>
-
-                                        <div className="panel-body">
+                        <Col sm={{ size: 8, order: 2, offset: 4 }}>
+                            <h2>Login</h2>
+                  {/*              <div className="panel panel-default">
+                                        <div className="panel-body">*/}
                                             <div className="col-md-offset-2 col-md-8 col-md-offset-2">
-                                                {error != undefined && <div className={name} role="alert">{msg}</div>}
+                                                {error !== undefined && <div className={name} role="alert">{msg}</div>}
                                             </div>
                                             <form className="form-horizontal" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
                                                 <div className="form-group">
@@ -110,16 +109,16 @@ class Login extends Component {
                                                 </div>
                                             </div>
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+{/*                                    </div>
+                                </div>*/}
+                        </Col>
                     </Container>
          </div>;
 
 	    return loading ? splashscreen : login;
-}
+
+        }
 }
 
-export default Login;
+export default UserLogin;
 
