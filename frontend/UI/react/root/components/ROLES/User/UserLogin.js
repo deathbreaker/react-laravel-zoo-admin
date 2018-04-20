@@ -22,22 +22,23 @@ class UserLogin extends Component {
 
      onSubmit(e){
         e.preventDefault();
-        this.setState({loading: true});
         const {email , password} = this.state;
-
-        axios.post('api/user-login', {
+        this.setState({loading: true});
+        axios.post('api/user/login', {
                 email,
                 password
              })
              .then(response=> {
                  this.setState({err: false});
-                 this.props.history.push("home") ;
+                 this.props.history.push("home");
 
              })
              .catch(error=> {
-                this.refs.email.value="";
-                this.refs.password.value="";
-                this.setState({err: true});
+                 this.setState({loading: false, err: true});
+                 this.refs.email.value="";
+                 this.refs.password.value="";
+
+
              });
      }
 
@@ -58,13 +59,12 @@ class UserLogin extends Component {
             <div>
                 <Nav />
                     <Container fluid className="container-customized">
-
                         <Col sm={{ size: 8, order: 2, offset: 4 }}>
                             <h2>Login</h2>
                   {/*              <div className="panel panel-default">
                                         <div className="panel-body">*/}
                                             <div className="col-md-offset-2 col-md-8 col-md-offset-2">
-                                                {error !== undefined && <div className={name} role="alert">{msg}</div>}
+                                                {error && <div className={name} role="alert">{msg}</div>}
                                             </div>
                                             <form className="form-horizontal" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
                                                 <div className="form-group">

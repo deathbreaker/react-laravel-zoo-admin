@@ -25,7 +25,7 @@ class AdminLogin extends Component {
         this.setState({loading: true});
         const {email , password} = this.state;
 
-        axios.post('api/admin-login', {
+        axios.post('api/admin/login', {
             email,
             password
         })

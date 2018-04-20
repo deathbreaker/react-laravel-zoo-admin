@@ -10,14 +10,14 @@ import {
 
 class Navigation extends Component {
 
-  constructor(props){
-      super(props);
-  } 
+  state = ({
+      loading: false
+  });
 
   logout(e){
        e.preventDefault();
-
-       axios.post('api/logout')
+       this.setState({loading: true});
+       axios.post('api/user/logout')
             .then(response => {
                 this.props.history.push('/');
             })
@@ -37,7 +37,8 @@ class Navigation extends Component {
         const navigation =
             <div>
                 <Navbar color="success" dark expand="md">
-                    <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Zoo app</NavbarBrand>
+                    {/*onClick={this.handleClick.bind(this)}*/}
+                    <NavbarBrand to="/home" tag={Link} >Zoo app</NavbarBrand>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
                             <NavLink to="/" tag={Link} onClick={this.logout.bind(this) }> Logout </NavLink>

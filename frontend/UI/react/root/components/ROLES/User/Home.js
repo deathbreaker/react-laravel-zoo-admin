@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
+
 import { Container } from 'reactstrap';
 
 import Navigation from '../../Navigation';
-import LoaderIn from '../../Loader/LoaderIn';
+import LoaderOut from '../../Loader/LoaderOut';
 
 class Home extends Component {
 
-  state = ({
-    loading: false
-  });
-
+    //loading ? splashscreen : home
+    //let {loading} = this.state;
+    //loading={loading}
   render() {
-      let {loading} = this.state;
 
-      const splashscreen = <LoaderIn/>;
+
+      const splashscreen = <LoaderOut/>;
 
       const home =
       <div>
-        <Navigation logoutLink="true" loading={loading} />
+        <Navigation logoutLink="true" />
         <Container fluid className="container text-center app-title">
             <h1 className="header1-size">Hey, You are logged in !</h1>
         </Container>
       </div>;
 
       return (
-        loading ? splashscreen : home
+        home
       )
   }
 }

@@ -5,7 +5,7 @@ import Root from './root/root'
 window._ = require('lodash');
 
 ReactDOM.render(
-    <div className="body-color"><Root/></div>,
+    <div className="body"><Root/></div>,
     document.getElementById('app')
 );
 

@@ -18,19 +18,19 @@ class Register extends Component {
             email : '',
             password: '',
             password_confirmation: '',
-            age: '',
+            age: ''
         }
      }
 
     onSubmit(e){
         e.preventDefault();
         const {name, email, password, password_confirmation, age} = this.state ;
-        axios.post('api/register', {
+        axios.post('api/user/register', {
             name,
             email,
             password,
             password_confirmation,
-            age,
+            age
           })
           .then(response=> {
            this.setState({err: false});
@@ -66,7 +66,7 @@ class Register extends Component {
 
                                 <div className="panel-body">*/}
                                     <div className="col-md-offset-2 col-md-8 col-md-offset-2">
-                                        {error !== undefined && <div className={name} role="alert">{msg}</div>}
+                                        {error && <div className={name} role="alert">{msg}</div>}
                                     </div>   
                                     <form className="form-horizontal" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
 
