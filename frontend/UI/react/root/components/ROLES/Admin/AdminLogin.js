@@ -9,6 +9,8 @@ import Nav from '../../Navigation';
 import LoaderIn from '../../Loader/LoaderIn';
 import { Link } from 'react-router-dom';
 
+import Footer from '../../Footer';
+
 class AdminLogin extends Component {
 
     constructor(props){
@@ -28,7 +30,7 @@ class AdminLogin extends Component {
         axios.post('api/admin/login', {
             email,
             password
-        })
+            })
             .then(response=> {
                 this.setState({err: false});
                 this.props.history.push("home") ;
@@ -49,21 +51,28 @@ class AdminLogin extends Component {
     render() {
         let loading = this.state.loading;
         let error = this.state.err ;
-        let msg = (!error) ? 'Login Successful' : 'Wrong Credentials' ;
-        let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
+
+        let msg = (!error) ? 'Login Successful' : 'W' ;
+        const alert=
+        <UncontrolledAlert color="danger">
+            Wrong Credentials!
+        </UncontrolledAlert>;
+
+        let name = (!error) ? 'alert alert-success' : 'alert alert-danger';
 
         const splashscreen = <LoaderIn/>;
 
         const login =
             <div>
                 <Nav />
-                <Container fluid className="container-customized">
+                <Container fluid className="container-customized mt-5">
 
                     <Col sm={{ size: 8, order: 2, offset: 4 }}>
+
                         <h2>Admin Login</h2>
 
                         <div className="col-md-offset-2 col-md-8 col-md-offset-2">
-                            {error !== undefined && <div className={name} role="alert">{msg}</div>}
+                            {error !== undefined && alert}
                         </div>
                         <form className="form-horizontal" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
                             <div className="form-group">
@@ -110,6 +119,7 @@ class AdminLogin extends Component {
                         </form>
                     </Col>
                 </Container>
+                <Footer/>
             </div>;
 
         return loading ? splashscreen : login;

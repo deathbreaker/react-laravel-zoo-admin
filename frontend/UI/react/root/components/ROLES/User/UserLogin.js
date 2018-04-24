@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import {
     Button,
     Container,
-    Col
+    Col,
+    UncontrolledAlert,
+    Alert
 } from 'reactstrap';
 
 import Nav from '../../Navigation';
+import Footer from '../../Footer';
 import LoaderIn from '../../Loader/LoaderIn';
 import { Link } from 'react-router-dom';
 
@@ -16,8 +19,9 @@ class UserLogin extends Component {
         this.state = {
             email : '',
             password: '',
-            loading: false
-        }
+            loading: false,
+            visible: false
+        };
      }
 
      onSubmit(e){
@@ -47,25 +51,29 @@ class UserLogin extends Component {
         this.setState({[name]: value});
      }
 
+    onDismiss() {
+        this.setState({ visible: !this.state.visible });
+    }
+
 	render() {
         let loading = this.state.loading;
         let error = this.state.err ;
         let msg = (!error) ? 'Login Successful' : 'Wrong Credentials' ;
-        let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
+        const visibility = error ? 'visible' : 'invisible';
+
+        let name = (!error) ? 'alert alert-success' : 'alert alert-danger';
 
         const splashscreen = <LoaderIn/>;
 
         const login =
             <div>
                 <Nav />
-                    <Container fluid className="container-customized">
+                    <Container className="mt-5 container-customized">
                         <Col sm={{ size: 8, order: 2, offset: 4 }}>
                             <h2>Login</h2>
                   {/*              <div className="panel panel-default">
                                         <div className="panel-body">*/}
-                                            <div className="col-md-offset-2 col-md-8 col-md-offset-2">
-                                                {error && <div className={name} role="alert">{msg}</div>}
-                                            </div>
+
                                             <form className="form-horizontal" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
                                                 <div className="form-group">
 
@@ -108,11 +116,17 @@ class UserLogin extends Component {
                                                     </li>
                                                 </div>
                                             </div>
+                                            <div className="col-md-offset-2 col-md-8 col-md-offset-2">
+                                                <UncontrolledAlert className={visibility} color="danger">
+                                                    Wrong credentials !
+                                                </UncontrolledAlert>
+                                            </div>
                                         </form>
 {/*                                    </div>
                                 </div>*/}
                         </Col>
                     </Container>
+                    <Footer/>
          </div>;
 
 	    return loading ? splashscreen : login;

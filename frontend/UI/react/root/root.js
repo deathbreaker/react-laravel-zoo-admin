@@ -8,6 +8,7 @@ import Register from './components/ROLES/Guest/Register';
 import Forgot from './components/ROLES/Guest/Forgot';
 import Reset from './components/ROLES/Guest/Reset';
 import AdminLogin from './components/ROLES/Admin/AdminLogin';
+import AnimalRegistry from './components/ROLES/User/AnimalRegistry'
 import NotFound from './components/PageNotFound/NotFound';
 
 import {homeThemes, loadingContext} from './context/home-context';
@@ -28,6 +29,7 @@ class Root extends Component {
                 <Route path='/password/reset/:token' component={Reset}/>
                 <Route path='/home' component={Home}/>
                 <Route path='/admin' component={AdminLogin}/>
+                <Route path='/animals' component={AnimalRegistry}/>
 
                 <Route component={NotFound} />
             </Switch>

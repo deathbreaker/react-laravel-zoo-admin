@@ -36,10 +36,13 @@ class Navigation extends Component {
     if (this.props.logoutLink) {
         const navigation =
             <div>
-                <Navbar color="success" dark expand="md">
+                <Navbar expand="md" dark fixed="top" className="mb-3 bg-spec-green border-bottom ">
                     {/*onClick={this.handleClick.bind(this)}*/}
                     <NavbarBrand to="/home" tag={Link} >Zoo app</NavbarBrand>
                     <Nav className="ml-auto" navbar>
+                        <NavItem>
+                            <NavLink to="/animals" tag={Link} > Animal Registry </NavLink>
+                        </NavItem>
                         <NavItem>
                             <NavLink to="/" tag={Link} onClick={this.logout.bind(this) }> Logout </NavLink>
                         </NavItem>
@@ -55,7 +58,7 @@ class Navigation extends Component {
 
     return (
         <div>
-            <Navbar color="success" dark expand="md">
+            <Navbar fixed="top" dark expand="md" className="mb-3 bg-spec-green border-bottom border-white">
                 <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Zoo app</NavbarBrand>
                 <Nav className="ml-auto" navbar>
                     <NavItem>

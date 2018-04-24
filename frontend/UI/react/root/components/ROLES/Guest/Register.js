@@ -8,6 +8,9 @@ import {
 import { Link } from 'react-router-dom'
 
 import Nav from '../../Navigation'
+import Footer from '../../Footer';
+
+
 
 class Register extends Component {
 
@@ -58,7 +61,7 @@ class Register extends Component {
         return (   
              <div>   
                 <Nav />
-                <Container fluid className="container-customized">
+                <Container fluid className="mt-5 container-customized">
                     <Row>
                         <Col sm={{ size: 8, order: 2, offset: 4 }}>
                             <h2>Register</h2>
@@ -67,7 +70,7 @@ class Register extends Component {
                                 <div className="panel-body">*/}
                                     <div className="col-md-offset-2 col-md-8 col-md-offset-2">
                                         {error && <div className={name} role="alert">{msg}</div>}
-                                    </div>   
+                                    </div>
                                     <form className="form-horizontal" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
 
                                         <div className="form-group">
@@ -126,6 +129,7 @@ class Register extends Component {
                         </Col>
                     </Row>
                 </Container>
+                <Footer />
             </div>    
         )
       }

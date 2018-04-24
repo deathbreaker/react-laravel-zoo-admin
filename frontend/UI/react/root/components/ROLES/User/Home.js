@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 
 import Navigation from '../../Navigation';
+import Footer from '../../Footer';
 import LoaderOut from '../../Loader/LoaderOut';
+
 
 class Home extends Component {
 
@@ -21,6 +23,7 @@ class Home extends Component {
         <Container fluid className="container text-center app-title">
             <h1 className="header1-size">Hey, You are logged in !</h1>
         </Container>
+        <Footer/>
       </div>;
 
       return (
