@@ -36,8 +36,6 @@ export default class AnimalRegistry extends Component{
              })
     }
 
-
-
     render(){
         const defaultImageUrl = 'http://www.zoozlin.eu';
 

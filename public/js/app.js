@@ -36381,19 +36381,19 @@ var AnimalRegistry = function (_Component) {
             var loader = _react2.default.createElement(_LoaderIn2.default, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 50
+                    lineNumber: 48
                 }
             });
             var noAnimalImage = _react2.default.createElement(
                 'div',
                 { className: imageStyle + noAnimalImageStyle, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 52
+                        lineNumber: 50
                     }
                 },
                 _react2.default.createElement('span', { className: 'animal-icon text-center text-green ra ra-lion ra-rw', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 53
+                        lineNumber: 51
                     }
                 })
             );
@@ -36403,19 +36403,19 @@ var AnimalRegistry = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 60
+                        lineNumber: 58
                     }
                 },
                 _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 61
+                        lineNumber: 59
                     }
                 }),
                 _react2.default.createElement(
                     _reactstrap.Container,
                     { className: 'mt-5', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 62
+                            lineNumber: 60
                         }
                     },
                     _react2.default.createElement(
@@ -36423,7 +36423,7 @@ var AnimalRegistry = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 63
+                                lineNumber: 61
                             }
                         },
                         animals.map(function (animal) {
@@ -36431,14 +36431,14 @@ var AnimalRegistry = function (_Component) {
                                 _reactstrap.Card,
                                 { key: animal.id, className: 'animal-card mt-3 ml-2 mb-2', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 66
+                                        lineNumber: 64
                                     }
                                 },
                                 animal.imageurl === noImage ? noAnimalImage : _react2.default.createElement(_reactstrap.CardImg, { className: imageStyle + noAnimalImageStyle, top: true, width: '50%',
                                     src: defaultImageUrl + animal.imageurl,
                                     alt: 'Card animal image cap', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 69
+                                        lineNumber: 67
                                     }
                                 }),
                                 _react2.default.createElement(
@@ -36446,14 +36446,14 @@ var AnimalRegistry = function (_Component) {
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 73
+                                            lineNumber: 71
                                         }
                                     },
                                     _react2.default.createElement(
                                         _reactstrap.CardTitle,
                                         { className: 'font-weight-bold', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 74
+                                                lineNumber: 72
                                             }
                                         },
                                         ' ',
@@ -36464,7 +36464,7 @@ var AnimalRegistry = function (_Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 75
+                                                lineNumber: 73
                                             }
                                         },
                                         ' ',
@@ -36475,7 +36475,7 @@ var AnimalRegistry = function (_Component) {
                                         {
                                             __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 76
+                                                lineNumber: 74
                                             }
                                         },
                                         'Po\u010Det: ',
@@ -36485,7 +36485,7 @@ var AnimalRegistry = function (_Component) {
                                         _reactstrap.Button,
                                         { color: 'success', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 77
+                                                lineNumber: 75
                                             }
                                         },
                                         'Detail'
@@ -36498,7 +36498,7 @@ var AnimalRegistry = function (_Component) {
                 _react2.default.createElement(_Footer2.default, {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 85
+                        lineNumber: 83
                     }
                 })
             );
