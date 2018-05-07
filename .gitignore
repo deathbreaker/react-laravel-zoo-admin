@@ -3,7 +3,7 @@
 /frontend/public/storage
 /backend/storage/oauth-private.key
 /backend/vendor
-/backend/.env
+# /backend/.env
 /backend/database/database.sqlite
 /.idea
 /.vagrant

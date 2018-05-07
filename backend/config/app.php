@@ -181,6 +181,8 @@ return [
          * Roles and permissions service...
         */
         Spatie\Permission\PermissionServiceProvider::class,
+
+
     ],
 
     /*

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Nav from '../../Navigation'
-
+import ajax from '../../../utils/ajax';
 
 const BASE_URL = 'http://localhost';
 
@@ -20,7 +20,7 @@ class Reset extends Component{
         e.preventDefault();
         const url = BASE_URL+'/api/password/reset' ;
         const {token, email, password, password_confirmation} = this.state ;
-        axios.post(url, {
+        ajax.post(url, {
 	    	token,
 	        email,
 	        password,

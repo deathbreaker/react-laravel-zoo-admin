@@ -1,11 +1,31 @@
+import axios from 'axios';
 
+
+let token = document.head.querySelector('meta[name="csrf-token"]');
+
+if (!token){
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+}
+
+const ajax = axios.create({
+    baseURL: 'http://localhost:8000/api', /*'http://localhost:8000' */
+    withCredentials: true,
+    headers: {
+        'X-CSRF-TOKEN': token.content,
+    },
+});
+
+export default ajax;
+
+
+
+/*
+        'X-Requested-With': 'XMLHttpRequest',
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
-window.axios.defaults.headers.common['baseURL'] = 'http://localhost:8000/api';
-
-let token = document.head.querySelector('meta[name="csrf-token"]');
+window.axios.defaults.headers.common['baseURL'] = 'http://zoo-admin.eu/api';
 
 if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
@@ -14,6 +34,9 @@ if (token) {
 }
 
 
+
+
+*/
 
 
 

@@ -8,7 +8,7 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminLoginController extends Controller
+class AdminAuthController extends Controller
 {
     /*
     |--------------------------------------------------------------------------

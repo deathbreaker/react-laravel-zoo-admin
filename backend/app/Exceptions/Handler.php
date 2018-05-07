@@ -3,8 +3,11 @@
 namespace App\Exceptions;
 
 use Exception;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Http\Response;
+
 
 class Handler extends ExceptionHandler
 {
@@ -21,6 +24,14 @@ class Handler extends ExceptionHandler
         \Illuminate\Session\TokenMismatchException::class,
         \Illuminate\Validation\ValidationException::class,
     ];
+
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+/*        return $request->expectsJson()
+            ? response()->json(['unauthenticated' => true], 401)
+            : response()->json(['unauthenticated' => false], 200);*/
+
+    }
 
     /**
      * Report or log an exception.
@@ -44,6 +55,11 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+        if ($exception instanceof \Illuminate\Validation\ValidationException){
+            return response()->json(['error' => 'Invalid user name or password.'], 500);
+        }
+
         if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException)
         {
             return response()->json([
@@ -51,22 +67,13 @@ class Handler extends ExceptionHandler
             ], 404);
         }
 
+        /*        if ($exception){
+                    return response()->json([
+                        'status' => $exception->getCode(),
+                        'error' => $exception->getMessage()
+                    ], 200);
+                }*/
+
         return parent::render($request, $exception);
-    }
-
-    /**
-     * Convert an authentication exception into an unauthenticated response.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $exception
-     * @return \Illuminate\Http\Response
-     */
-    protected function unauthenticated($request, AuthenticationException $exception)
-    {
-        if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
-        }
-
-        return redirect()->guest(route('login'));
     }
 }

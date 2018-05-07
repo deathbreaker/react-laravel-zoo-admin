@@ -16,6 +16,7 @@ import Footer from '../../Footer';
 
 import Navigation from '../../Navigation';
 import LoaderIn from '../../Loader/LoaderIn';
+import ajax from '../../../utils/ajax';
 
 export default class AnimalRegistry extends Component{
 
@@ -25,7 +26,7 @@ export default class AnimalRegistry extends Component{
 
 
     componentDidMount() {
-        axios.get("api/user/animals")
+        ajax.get("/user/animals")
              .then( response => {
                  const animals = response.data;
 

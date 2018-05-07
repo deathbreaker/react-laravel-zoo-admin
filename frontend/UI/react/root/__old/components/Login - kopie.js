@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Nav from '../../components/Navigation'
 import { Link } from 'react-router-dom'
-import axios from '../../utils/axios-customized'
+import axios from '../../utils/ajax'
 
 
 class Login extends Component {

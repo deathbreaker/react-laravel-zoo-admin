@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {
     Button,
     Container,
-    Col
+    Col,
+    UncontrolledAlert
 } from 'reactstrap';
 
 import Nav from '../../Navigation';
@@ -10,6 +11,7 @@ import LoaderIn from '../../Loader/LoaderIn';
 import { Link } from 'react-router-dom';
 
 import Footer from '../../Footer';
+import ajax from '../../../utils/ajax';
 
 class AdminLogin extends Component {
 
@@ -27,7 +29,7 @@ class AdminLogin extends Component {
         this.setState({loading: true});
         const {email , password} = this.state;
 
-        axios.post('api/admin/login', {
+        ajax.post('api/admin/login', {
             email,
             password
             })

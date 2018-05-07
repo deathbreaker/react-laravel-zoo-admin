@@ -6,10 +6,9 @@ import {
     Col
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
-
+import ajax from '../../../utils/ajax';
 import Nav from '../../Navigation'
 import Footer from '../../Footer';
-
 
 
 class Register extends Component {
@@ -28,7 +27,7 @@ class Register extends Component {
     onSubmit(e){
         e.preventDefault();
         const {name, email, password, password_confirmation, age} = this.state ;
-        axios.post('api/user/register', {
+        ajax.post('/user/register', {
             name,
             email,
             password,
@@ -36,10 +35,12 @@ class Register extends Component {
             age
           })
           .then(response=> {
+           console.log(response);
            this.setState({err: false});
-           this.props.history.push("home") ;
+           this.props.history.push("/") ;
           })
-          .catch(error=> {
+          .catch(err=> {
+            console.log(err);
             this.refs.name.value="";
             this.refs.password.value="";
             this.refs.email.value="";

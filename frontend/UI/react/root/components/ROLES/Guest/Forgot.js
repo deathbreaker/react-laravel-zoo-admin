@@ -6,6 +6,7 @@ import {
 } from 'reactstrap'
 
 import Nav from '../../Navigation'
+import ajax from '../../../utils/ajax';
 
 class Forgot extends Component{
 
@@ -20,7 +21,7 @@ class Forgot extends Component{
 	onSubmit(e){
 		e.preventDefault();
 		const {email} = this.state;
-        axios.post('api/password/email', {
+        ajax.post('api/password/email', {
              email,
           })
           .then(response=> {

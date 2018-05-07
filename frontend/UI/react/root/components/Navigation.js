@@ -7,6 +7,8 @@ import {
     NavLink,
     NavItem
 } from 'reactstrap';
+import ajax from '../utils/ajax';
+
 
 class Navigation extends Component {
 
@@ -17,9 +19,9 @@ class Navigation extends Component {
   logout(e){
        e.preventDefault();
        this.setState({loading: true});
-       axios.post('api/user/logout')
+       ajax.post('/user/logout')
             .then(response => {
-                this.props.history.push('/');
+                //this.props.history.push('/');
             })
             .catch(error=> {
                 console.log(error);

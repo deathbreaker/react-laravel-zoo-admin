@@ -26,7 +26,7 @@ class AnimalsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:products|max:255',
+            'name' => 'required|unique:products',
             'latinname' => 'required',
             'count' => 'integer',
             'imageurl' => 'string',
