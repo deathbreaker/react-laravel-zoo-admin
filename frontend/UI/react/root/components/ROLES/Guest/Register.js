@@ -37,7 +37,7 @@ class Register extends Component {
           .then(response=> {
            console.log(response);
            this.setState({err: false});
-           this.props.history.push("/") ;
+           this.props.onRegisterSuccess();
           })
           .catch(err=> {
             console.log(err);

@@ -4,6 +4,15 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * Class RegisterRequest
+ * @package App\Http\Requests
+ *
+ * @property string $name
+ * @property string $email
+ * @property string $password
+ * @property integer $age
+ */
 class RegisterRequest extends FormRequest
 {
     /**
@@ -13,7 +22,7 @@ class RegisterRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**

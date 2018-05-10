@@ -3,26 +3,23 @@
 namespace App\Http\Controllers\Auth\User;
 
 use App\Http\Requests\RegisterRequest;
-use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Requests\CustomRequest;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Contracts\Auth\Guard;
 
 
 class UserAuthController extends Controller
 {
 
-    //use AuthenticatesUsers;
+    use AuthenticatesUsers;
 
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('auth')->except(['login', 'register']);
     }
 
 
@@ -32,37 +29,29 @@ class UserAuthController extends Controller
 //    }
 
 
-    public function login(Request $request)
-    {
-
-
-//        $credentials= $registerRequest === null ? : $registerRequest ;
-
-        //$request = $registerRequest !== null ? $registerRequest : new LoginRequest();
-//        $user = User::where($request->only('email', 'password'))->first();
-
-        $credentials = $request->only('email', 'password');
-
-        //$isVerified = $user !== null ? true : false;
-        $isVerified =  auth()->attempt($credentials);
-        $request->session()->regenerate();
-        if ($isVerified) {
-            $responseToReturn = [
-                'success' => 'true',
-                'message' => 'User Logged-in Successfully!',
-            ];
-            return response()->json($responseToReturn, 200);
-        } else {
-            $responseToReturn = [
-                'success' => 'false',
-                'message' => 'Invalid Email / Password',
-            ];
-            return response()->json($responseToReturn, 200);
-        }
-
-
-    }
-
+//    public function login(Request $request)
+//    {
+//
+//
+////        $credentials= $registerRequest === null ? : $registerRequest ;
+//
+//        //$request = $registerRequest !== null ? $registerRequest : new LoginRequest();
+////        $user = User::where($request->only('email', 'password'))->first();
+//
+//        $credentials = $request->only('email', 'password');
+//
+//        if (Auth::attempt($credentials)) {
+//            Auth::guard()->
+//            return response(null, 200);
+//        } else {
+//            $responseToReturn = [
+//                'message' => 'Invalid Email / Password',
+//            ];
+//            return response()->json($responseToReturn, 403);
+//        }
+//
+//
+//    }
 
 
     protected function register(RegisterRequest $request)
@@ -76,18 +65,35 @@ class UserAuthController extends Controller
         return $this->login($request);
     }
 
-    public function logout(Request $request)
+//    public function logout(Request $request)
+//    {
+//
+//        Auth::logout();
+//        //return response()->json(['message' => 'Successfully log out!'], 200);
+//
+//    }
+    protected function authenticated(Request $request, $user)
     {
-        $request->session()->invalidate();
-        auth()->logout();
-        return response()->json(['message' => 'Successfully log out!'], 200);
 
+        $request->session()->put('firstname', $user->first_name);
+        $request->session()->save();
+        return response('', 200);
     }
 
-    public function verifyAuth()
-    {
-        return response()->json(['message' => auth()->check()], 200);
 
+    protected function sendFailedLoginResponse(Request $request)
+    {
+        return response('', 500);
+    }
+
+
+    public function auth()
+    {
+        if (Auth::check()) {
+            return response('', 200);
+        }
+
+        return response('', 403);
     }
 
 

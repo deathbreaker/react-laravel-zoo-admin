@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Root from './root/root'
+import Root from './root/Root'
 
 window._ = require('lodash');
 

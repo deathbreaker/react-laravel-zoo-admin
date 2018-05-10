@@ -9,7 +9,7 @@ Route::group(['middleware' => ['web']], function () {
        /*
        * AUTH routes
        */
-       Route::get('auth', 'Auth\User\UserAuthController@verifyAuth');
+       Route::get('auth', 'Auth\User\UserAuthController@auth');
        Route::get('/token/refresh', 'Auth\User\UserAuthController@refresh');
        Route::post('login', 'Auth\User\UserAuthController@login');
        Route::post('register','Auth\User\UserAuthController@register');
