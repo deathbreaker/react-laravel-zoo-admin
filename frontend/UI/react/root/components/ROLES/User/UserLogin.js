@@ -13,6 +13,7 @@ import {
 import Nav from '../../Navigation';
 import Footer from '../../Footer';
 import LoaderIn from '../../Loader/LoaderIn';
+
 import { Link } from 'react-router-dom';
 import ajax from '../../../utils/ajax';
 
@@ -33,8 +34,7 @@ class UserLogin extends Component {
      };
 
 
-     onSubmit(e, context){
-        e.preventDefault();
+     onSubmit(e, actions){
         const {email, password} = this.state;
 
         this.setState({loading: true});
@@ -42,12 +42,11 @@ class UserLogin extends Component {
                     .then( response => {
                         const {success} = response.data;
                         console.log(response);
-                        console.log(success);
+                        console.log("Auth success: " + success);
 
                         if(success === 'true'){
-                            console.log("Before force update.");
+                            this.props.auth();
                             this.props.history.push("/");
-                            this.forceUpdate();
                         }
                         else{
                             this.setState({
@@ -124,7 +123,7 @@ class UserLogin extends Component {
         const login =
             <div>
                 <ZooContext.Consumer>
-                    {(context) => (
+                    {(state, actions) => (
                     <React.Fragment>
                 <Nav />
                     <Container className="mt-5 container-customized">
@@ -133,7 +132,7 @@ class UserLogin extends Component {
                   {/*              <div className="panel panel-default">
                                         <div className="panel-body">*/}
 
-                                            <form className="form-horizontal" role="form" method="POST" onSubmit= {(e, context) => this.onSubmit(e)}>
+                                            <form className="form-horizontal" role="form" method="POST" onSubmit= {(e, actions) => this.onSubmit(e, actions)}>
                                                 <div className="form-group">
 
                                                     <label htmlFor="email" className="col-md-4 control-label">E-Mail Address</label>

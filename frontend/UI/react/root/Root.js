@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+
 import {ZooContext} from './context/ZooContext';
 
 import Home from './components/ROLES/User/Home';
@@ -23,39 +24,47 @@ import ajax from "./utils/ajax";
 
 class Root extends Component {
 
-    static authContextTypes = {
-        rerender: PropTypes.boolean
-    };
-
     state = {
-        rerender: false,
         auth: false,
     };
 
     componentDidMount(){
+        this.getAuthVerification();
+    }
+
+    getAuthVerification(){
         ajax.get("/user/auth")
             .then( response => {
                 const {message} = response.data;
-                console.log("Message: " +  message);
+                console.log("Authenticated: " +  message);
+                //return message;
                 this.setState({ auth: message });
             })
             .catch((error)  => {
-                console.log(error)
+                console.log(error);
             })
     }
 
-    notRerending(){
-        this.setState({rerender: false})
+    componentDidUpdate(prevProps){
+
     }
 
-    render() {
-        const {rerender} = this.state;
-        const {auth} = this.state;
+    onLoginSucceed = (auth) => {
 
-        let routes = (
+        this.setState({auth})
+
+    };
+
+
+
+    render() {
+        const {auth} = this.state;
+        //const history = createBrowserHistory();
+
+        let publicRoutes = (
             <Switch>
                 <Route exact path='/' component={Index}/>
-                <Route path='/login' component={UserLogin}/>
+                <Route path='/login' component={() => <UserLogin auth={ this.getAuthVerification } onLoginSucceed={ this.onLoginSucceed }/>}/>
                 <Route path='/register' component={Register}/>
                 <Route path='/forgotpassword' component={Forgot}/>
                 <Route path='/password/reset/:token' component={Reset}/>
@@ -63,7 +72,7 @@ class Root extends Component {
             </Switch>
         );
 
-        let authRoutes = (
+        let privateRoutes = (
             <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route path='/animals' component={AnimalRegistry}/>
@@ -72,14 +81,14 @@ class Root extends Component {
         );
 
         return(
+            <ZooContext.Provider value={{
+                state: this.state,
+                actions: {rerenderPage: () => this.setState({state: this.state})}
+            }}>
                 <Router>
-                    <ZooContext.Provider value={{
-                        state: this.state,
-                    }}>
-                        {auth ? authRoutes : routes}
-                    </ZooContext.Provider>
-
+                        {auth ? publicRoutes : privateRoutes}
                 </Router>
+            </ZooContext.Provider>
         )
     }
 }
