@@ -33,11 +33,12 @@ class App extends Component {
     getAuthVerification = () => {
         return ajax.get("/user/auth")
             .then( response => {
-                const {data} = response;
-                console.log("Authenticated: " +  data);
-                console.log("Authenticated: ", typeof data);
+                const {auth} = response.data;
+                console.log("Authenticated: " +  auth);
+                console.log("Authenticated: ", typeof auth);
                 //return message;
-                this.setState({ auth: data });
+                this.setState({ auth: auth });
+
             })
             .catch((error)  => {
                 console.log(error);
@@ -52,14 +53,17 @@ class App extends Component {
 
     render() {
         const {auth} = this.state;
-        return auth ? <Switch>
+        return auth ?
+        <Switch>
             <Route exact path='/' component={Home}/>
             <Route path='/animals' component={AnimalRegistry}/>
             <Route component={NotFound}/>
-        </Switch> : <Switch>
+        </Switch> :
+        <Switch>
             <Route exact path='/' component={Index}/>
-            <Route path='/login' component={() => <UserLogin onLoginSucceed={this.onLoginSucceed}/>}/>
-            <Route path='/register' component={() => <Register onRegisterSuccess={this.onLoginSucceed}/>}/>
+            <Route path='/user-login' component={() => <UserLogin onLoginSucceed={this.onLoginSucceed}/>}/>
+            <Route path='/user-register' component={() => <Register onRegisterSuccess={this.onLoginSucceed}/>}/>
+            <Route path='/admin-login' component={() => <AdminLogin onLoginSucceed={this.onLoginSucceed}/>}/>
             <Route path='/forgotpassword' component={Forgot}/>
             <Route path='/password/reset/:token' component={Reset}/>
             <Route component={NotFound}/>

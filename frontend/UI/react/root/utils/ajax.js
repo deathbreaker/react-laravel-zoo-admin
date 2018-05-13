@@ -8,7 +8,7 @@ if (!token){
 }
 
 const ajax = axios.create({
-    baseURL: 'http://localhost:8000/api', /*'http://localhost:8000' */
+    baseURL:  process.env.NODE_ENV ? 'http://localhost:8000/api' : "http://zoo-admin.eu/api",
     withCredentials: true,
     headers: {
         'X-CSRF-TOKEN': token.content,

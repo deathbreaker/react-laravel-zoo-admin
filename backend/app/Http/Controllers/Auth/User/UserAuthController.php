@@ -19,7 +19,7 @@ class UserAuthController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth')->except(['login', 'register']);
+        $this->middleware('auth')->except(['login', 'register', 'auth']);
     }
 
 
@@ -75,7 +75,7 @@ class UserAuthController extends Controller
     protected function authenticated(Request $request, $user)
     {
 
-        $request->session()->put('firstname', $user->first_name);
+        $request->session()->put('name', $user->name);
         $request->session()->save();
         return response('', 200);
     }
@@ -90,10 +90,10 @@ class UserAuthController extends Controller
     public function auth()
     {
         if (Auth::check()) {
-            return response('', 200);
+            return response()->json(["auth" => true], 200);
         }
 
-        return response('', 403);
+        return response()->json(["auth" => false], 403);
     }
 
 

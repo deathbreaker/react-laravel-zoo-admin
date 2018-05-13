@@ -59,7 +59,7 @@ class Reset extends Component{
 								<h2>Reset Password</h2>
 			                    <div className="panel-body">
 			                    	<div className="col-md-offset-2 col-md-8 col-md-offset-2">
-                                        {error != undefined && <div className={name} role="alert">{msg}</div>}
+                                        {error !== undefined && <div className={name} role="alert">{msg}</div>}
                                     </div>  
 			                        <form className="form-horizontal" role="form"  onSubmit= {this.onSubmit.bind(this)}>
 			                            <div className="form-group">

@@ -19,7 +19,7 @@ class Navigation extends Component {
     logout = (e) => {
         e.preventDefault();
         this.setState({loading: true});
-        console.log(this.props.history)
+        console.log(this.props.history);
         ajax.post('/user/logout')
             .then(response => {
                 this.props.history.push('/');
@@ -42,7 +42,7 @@ class Navigation extends Component {
                 <div>
                     <Navbar expand="md" dark fixed="top" className="mb-3 bg-spec-green border-bottom ">
                         {/*onClick={this.handleClick.bind(this)}*/}
-                        <NavbarBrand to="/home" tag={Link}>Zoo app</NavbarBrand>
+                        <NavbarBrand to="/" tag={Link}>Zoo app</NavbarBrand>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink to="/animals" tag={Link}> Animal Registry </NavLink>
@@ -63,13 +63,16 @@ class Navigation extends Component {
         return (
             <div>
                 <Navbar fixed="top" dark expand="md" className="mb-3 bg-spec-green border-bottom border-white">
-                    <NavbarBrand href="#" onClick={this.handleClick.bind(this)}>Zoo app</NavbarBrand>
+                    <NavbarBrand to="/" tag={Link} onClick={this.handleClick.bind(this)}>Zoo app</NavbarBrand>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink to="/login" tag={Link}>Login</NavLink>
+                            <NavLink to="/admin-login" tag={Link}>Admin Login</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/register" tag={Link}>Register</NavLink>
+                            <NavLink to="/user-login" tag={Link}>User Login</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink to="/user-register" tag={Link}>User Register</NavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>
