@@ -23,6 +23,7 @@ import {
     Form
 
 } from 'reactstrap';
+import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import LoaderIn from './Loader/LoaderIn';
 import ajax from '../utils/ajax';
@@ -32,14 +33,7 @@ class AnimalRegistry extends Component{
 
     state = {
         animals: [],
-        modal: false,
-        name: null,
-        latinname: null,
-    };
 
-    onChange = (e) => {
-        const {name, value} = e.target ;
-        this.setState({[name]: value});
     };
 
 
@@ -69,12 +63,14 @@ class AnimalRegistry extends Component{
     };
 
     toggle = () => {
+        console.log("uwdhwdah");
         this.setState({
             modal: !this.state.modal
         });
     };
 
     onPutSubmit = (id) => {
+        console.log(id);
         const {name, latinname} = this.state;
         return  ajax.patch('/user/animals/' + id, {name, latinname})
                     .then(() => {
@@ -115,9 +111,10 @@ class AnimalRegistry extends Component{
                             <Col sm="12">
                                 <CardColumns>
                                     { animals.map(animal => {
+
                                         return (
-                                            <div>
-                                                <Card key={animal.id} className="animal-card mt-3 ml-2 mb-2">
+                                            <div key={animal.id} >
+                                                <Card className="animal-card mt-3 ml-2 mb-2">
                                                     { animal.imageurl === noImage
                                                         ? noAnimalImage
                                                         :<CardImg className={ imageStyle + noAnimalImageStyle} top width="50%"
@@ -129,13 +126,18 @@ class AnimalRegistry extends Component{
                                                         <CardSubtitle> { animal.latinname }</CardSubtitle>
                                                         <CardText>Počet: {animal.count }</CardText>
 
-                                                        <Button className="mr-2" color="success" onClick={this.toggle}>Update</Button>
+                                                        <Button to={"animals/edit/"+ animal.id}
+                                                                tag={Link}
+                                                                className="mr-2"
+                                                                color="btn btn-success"
+                                                                onClick={this.toggle}>
+                                                                Edit
+                                                        </Button>
                                                         <Button onClick={() => this.onDeleteSubmit(event,  animal.id)} type="submit" color="danger">Delete</Button>
 
                                                     </CardBody>
-
-
                                                 </Card>
+
                                                 <Modal isOpen={this.state.modal} toggle={this.toggle}>
                                                     <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>&times;</button>;
                                                     <ModalHeader>Update the animal</ModalHeader>
@@ -161,7 +163,7 @@ class AnimalRegistry extends Component{
                                                                            type="text"
                                                                            className="form-control"
                                                                            ref="age"
-                                                                           ame="age"
+                                                                           name="age"
                                                                            onChange={(() => this.onChange)}
                                                                            required autoFocus />
                                                                 </Col>

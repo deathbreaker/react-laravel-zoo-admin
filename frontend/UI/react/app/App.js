@@ -12,11 +12,10 @@ import Reset from './components/ROLES/Guest/Reset';
 import AnimalRegistry from './components/AnimalRegistry';
 import AdminMain from './components/ROLES/Admin/AdminMain';
 import NotFound from './components/PageNotFound/NotFound';
+import EditAnimal from './components/EditAnimal';
 
 import ajax from "./utils/ajax";
 import {withRouter} from "react-router";
-
-
 
 
 class App extends Component {
@@ -61,13 +60,10 @@ class App extends Component {
                     routes =
                         <Switch>
                             <Route exact path='/'
-                                   component={ () =>
-                                       <Index/>
-                                   }
+                                   component={ Index}
                             />
                             <Route path='/login'
-                                   component={ () =><Login/>
-                                   }
+                                   component={ Login }
                             />
                             <Route path='/register'
                                    component={ () =>
@@ -85,7 +81,7 @@ class App extends Component {
                                    }
                             />
                             <Route component={ () =>
-                                  <NotFound/>
+                                  <NotFound authorized={false}/>
                             }/>
                         </Switch>;
                     break;
@@ -93,16 +89,26 @@ class App extends Component {
                     routes =
                     <Switch>
                         <Route exact path='/' component={Home}/>
-                        <Route path='/animals' component={() => <AnimalRegistry isAdmin={false} />}/>
-                        <Route component={NotFound}/>
+                        <Route exact path='/animals' component={() => <AnimalRegistry isAdmin={false} />}/>
+                        <Route component={ () =>
+                            <NotFound authorized={true}/>
+                        }/>
                     </Switch>;
                     break;
                 case "admin":
                     routes =
                     <Switch>
-                        <Route exact path='/' component={AdminMain} />}/>
+                        { isAdmin && <Route path='/animals/:id/edit' component={EditAnimal} /> }
+                        <Route path='/animals/new' component={() => <AnimalRegistry isAdmin={true}/> } />
+
                         <Route path='/animals' component={() => <AnimalRegistry isAdmin={true}/> } />
-                        <Route component={NotFound}/>
+                        <Route exact path='/' component={AdminMain} />}/>
+
+
+
+                        <Route component={ () =>
+                            <NotFound authorized={true}/>
+                        }/>
                     </Switch>;
                     break;
 

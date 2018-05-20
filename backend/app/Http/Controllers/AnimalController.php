@@ -14,7 +14,7 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        return Animal::all();
+        return Animal::limit(30)->get();
     }
 
     /**
@@ -26,7 +26,7 @@ class AnimalController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:products',
+            'name' => 'required|unique:animals',
             'latinname' => 'required',
             'count' => 'integer',
             'imageurl' => 'string',
@@ -42,9 +42,9 @@ class AnimalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function get($id)
     {
-        return Animal::find($id)->get();
+        return Animal::findOrFail($id);
     }
 
     /**

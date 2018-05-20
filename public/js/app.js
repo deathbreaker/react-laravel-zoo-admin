@@ -6361,21 +6361,21 @@ var Navigation = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 50
+                        lineNumber: 49
                     }
                 },
                 _react2.default.createElement(
                     _reactstrap.Navbar,
                     { expand: 'md', dark: true, fixed: 'top', className: 'mb-3 bg-spec-green border-bottom ', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 51
+                            lineNumber: 50
                         }
                     },
                     _react2.default.createElement(
                         _reactstrap.NavbarBrand,
                         { to: '/', tag: _reactRouterDom.Link, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 52
+                                lineNumber: 51
                             }
                         },
                         'Zoo app'
@@ -6384,7 +6384,7 @@ var Navigation = function (_Component) {
                         _reactstrap.Nav,
                         { className: 'ml-auto', navbar: true, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 53
+                                lineNumber: 52
                             }
                         },
                         _react2.default.createElement(
@@ -6392,17 +6392,17 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 54
+                                    lineNumber: 53
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/animals', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 55
+                                        lineNumber: 54
                                     }
                                 },
-                                ' Animal Registry '
+                                ' List all animals'
                             )
                         ),
                         _react2.default.createElement(
@@ -6410,14 +6410,32 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 57
+                                    lineNumber: 56
+                                }
+                            },
+                            _react2.default.createElement(
+                                _reactstrap.NavLink,
+                                { to: '/animals/new', tag: _reactRouterDom.Link, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 57
+                                    }
+                                },
+                                ' Create new animal '
+                            )
+                        ),
+                        _react2.default.createElement(
+                            _reactstrap.NavItem,
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 59
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/', tag: _reactRouterDom.Link, onClick: this.logout, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 58
+                                        lineNumber: 60
                                     }
                                 },
                                 ' Logout '
@@ -6430,21 +6448,21 @@ var Navigation = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 64
+                        lineNumber: 66
                     }
                 },
                 _react2.default.createElement(
                     _reactstrap.Navbar,
                     { fixed: 'top', dark: true, expand: 'md', className: 'mb-3 bg-spec-green border-bottom border-white', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 65
+                            lineNumber: 67
                         }
                     },
                     _react2.default.createElement(
                         _reactstrap.NavbarBrand,
                         { to: '/', tag: _reactRouterDom.Link, onClick: this.handleClick.bind(this), __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 66
+                                lineNumber: 68
                             }
                         },
                         'Zoo app'
@@ -6453,7 +6471,7 @@ var Navigation = function (_Component) {
                         _reactstrap.Nav,
                         { className: 'ml-auto', navbar: true, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 67
+                                lineNumber: 69
                             }
                         },
                         _react2.default.createElement(
@@ -6461,14 +6479,14 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 68
+                                    lineNumber: 70
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/login', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 69
+                                        lineNumber: 71
                                     }
                                 },
                                 'User Login'
@@ -6479,14 +6497,14 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 71
+                                    lineNumber: 73
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/register', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 72
+                                        lineNumber: 74
                                     }
                                 },
                                 'User Register'
@@ -28070,6 +28088,10 @@ var _NotFound = __webpack_require__(124);
 
 var _NotFound2 = _interopRequireDefault(_NotFound);
 
+var _EditAnimal = __webpack_require__(140);
+
+var _EditAnimal2 = _interopRequireDefault(_EditAnimal);
+
 var _ajax = __webpack_require__(7);
 
 var _ajax2 = _interopRequireDefault(_ajax);
@@ -28140,29 +28162,28 @@ var App = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 62
+                                lineNumber: 61
                             }
                         },
                         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/',
-                            component: function component() {
-                                return _react2.default.createElement(_Index2.default, {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 65
-                                    }
-                                });
-                            },
+                            component: _Index2.default,
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 63
+                                lineNumber: 62
                             }
                         }),
                         _react2.default.createElement(_reactRouterDom.Route, { path: '/login',
+                            component: _Login2.default,
+                            __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 65
+                            }
+                        }),
+                        _react2.default.createElement(_reactRouterDom.Route, { path: '/register',
                             component: function component() {
-                                return _react2.default.createElement(_Login2.default, {
-                                    __source: {
+                                return _react2.default.createElement(_Register2.default, { onRegisterSuccess: _this2.onUserLoginSucceed, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 69
+                                        lineNumber: 70
                                     }
                                 });
                             },
@@ -28171,55 +28192,41 @@ var App = function (_Component) {
                                 lineNumber: 68
                             }
                         }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/register',
-                            component: function component() {
-                                return _react2.default.createElement(_Register2.default, { onRegisterSuccess: _this2.onUserLoginSucceed, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 74
-                                    }
-                                });
-                            },
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 72
-                            }
-                        }),
                         _react2.default.createElement(_reactRouterDom.Route, { path: '/forgotpassword',
                             component: function component() {
                                 return _react2.default.createElement(_Forgot2.default, { onRegisterSuccess: _this2.onUserLoginSucceed, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 79
+                                        lineNumber: 75
                                     }
                                 });
                             },
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 77
+                                lineNumber: 73
                             }
                         }),
                         _react2.default.createElement(_reactRouterDom.Route, { path: '/password/reset/:token',
                             component: function component() {
                                 return _react2.default.createElement(_Reset2.default, { onRegisterSuccess: _this2.onUserLoginSucceed, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 84
+                                        lineNumber: 80
                                     }
                                 });
                             },
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 82
+                                lineNumber: 78
                             }
                         }),
                         _react2.default.createElement(_reactRouterDom.Route, { component: function component() {
-                                return _react2.default.createElement(_NotFound2.default, {
-                                    __source: {
+                                return _react2.default.createElement(_NotFound2.default, { authorized: false, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 88
+                                        lineNumber: 84
                                     }
                                 });
                             }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 87
+                                lineNumber: 83
                             }
                         })
                     );
@@ -28230,28 +28237,34 @@ var App = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 94
+                                lineNumber: 90
                             }
                         },
                         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 95
+                                lineNumber: 91
                             }
                         }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/animals', component: function component() {
+                        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/animals', component: function component() {
                                 return _react2.default.createElement(_AnimalRegistry2.default, { isAdmin: false, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 96
+                                        lineNumber: 92
                                     }
                                 });
                             }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 96
+                                lineNumber: 92
                             }
                         }),
-                        _react2.default.createElement(_reactRouterDom.Route, { component: _NotFound2.default, __source: {
+                        _react2.default.createElement(_reactRouterDom.Route, { component: function component() {
+                                return _react2.default.createElement(_NotFound2.default, { authorized: true, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 94
+                                    }
+                                });
+                            }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 97
+                                lineNumber: 93
                             }
                         })
                     );
@@ -28262,15 +28275,25 @@ var App = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 102
+                                lineNumber: 100
                             }
                         },
-                        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _AdminMain2.default, __source: {
+                        isAdmin && _react2.default.createElement(_reactRouterDom.Route, { path: '/animals/:id/edit', component: _EditAnimal2.default, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 103
+                                lineNumber: 101
                             }
                         }),
-                        '}/>',
+                        _react2.default.createElement(_reactRouterDom.Route, { path: '/animals/new', component: function component() {
+                                return _react2.default.createElement(_AnimalRegistry2.default, { isAdmin: true, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 102
+                                    }
+                                });
+                            }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 102
+                            }
+                        }),
                         _react2.default.createElement(_reactRouterDom.Route, { path: '/animals', component: function component() {
                                 return _react2.default.createElement(_AnimalRegistry2.default, { isAdmin: true, __source: {
                                         fileName: _jsxFileName,
@@ -28282,9 +28305,21 @@ var App = function (_Component) {
                                 lineNumber: 104
                             }
                         }),
-                        _react2.default.createElement(_reactRouterDom.Route, { component: _NotFound2.default, __source: {
+                        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _AdminMain2.default, __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 105
+                            }
+                        }),
+                        '}/>',
+                        _react2.default.createElement(_reactRouterDom.Route, { component: function component() {
+                                return _react2.default.createElement(_NotFound2.default, { authorized: true, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 110
+                                    }
+                                });
+                            }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 109
                             }
                         })
                     );
@@ -37338,8 +37373,6 @@ var _Navigation2 = _interopRequireDefault(_Navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -37361,16 +37394,8 @@ var AnimalRegistry = function (_Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AnimalRegistry.__proto__ || Object.getPrototypeOf(AnimalRegistry)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            animals: [],
-            modal: false,
-            name: null,
-            latinname: null
-        }, _this.onChange = function (e) {
-            var _e$target = e.target,
-                name = _e$target.name,
-                value = _e$target.value;
+            animals: []
 
-            _this.setState(_defineProperty({}, name, value));
         }, _this.onDeleteSubmit = function (event, id) {
             _ajax2.default.delete("/user/animals/" + id).then(function () {
                 _this.props.history.push("/animals");
@@ -37381,10 +37406,12 @@ var AnimalRegistry = function (_Component) {
                 console.log(error);
             });
         }, _this.toggle = function () {
+            console.log("uwdhwdah");
             _this.setState({
                 modal: !_this.state.modal
             });
         }, _this.onPutSubmit = function (id) {
+            console.log(id);
             var _this$state = _this.state,
                 name = _this$state.name,
                 latinname = _this$state.latinname;
@@ -37426,19 +37453,19 @@ var AnimalRegistry = function (_Component) {
             var loader = _react2.default.createElement(_LoaderIn2.default, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 98
+                    lineNumber: 94
                 }
             });
             var noAnimalImage = _react2.default.createElement(
                 'div',
                 { className: imageStyle + noAnimalImageStyle, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 100
+                        lineNumber: 96
                     }
                 },
                 _react2.default.createElement('span', { className: 'animal-icon text-center text-green ra ra-lion ra-rw', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 101
+                        lineNumber: 97
                     }
                 })
             );
@@ -37450,19 +37477,19 @@ var AnimalRegistry = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 111
+                        lineNumber: 107
                     }
                 },
                 _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 112
+                        lineNumber: 108
                     }
                 }),
                 _react2.default.createElement(
                     _reactstrap.Container,
                     { className: 'mt-5', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 113
+                            lineNumber: 109
                         }
                     },
                     _react2.default.createElement(
@@ -37470,14 +37497,14 @@ var AnimalRegistry = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 114
+                                lineNumber: 110
                             }
                         },
                         _react2.default.createElement(
                             _reactstrap.Col,
                             { sm: '12', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 115
+                                    lineNumber: 111
                                 }
                             },
                             _react2.default.createElement(
@@ -37485,30 +37512,30 @@ var AnimalRegistry = function (_Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 116
+                                        lineNumber: 112
                                     }
                                 },
                                 animals.map(function (animal) {
+
                                     return _react2.default.createElement(
                                         'div',
-                                        {
-                                            __source: {
+                                        { key: animal.id, __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 119
+                                                lineNumber: 116
                                             }
                                         },
                                         _react2.default.createElement(
                                             _reactstrap.Card,
-                                            { key: animal.id, className: 'animal-card mt-3 ml-2 mb-2', __source: {
+                                            { className: 'animal-card mt-3 ml-2 mb-2', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 120
+                                                    lineNumber: 117
                                                 }
                                             },
                                             animal.imageurl === noImage ? noAnimalImage : _react2.default.createElement(_reactstrap.CardImg, { className: imageStyle + noAnimalImageStyle, top: true, width: '50%',
                                                 src: defaultImageUrl + animal.imageurl,
                                                 alt: 'Card animal image cap', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 123
+                                                    lineNumber: 120
                                                 }
                                             }),
                                             _react2.default.createElement(
@@ -37516,14 +37543,14 @@ var AnimalRegistry = function (_Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 127
+                                                        lineNumber: 124
                                                     }
                                                 },
                                                 _react2.default.createElement(
                                                     _reactstrap.CardTitle,
                                                     { className: 'font-weight-bold', __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 128
+                                                            lineNumber: 125
                                                         }
                                                     },
                                                     ' ',
@@ -37534,7 +37561,7 @@ var AnimalRegistry = function (_Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 129
+                                                            lineNumber: 126
                                                         }
                                                     },
                                                     ' ',
@@ -37545,7 +37572,7 @@ var AnimalRegistry = function (_Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 130
+                                                            lineNumber: 127
                                                         }
                                                     },
                                                     'Po\u010Det: ',
@@ -37553,12 +37580,16 @@ var AnimalRegistry = function (_Component) {
                                                 ),
                                                 _react2.default.createElement(
                                                     _reactstrap.Button,
-                                                    { className: 'mr-2', color: 'success', onClick: _this3.toggle, __source: {
+                                                    { to: "animals/edit/" + animal.id,
+                                                        tag: _reactRouterDom.Link,
+                                                        className: 'mr-2',
+                                                        color: 'btn btn-success',
+                                                        onClick: _this3.toggle, __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 132
+                                                            lineNumber: 129
                                                         }
                                                     },
-                                                    'Update'
+                                                    'Edit'
                                                 ),
                                                 _react2.default.createElement(
                                                     _reactstrap.Button,
@@ -37566,7 +37597,7 @@ var AnimalRegistry = function (_Component) {
                                                             return _this3.onDeleteSubmit(event, animal.id);
                                                         }, type: 'submit', color: 'danger', __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 133
+                                                            lineNumber: 136
                                                         }
                                                     },
                                                     'Delete'
@@ -37577,14 +37608,14 @@ var AnimalRegistry = function (_Component) {
                                             _reactstrap.Modal,
                                             { isOpen: _this3.state.modal, toggle: _this3.toggle, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 139
+                                                    lineNumber: 141
                                                 }
                                             },
                                             _react2.default.createElement(
                                                 'button',
                                                 { className: 'close', style: { position: 'absolute', top: '15px', right: '15px' }, onClick: _this3.toggle, __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 140
+                                                        lineNumber: 142
                                                     }
                                                 },
                                                 '\xD7'
@@ -37595,7 +37626,7 @@ var AnimalRegistry = function (_Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 141
+                                                        lineNumber: 143
                                                     }
                                                 },
                                                 'Update the animal'
@@ -37604,7 +37635,7 @@ var AnimalRegistry = function (_Component) {
                                                 _reactstrap.ModalBody,
                                                 { className: 'mb-2', __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 142
+                                                        lineNumber: 144
                                                     }
                                                 },
                                                 _react2.default.createElement(
@@ -37613,21 +37644,21 @@ var AnimalRegistry = function (_Component) {
                                                             return _this3.onPutSubmit(animal.id);
                                                         }, __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 143
+                                                            lineNumber: 145
                                                         }
                                                     },
                                                     _react2.default.createElement(
                                                         'div',
                                                         { className: 'form-group', __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 145
+                                                                lineNumber: 147
                                                             }
                                                         },
                                                         _react2.default.createElement(
                                                             _reactstrap.Col,
                                                             { md: { size: 8, order: 2 }, __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 146
+                                                                    lineNumber: 148
                                                                 }
                                                             },
                                                             _react2.default.createElement(_reactstrap.Input, { placeholder: 'edit name',
@@ -37640,7 +37671,7 @@ var AnimalRegistry = function (_Component) {
                                                                 required: true,
                                                                 autoFocus: true, __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 147
+                                                                    lineNumber: 149
                                                                 }
                                                             })
                                                         )
@@ -37649,27 +37680,27 @@ var AnimalRegistry = function (_Component) {
                                                         'div',
                                                         { className: 'form-group', __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 157
+                                                                lineNumber: 159
                                                             }
                                                         },
                                                         _react2.default.createElement(
                                                             _reactstrap.Col,
                                                             { md: { size: 8, order: 2 }, __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 159
+                                                                    lineNumber: 161
                                                                 }
                                                             },
                                                             _react2.default.createElement(_reactstrap.Input, { placeholder: 'edit latin name',
                                                                 type: 'text',
                                                                 className: 'form-control',
                                                                 ref: 'age',
-                                                                ame: 'age',
+                                                                name: 'age',
                                                                 onChange: function onChange() {
                                                                     return _this3.onChange;
                                                                 },
                                                                 required: true, autoFocus: true, __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 160
+                                                                    lineNumber: 162
                                                                 }
                                                             })
                                                         )
@@ -37678,14 +37709,14 @@ var AnimalRegistry = function (_Component) {
                                                         'div',
                                                         { className: 'form-group', __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 171
+                                                                lineNumber: 173
                                                             }
                                                         },
                                                         _react2.default.createElement(
                                                             'div',
                                                             { className: 'col-md-6 col-md-offset-4', __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 172
+                                                                    lineNumber: 174
                                                                 }
                                                             },
                                                             _react2.default.createElement(
@@ -37695,7 +37726,7 @@ var AnimalRegistry = function (_Component) {
                                                                     className: 'align-self-center',
                                                                     onClick: _this3.toggle, __source: {
                                                                         fileName: _jsxFileName,
-                                                                        lineNumber: 173
+                                                                        lineNumber: 175
                                                                     }
                                                                 },
                                                                 'Update'
@@ -37714,7 +37745,7 @@ var AnimalRegistry = function (_Component) {
                 _react2.default.createElement(_Footer2.default, {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 194
+                        lineNumber: 196
                     }
                 })
             ) : _react2.default.createElement(
@@ -37722,19 +37753,19 @@ var AnimalRegistry = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 197
+                        lineNumber: 199
                     }
                 },
                 _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 198
+                        lineNumber: 200
                     }
                 }),
                 _react2.default.createElement(
                     _reactstrap.Container,
                     { className: 'mt-5', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 199
+                            lineNumber: 201
                         }
                     },
                     _react2.default.createElement(
@@ -37742,14 +37773,14 @@ var AnimalRegistry = function (_Component) {
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 200
+                                lineNumber: 202
                             }
                         },
                         _react2.default.createElement(
                             _reactstrap.Col,
                             { sm: '12', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 201
+                                    lineNumber: 203
                                 }
                             },
                             _react2.default.createElement(
@@ -37757,7 +37788,7 @@ var AnimalRegistry = function (_Component) {
                                 {
                                     __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 202
+                                        lineNumber: 204
                                     }
                                 },
                                 animals.map(function (animal) {
@@ -37765,14 +37796,14 @@ var AnimalRegistry = function (_Component) {
                                         _reactstrap.Card,
                                         { key: animal.id, className: 'animal-card mt-3 ml-2 mb-2', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 205
+                                                lineNumber: 207
                                             }
                                         },
                                         animal.imageurl === noImage ? noAnimalImage : _react2.default.createElement(_reactstrap.CardImg, { className: imageStyle + noAnimalImageStyle, top: true, width: '50%',
                                             src: defaultImageUrl + animal.imageurl,
                                             alt: 'Card animal image cap', __source: {
                                                 fileName: _jsxFileName,
-                                                lineNumber: 208
+                                                lineNumber: 210
                                             }
                                         }),
                                         _react2.default.createElement(
@@ -37780,14 +37811,14 @@ var AnimalRegistry = function (_Component) {
                                             {
                                                 __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 212
+                                                    lineNumber: 214
                                                 }
                                             },
                                             _react2.default.createElement(
                                                 _reactstrap.CardTitle,
                                                 { className: 'font-weight-bold', __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 213
+                                                        lineNumber: 215
                                                     }
                                                 },
                                                 ' ',
@@ -37798,7 +37829,7 @@ var AnimalRegistry = function (_Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 214
+                                                        lineNumber: 216
                                                     }
                                                 },
                                                 ' ',
@@ -37809,7 +37840,7 @@ var AnimalRegistry = function (_Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 215
+                                                        lineNumber: 217
                                                     }
                                                 },
                                                 'Count: ',
@@ -37825,7 +37856,7 @@ var AnimalRegistry = function (_Component) {
                 _react2.default.createElement(_Footer2.default, {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 226
+                        lineNumber: 228
                     }
                 })
             );
@@ -37942,7 +37973,7 @@ var _Navigation2 = _interopRequireDefault(_Navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NotFound = function NotFound() {
+var NotFound = function NotFound(props) {
     return _react2.default.createElement(
         "div",
         { className: "body-color", __source: {
@@ -37950,8 +37981,7 @@ var NotFound = function NotFound() {
                 lineNumber: 5
             }
         },
-        _react2.default.createElement(_Navigation2.default, {
-            __source: {
+        _react2.default.createElement(_Navigation2.default, { logoutLink: props.authorized, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 6
             }
@@ -37983,6 +38013,302 @@ exports.default = NotFound;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\EditAnimal.js';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(98);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _reactRouterDom = __webpack_require__(8);
+
+var _Navigation = __webpack_require__(6);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+var _ajax = __webpack_require__(7);
+
+var _ajax2 = _interopRequireDefault(_ajax);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EditAnimal = function (_Component) {
+    _inherits(EditAnimal, _Component);
+
+    function EditAnimal(props) {
+        _classCallCheck(this, EditAnimal);
+
+        var _this = _possibleConstructorReturn(this, (EditAnimal.__proto__ || Object.getPrototypeOf(EditAnimal)).call(this, props));
+
+        _this.handleChange = function (e) {
+            var _e$target = e.target,
+                name = _e$target.name,
+                value = _e$target.value;
+
+            _this.setState(_defineProperty({}, name, value));
+        };
+
+        _this.state = {
+            name: '',
+            latinname: '',
+            count: '',
+            status: "LOADING"
+        };
+        return _this;
+    }
+
+    _createClass(EditAnimal, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            console.log(this.props.match);
+            _ajax2.default.get('/user/animals/' + this.props.match.params.id).then(function (response) {
+                _this2.setState(_extends({}, response.data, { status: "OK" }));
+            }).catch(function (error) {
+                console.log(error);
+
+                if (error.response.status === 404) {
+                    this.setState({
+                        status: "NOT_FOUND"
+                    });
+                }
+            });
+        }
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {
+            var _this3 = this;
+
+            event.preventDefault();
+            var products = {
+                name: this.state.name,
+                latinname: this.state.latinname,
+                count: this.state.count
+            };
+
+            var uri = '/animals/' + this.props.match.params.id;
+
+            _axios2.default.patch(uri, products).then(function (response) {
+                _this3.props.history.push('/animals');
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.state.status === "LOADING") {
+                return _react2.default.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 58
+                        }
+                    },
+                    'Loading.'
+                );
+            } else if (this.state.status === "NOT_FOUND") {
+                return _react2.default.createElement(Redirect, { to: "/404", __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 61
+                    }
+                });
+            }
+            return _react2.default.createElement(
+                'div',
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 64
+                    }
+                },
+                _react2.default.createElement(_Navigation2.default, { logoutLink: true, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 65
+                    }
+                }),
+                _react2.default.createElement(
+                    'h1',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 66
+                        }
+                    },
+                    'Update Item'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 67
+                        }
+                    },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'mt-2 col-md-2', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 68
+                            }
+                        },
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { to: '/animals', className: 'btn btn-success', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 69
+                                }
+                            },
+                            'Zp\u011Bt'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'form',
+                    { onSubmit: this.handleSubmit, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 72
+                        }
+                    },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'form-group', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 73
+                            }
+                        },
+                        _react2.default.createElement(
+                            'label',
+                            { id: 'name', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 74
+                                }
+                            },
+                            'Name'
+                        ),
+                        _react2.default.createElement('input', { name: 'name',
+                            type: 'text',
+                            className: 'form-control',
+                            value: this.state.name,
+                            onChange: this.handleChange, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 75
+                            }
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'form-group', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 82
+                            }
+                        },
+                        _react2.default.createElement(
+                            'label',
+                            { id: 'latinname', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 83
+                                }
+                            },
+                            'Latin name'
+                        ),
+                        _react2.default.createElement('input', { id: 'latinname', type: 'text', className: 'form-control',
+                            value: this.state.latinname,
+                            onChange: this.handleChange, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 84
+                            }
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'form-group', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 89
+                            }
+                        },
+                        _react2.default.createElement(
+                            'label',
+                            { id: 'count', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 90
+                                }
+                            },
+                            'Count'
+                        ),
+                        _react2.default.createElement('input', { id: 'count', type: 'text', className: 'form-control',
+                            value: this.state.latinname,
+                            onChange: this.handleChange, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 91
+                            }
+                        })
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'form-group', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 96
+                            }
+                        },
+                        _react2.default.createElement(
+                            'button',
+                            { type: 'submit', className: 'btn btn-success', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 97
+                                }
+                            },
+                            'Update'
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return EditAnimal;
+}(_react.Component);
+
+exports.default = EditAnimal;
 
 /***/ })
 /******/ ]);

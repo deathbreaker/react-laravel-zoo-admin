@@ -21,9 +21,8 @@ Route::group(['middleware' => ['web']], function () {
        /*
        * Animals CRUD routes
        */
-
+       Route::get('animals/{id}', 'AnimalController@get');
        Route::get('animals', 'AnimalController@index');
-       Route::get('animals/{id}', 'AnimalController@show');
        Route::post('animals','AnimalController@store');
        Route::patch('animals/{id}','AnimalController@update');
        Route::delete('animals/{id}', 'AnimalController@destroy');

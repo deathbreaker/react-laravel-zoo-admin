@@ -15321,6 +15321,10 @@ body {
   }
 }
 
+.nav-item-black-text {
+  color: darkgreen !important;
+}
+
 .app-title {
   margin-top: 230px !important;
   color: #ffffff;

@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import {withRouter, Link} from 'react-router-dom';
 import {
-    NavbarBrand,
     Navbar,
     NavLink,
     NavItem,
-    TabContent,
-    TabPane,
+    UncontrolledDropdown,
+    NavbarBrand,
     Nav,
-    Button,
-    Row,
-    Col
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
 } from 'reactstrap';
 
 import ajax from '../utils/ajax';
@@ -51,9 +50,12 @@ class Navigation extends Component {
                 <Navbar expand="md" dark fixed="top" className="mb-3 bg-spec-green border-bottom ">
                     <NavbarBrand to="/" tag={Link}>Zoo app</NavbarBrand>
                     <Nav className="ml-auto" navbar>
-                        <NavItem>
-                            <NavLink to="/animals" tag={Link}> Animal Registry </NavLink>
-                        </NavItem>
+                                <NavItem>
+                                    <NavLink to="/animals" tag={Link}> List all animals</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink to="/animals/new" tag={Link}> Create new animal </NavLink>
+                                </NavItem>
                         <NavItem>
                             <NavLink to="/" tag={Link} onClick={this.logout}> Logout </NavLink>
                         </NavItem>

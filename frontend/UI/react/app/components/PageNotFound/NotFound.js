@@ -1,9 +1,9 @@
 import React from 'react';
 import Navigation from "./../Navigation";
 
-const NotFound = () => (
+const NotFound = (props) => (
     <div className="body-color">
-        <Navigation/>
+        <Navigation logoutLink={props.authorized}/>
         <div className="app-title text-center">
             <h1 className="header2 h2-size">404 Error - Page not found</h1>
         </div>
