@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 50);
+/******/ 	return __webpack_require__(__webpack_require__.s = 52);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,7 +73,7 @@
 if (false) {
   module.exports = require('./cjs/react.production.min.js');
 } else {
-  module.exports = __webpack_require__(52);
+  module.exports = __webpack_require__(54);
 }
 
 
@@ -103,7 +103,7 @@ if (true) {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(65)(isValidElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(67)(isValidElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
@@ -185,7 +185,7 @@ module.exports = warning;
 "use strict";
 
 
-var bind = __webpack_require__(44);
+var bind = __webpack_require__(45);
 var isBuffer = __webpack_require__(100);
 
 /*global toString:true*/
@@ -640,17 +640,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_classnames___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_classnames__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash_isfunction__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash_isfunction__ = __webpack_require__(90);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_lodash_isfunction___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_lodash_isfunction__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash_isobject__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash_isobject__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_lodash_isobject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_lodash_isobject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_dom__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_popper__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_popper__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_react_popper___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_react_popper__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_tonumber__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_tonumber__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_lodash_tonumber___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_lodash_tonumber__);
 
 
@@ -6291,6 +6291,9 @@ var UncontrolledTooltip = function (_Component) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\Navigation.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -6302,6 +6305,14 @@ var _react2 = _interopRequireDefault(_react);
 var _reactRouterDom = __webpack_require__(8);
 
 var _reactstrap = __webpack_require__(5);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _UserContext = __webpack_require__(43);
+
+var _UserContext2 = _interopRequireDefault(_UserContext);
 
 var _ajax = __webpack_require__(7);
 
@@ -6315,67 +6326,54 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Navigation = function (_Component) {
-    _inherits(Navigation, _Component);
+var X = function (_Component) {
+    _inherits(X, _Component);
 
-    function Navigation() {
-        var _ref;
+    function X(props, context) {
+        _classCallCheck(this, X);
 
-        var _temp, _this, _ret;
+        var _this = _possibleConstructorReturn(this, (X.__proto__ || Object.getPrototypeOf(X)).call(this, props, context));
 
-        _classCallCheck(this, Navigation);
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
-
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            loading: false
-        }, _this.logout = function (e) {
+        _this.logout = function (e) {
             e.preventDefault();
             _this.setState({ loading: true });
-            console.log(_this.props.history);
             _ajax2.default.post('/user/logout').then(function (response) {
-                _this.props.history.push('/');
+                _this.context.router.history.push("/");
                 window.location.reload(true);
             }).catch(function (error) {
                 console.log(error);
             });
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+        };
+
+        _this.state = {
+            loading: false
+        };
+        return _this;
     }
 
-    _createClass(Navigation, [{
-        key: 'handleClick',
-        value: function handleClick(e) {
-            e.preventDefault();
-            this.props.history.push('/');
-        }
-    }, {
+    _createClass(X, [{
         key: 'render',
         value: function render() {
-
-            var navigation = null;
-
-            this.props.logoutLink ? navigation = _react2.default.createElement(
+            return this.props.isAuthorized ? _react2.default.createElement(
                 'div',
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 49
+                        lineNumber: 48
                     }
                 },
                 _react2.default.createElement(
                     _reactstrap.Navbar,
                     { expand: 'md', dark: true, fixed: 'top', className: 'mb-3 bg-spec-green border-bottom ', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 50
+                            lineNumber: 49
                         }
                     },
                     _react2.default.createElement(
                         _reactstrap.NavbarBrand,
                         { to: '/', tag: _reactRouterDom.Link, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 51
+                                lineNumber: 50
                             }
                         },
                         'Zoo app'
@@ -6384,7 +6382,7 @@ var Navigation = function (_Component) {
                         _reactstrap.Nav,
                         { className: 'ml-auto', navbar: true, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 52
+                                lineNumber: 51
                             }
                         },
                         _react2.default.createElement(
@@ -6392,32 +6390,32 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 53
+                                    lineNumber: 52
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/animals', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 54
+                                        lineNumber: 53
                                     }
                                 },
                                 ' List all animals'
                             )
                         ),
-                        _react2.default.createElement(
+                        this.props.isAdmin && _react2.default.createElement(
                             _reactstrap.NavItem,
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 56
+                                    lineNumber: 55
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/animals/new', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 57
+                                        lineNumber: 56
                                     }
                                 },
                                 ' Create new animal '
@@ -6428,14 +6426,14 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 59
+                                    lineNumber: 58
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/', tag: _reactRouterDom.Link, onClick: this.logout, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 60
+                                        lineNumber: 59
                                     }
                                 },
                                 ' Logout '
@@ -6443,26 +6441,26 @@ var Navigation = function (_Component) {
                         )
                     )
                 )
-            ) : navigation = _react2.default.createElement(
+            ) : _react2.default.createElement(
                 'div',
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 66
+                        lineNumber: 63
                     }
                 },
                 _react2.default.createElement(
                     _reactstrap.Navbar,
                     { fixed: 'top', dark: true, expand: 'md', className: 'mb-3 bg-spec-green border-bottom border-white', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 64
                         }
                     },
                     _react2.default.createElement(
                         _reactstrap.NavbarBrand,
-                        { to: '/', tag: _reactRouterDom.Link, onClick: this.handleClick.bind(this), __source: {
+                        { to: '/', tag: _reactRouterDom.Link, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 68
+                                lineNumber: 65
                             }
                         },
                         'Zoo app'
@@ -6471,7 +6469,7 @@ var Navigation = function (_Component) {
                         _reactstrap.Nav,
                         { className: 'ml-auto', navbar: true, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 69
+                                lineNumber: 66
                             }
                         },
                         _react2.default.createElement(
@@ -6479,14 +6477,14 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 70
+                                    lineNumber: 67
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/login', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 71
+                                        lineNumber: 68
                                     }
                                 },
                                 'User Login'
@@ -6497,14 +6495,14 @@ var Navigation = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 73
+                                    lineNumber: 70
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.NavLink,
                                 { to: '/register', tag: _reactRouterDom.Link, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 74
+                                        lineNumber: 71
                                     }
                                 },
                                 'User Register'
@@ -6513,8 +6511,49 @@ var Navigation = function (_Component) {
                     )
                 )
             );
+        }
+    }]);
 
-            return navigation;
+    return X;
+}(_react.Component);
+
+X.contextTypes = {
+    router: _propTypes2.default.object
+};
+
+var Navigation = function (_Component2) {
+    _inherits(Navigation, _Component2);
+
+    function Navigation() {
+        _classCallCheck(this, Navigation);
+
+        return _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).apply(this, arguments));
+    }
+
+    _createClass(Navigation, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                _UserContext2.default.Consumer,
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 81
+                    }
+                },
+                function (userContext) {
+                    return _react2.default.createElement(X, _extends({}, userContext, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 82
+                        }
+                    }));
+                }
+            );
+            /*
+                    return <UserContext.Consumer>
+                        {(userContext) => <X {...userContext}/>}
+                    </UserContext.Consumer>*/
         }
     }]);
 
@@ -6534,7 +6573,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _axios = __webpack_require__(98);
+var _axios = __webpack_require__(44);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -6601,31 +6640,31 @@ export default instance;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(68);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(68);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(70);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "HashRouter", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(32);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return __WEBPACK_IMPORTED_MODULE_2__Link__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(72);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__NavLink__ = __webpack_require__(74);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "NavLink", function() { return __WEBPACK_IMPORTED_MODULE_4__NavLink__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Prompt__ = __webpack_require__(77);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_5__Prompt__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Redirect__ = __webpack_require__(78);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_6__Redirect__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Route__ = __webpack_require__(34);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_7__Route__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Router__ = __webpack_require__(22);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_8__Router__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__StaticRouter__ = __webpack_require__(83);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_9__StaticRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Switch__ = __webpack_require__(84);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_10__Switch__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__matchPath__ = __webpack_require__(85);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_11__matchPath__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__withRouter__ = __webpack_require__(86);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_12__withRouter__["a"]; });
 
 
@@ -7164,7 +7203,7 @@ Router.childContextTypes = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp__ = __webpack_require__(75);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path_to_regexp___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path_to_regexp__);
 
 
@@ -7919,10 +7958,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = __webpack_require__(45);
+    adapter = __webpack_require__(46);
   } else if (typeof process !== 'undefined') {
     // For node use HTTP adapter
-    adapter = __webpack_require__(45);
+    adapter = __webpack_require__(46);
   }
   return adapter;
 }
@@ -8082,7 +8121,7 @@ if (false) {
   checkDCE();
   module.exports = require('./cjs/react-dom.production.min.js');
 } else {
-  module.exports = __webpack_require__(53);
+  module.exports = __webpack_require__(55);
 }
 
 
@@ -8390,7 +8429,7 @@ Link.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createMemoryHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(15);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -8561,7 +8600,7 @@ Prompt.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_warning__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_invariant__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history__ = __webpack_require__(79);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -9008,7 +9047,7 @@ Switch.propTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_hoist_non_react_statics__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(23);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -9121,49 +9160,36 @@ module.exports = g;
 
 /***/ }),
 /* 43 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MemoryRouter__ = __webpack_require__(33);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__MemoryRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Prompt__ = __webpack_require__(35);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_1__Prompt__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Redirect__ = __webpack_require__(36);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_2__Redirect__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(23);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_3__Route__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(15);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_4__Router__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__StaticRouter__ = __webpack_require__(38);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_5__StaticRouter__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Switch__ = __webpack_require__(39);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_6__Switch__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__matchPath__ = __webpack_require__(16);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_7__matchPath__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__withRouter__ = __webpack_require__(40);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_8__withRouter__["a"]; });
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
+var _react = __webpack_require__(0);
 
+var _react2 = _interopRequireDefault(_react);
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var UserContext = _react2.default.createContext({
+    isAuthorized: false,
+    isAdmin: false
+});
 
-
-
-
-
-
-
-
-
-
-
-
+exports.default = UserContext;
 
 /***/ }),
 /* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(99);
+
+/***/ }),
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9181,7 +9207,7 @@ module.exports = function bind(fn, thisArg) {
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9192,7 +9218,7 @@ var settle = __webpack_require__(104);
 var buildURL = __webpack_require__(106);
 var parseHeaders = __webpack_require__(107);
 var isURLSameOrigin = __webpack_require__(108);
-var createError = __webpack_require__(46);
+var createError = __webpack_require__(47);
 var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(109);
 
 module.exports = function xhrAdapter(config) {
@@ -9368,7 +9394,7 @@ module.exports = function xhrAdapter(config) {
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9393,7 +9419,7 @@ module.exports = function createError(message, config, code, request, response) 
 
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9405,7 +9431,7 @@ module.exports = function isCancel(value) {
 
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9431,7 +9457,50 @@ module.exports = Cancel;
 
 
 /***/ }),
-/* 49 */
+/* 50 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__MemoryRouter__ = __webpack_require__(33);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "MemoryRouter", function() { return __WEBPACK_IMPORTED_MODULE_0__MemoryRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Prompt__ = __webpack_require__(35);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Prompt", function() { return __WEBPACK_IMPORTED_MODULE_1__Prompt__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Redirect__ = __webpack_require__(36);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Redirect", function() { return __WEBPACK_IMPORTED_MODULE_2__Redirect__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Route__ = __webpack_require__(23);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return __WEBPACK_IMPORTED_MODULE_3__Route__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(15);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return __WEBPACK_IMPORTED_MODULE_4__Router__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__StaticRouter__ = __webpack_require__(38);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "StaticRouter", function() { return __WEBPACK_IMPORTED_MODULE_5__StaticRouter__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Switch__ = __webpack_require__(39);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Switch", function() { return __WEBPACK_IMPORTED_MODULE_6__Switch__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__matchPath__ = __webpack_require__(16);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "matchPath", function() { return __WEBPACK_IMPORTED_MODULE_7__matchPath__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__withRouter__ = __webpack_require__(40);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "withRouter", function() { return __WEBPACK_IMPORTED_MODULE_8__withRouter__["a"]; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9507,15 +9576,15 @@ const Home= Loadable({
 */
 
 /***/ }),
-/* 50 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(51);
-module.exports = __webpack_require__(125);
+__webpack_require__(53);
+module.exports = __webpack_require__(127);
 
 
 /***/ }),
-/* 51 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9529,7 +9598,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactDom = __webpack_require__(28);
 
-var _App = __webpack_require__(64);
+var _App = __webpack_require__(66);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -9573,7 +9642,7 @@ var Application = function Application() {
 }), document.getElementById('app'));
 
 /***/ }),
-/* 52 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10989,7 +11058,7 @@ module.exports = react;
 
 
 /***/ }),
-/* 53 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11013,16 +11082,16 @@ if (true) {
 var React = __webpack_require__(0);
 var invariant = __webpack_require__(12);
 var warning = __webpack_require__(13);
-var ExecutionEnvironment = __webpack_require__(54);
+var ExecutionEnvironment = __webpack_require__(56);
 var _assign = __webpack_require__(18);
 var emptyFunction = __webpack_require__(14);
 var checkPropTypes = __webpack_require__(19);
-var getActiveElement = __webpack_require__(55);
-var shallowEqual = __webpack_require__(56);
-var containsNode = __webpack_require__(57);
+var getActiveElement = __webpack_require__(57);
+var shallowEqual = __webpack_require__(58);
+var containsNode = __webpack_require__(59);
 var emptyObject = __webpack_require__(26);
-var hyphenateStyleName = __webpack_require__(60);
-var camelizeStyleName = __webpack_require__(62);
+var hyphenateStyleName = __webpack_require__(62);
+var camelizeStyleName = __webpack_require__(64);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -27620,7 +27689,7 @@ module.exports = reactDom;
 
 
 /***/ }),
-/* 54 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27659,7 +27728,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 55 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27701,7 +27770,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27772,7 +27841,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27787,7 +27856,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(58);
+var isTextNode = __webpack_require__(60);
 
 /*eslint-disable no-bitwise */
 
@@ -27815,7 +27884,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27830,7 +27899,7 @@ module.exports = containsNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(59);
+var isNode = __webpack_require__(61);
 
 /**
  * @param {*} object The object to check.
@@ -27843,7 +27912,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27871,7 +27940,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27886,7 +27955,7 @@ module.exports = isNode;
 
 
 
-var hyphenate = __webpack_require__(61);
+var hyphenate = __webpack_require__(63);
 
 var msPattern = /^ms-/;
 
@@ -27913,7 +27982,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27949,7 +28018,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -27964,7 +28033,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(63);
+var camelize = __webpack_require__(65);
 
 var msPattern = /^-ms-/;
 
@@ -27992,7 +28061,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28027,7 +28096,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28052,51 +28121,59 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 
 var _reactRouterDom = __webpack_require__(8);
 
-var _Home = __webpack_require__(86);
+var _Home = __webpack_require__(88);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _Login = __webpack_require__(97);
+var _Login = __webpack_require__(118);
 
 var _Login2 = _interopRequireDefault(_Login);
 
-var _Index = __webpack_require__(118);
+var _Index = __webpack_require__(119);
 
 var _Index2 = _interopRequireDefault(_Index);
 
-var _Register = __webpack_require__(119);
+var _Register = __webpack_require__(120);
 
 var _Register2 = _interopRequireDefault(_Register);
 
-var _Forgot = __webpack_require__(120);
+var _Forgot = __webpack_require__(121);
 
 var _Forgot2 = _interopRequireDefault(_Forgot);
 
-var _Reset = __webpack_require__(121);
+var _Reset = __webpack_require__(122);
 
 var _Reset2 = _interopRequireDefault(_Reset);
 
-var _AnimalRegistry = __webpack_require__(122);
+var _AnimalRegistry = __webpack_require__(123);
 
 var _AnimalRegistry2 = _interopRequireDefault(_AnimalRegistry);
 
-var _AdminMain = __webpack_require__(123);
+var _AdminMain = __webpack_require__(124);
 
 var _AdminMain2 = _interopRequireDefault(_AdminMain);
 
-var _NotFound = __webpack_require__(124);
+var _NotFound = __webpack_require__(125);
 
 var _NotFound2 = _interopRequireDefault(_NotFound);
 
-var _EditAnimal = __webpack_require__(140);
+var _EditAnimal = __webpack_require__(126);
 
 var _EditAnimal2 = _interopRequireDefault(_EditAnimal);
+
+var _NewAnimal = __webpack_require__(142);
+
+var _NewAnimal2 = _interopRequireDefault(_NewAnimal);
+
+var _UserContext = __webpack_require__(43);
+
+var _UserContext2 = _interopRequireDefault(_UserContext);
 
 var _ajax = __webpack_require__(7);
 
 var _ajax2 = _interopRequireDefault(_ajax);
 
-var _reactRouter = __webpack_require__(43);
+var _reactRouter = __webpack_require__(50);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28121,15 +28198,18 @@ var App = function (_Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = App.__proto__ || Object.getPrototypeOf(App)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            auth: null
+            auth: {
+                isAuthorized: null,
+                isAdmin: null
+            }
         }, _this.getAuthVerification = function () {
             return _ajax2.default.get("/user/auth").then(function (response) {
                 var auth = response.data.auth;
 
                 console.log("Authenticated: " + auth);
                 console.log("Authenticated type: ", typeof auth === 'undefined' ? 'undefined' : _typeof(auth));
-                //return message;
-                _this.setState({ auth: auth });
+
+                _this.setState({ auth: { isAuthorized: auth !== null, isAdmin: auth === "admin" } });
             }).catch(function (error) {
                 console.log(error);
             });
@@ -28152,182 +28232,131 @@ var App = function (_Component) {
 
             var auth = this.state.auth;
 
+            console.log(auth);
 
-            var routes = null;
+            console.log("isAuthorized: " + this.state.auth.isAuthorized);
+            console.log("isAdmin: " + this.state.auth.isAdmin);
 
-            switch (auth) {
-                case null:
-                    routes = _react2.default.createElement(
+            if (!auth.isAuthorized) {
+                return _react2.default.createElement(
+                    _UserContext2.default.Provider,
+                    { value: this.state.auth, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 65
+                        }
+                    },
+                    _react2.default.createElement(
                         _reactRouterDom.Switch,
                         {
                             __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 61
+                                lineNumber: 66
                             }
                         },
-                        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/',
-                            component: _Index2.default,
-                            __source: {
+                        _react2.default.createElement(_reactRouterDom.Route, { path: '/login', component: _Login2.default, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 62
+                                lineNumber: 67
                             }
                         }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/login',
-                            component: _Login2.default,
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 65
-                            }
-                        }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/register',
-                            component: function component() {
+                        _react2.default.createElement(_reactRouterDom.Route, { path: '/register', component: function component() {
                                 return _react2.default.createElement(_Register2.default, { onRegisterSuccess: _this2.onUserLoginSucceed, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 70
+                                        lineNumber: 68
                                     }
                                 });
-                            },
-                            __source: {
+                            }, __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 68
                             }
                         }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/forgotpassword',
-                            component: function component() {
+                        _react2.default.createElement(_reactRouterDom.Route, { path: '/forgot-password', component: function component() {
                                 return _react2.default.createElement(_Forgot2.default, { onRegisterSuccess: _this2.onUserLoginSucceed, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 75
+                                        lineNumber: 69
                                     }
                                 });
-                            },
-                            __source: {
+                            }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 73
+                                lineNumber: 69
                             }
                         }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/password/reset/:token',
-                            component: function component() {
+                        _react2.default.createElement(_reactRouterDom.Route, { path: '/password-reset/:token', component: function component() {
                                 return _react2.default.createElement(_Reset2.default, { onRegisterSuccess: _this2.onUserLoginSucceed, __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 80
-                                    }
-                                });
-                            },
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 78
-                            }
-                        }),
-                        _react2.default.createElement(_reactRouterDom.Route, { component: function component() {
-                                return _react2.default.createElement(_NotFound2.default, { authorized: false, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 84
+                                        lineNumber: 70
                                     }
                                 });
                             }, __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 83
+                                lineNumber: 70
+                            }
+                        }),
+                        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Index2.default, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 71
+                            }
+                        }),
+                        _react2.default.createElement(_reactRouterDom.Route, { component: _NotFound2.default, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 72
                             }
                         })
-                    );
-                    break;
-                case "user":
-                    routes = _react2.default.createElement(
-                        _reactRouterDom.Switch,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 90
-                            }
-                        },
-                        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 91
-                            }
-                        }),
-                        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/animals', component: function component() {
-                                return _react2.default.createElement(_AnimalRegistry2.default, { isAdmin: false, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 92
-                                    }
-                                });
-                            }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 92
-                            }
-                        }),
-                        _react2.default.createElement(_reactRouterDom.Route, { component: function component() {
-                                return _react2.default.createElement(_NotFound2.default, { authorized: true, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 94
-                                    }
-                                });
-                            }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 93
-                            }
-                        })
-                    );
-                    break;
-                case "admin":
-                    routes = _react2.default.createElement(
-                        _reactRouterDom.Switch,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 100
-                            }
-                        },
-                        isAdmin && _react2.default.createElement(_reactRouterDom.Route, { path: '/animals/:id/edit', component: _EditAnimal2.default, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 101
-                            }
-                        }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/animals/new', component: function component() {
-                                return _react2.default.createElement(_AnimalRegistry2.default, { isAdmin: true, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 102
-                                    }
-                                });
-                            }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 102
-                            }
-                        }),
-                        _react2.default.createElement(_reactRouterDom.Route, { path: '/animals', component: function component() {
-                                return _react2.default.createElement(_AnimalRegistry2.default, { isAdmin: true, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 104
-                                    }
-                                });
-                            }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 104
-                            }
-                        }),
-                        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _AdminMain2.default, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 105
-                            }
-                        }),
-                        '}/>',
-                        _react2.default.createElement(_reactRouterDom.Route, { component: function component() {
-                                return _react2.default.createElement(_NotFound2.default, { authorized: true, __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 110
-                                    }
-                                });
-                            }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 109
-                            }
-                        })
-                    );
-                    break;
-
+                    )
+                );
             }
 
-            return routes;
+            var isAdmin = this.state.auth.isAdmin;
+
+
+            return _react2.default.createElement(
+                _UserContext2.default.Provider,
+                { value: this.state.auth, __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 79
+                    }
+                },
+                _react2.default.createElement(
+                    _reactRouterDom.Switch,
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 80
+                        }
+                    },
+                    isAdmin && _react2.default.createElement(_reactRouterDom.Route, { path: '/animals/:id/edit', component: _EditAnimal2.default, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 81
+                        }
+                    }),
+                    isAdmin && _react2.default.createElement(_reactRouterDom.Route, { path: '/animals/new', component: _NewAnimal2.default, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 82
+                        }
+                    }),
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/animals', component: function component() {
+                            return _react2.default.createElement(_AnimalRegistry2.default, { isAdmin: isAdmin, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 83
+                                }
+                            });
+                        }, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 83
+                        }
+                    }),
+                    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: isAdmin ? _AdminMain2.default : _Home2.default, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 84
+                        }
+                    }),
+                    '}/>',
+                    _react2.default.createElement(_reactRouterDom.Route, { component: _NotFound2.default, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 85
+                        }
+                    })
+                )
+            );
         }
     }]);
 
@@ -28337,7 +28366,7 @@ var App = function (_Component) {
 exports.default = (0, _reactRouter.withRouter)(App);
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28886,7 +28915,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28896,7 +28925,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createBrowserHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(22);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28953,7 +28982,7 @@ BrowserRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (BrowserRouter);
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29266,7 +29295,7 @@ var createBrowserHistory = function createBrowserHistory() {
 exports.default = createBrowserHistory;
 
 /***/ }),
-/* 68 */
+/* 70 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29276,7 +29305,7 @@ exports.default = createBrowserHistory;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_history_createHashHistory___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_history_createHashHistory__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Router__ = __webpack_require__(22);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29332,7 +29361,7 @@ HashRouter.propTypes = {
 /* harmony default export */ __webpack_exports__["a"] = (HashRouter);
 
 /***/ }),
-/* 69 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29662,7 +29691,7 @@ var createHashHistory = function createHashHistory() {
 exports.default = createHashHistory;
 
 /***/ }),
-/* 70 */
+/* 72 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29673,7 +29702,7 @@ exports.default = createHashHistory;
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_MemoryRouter__["a" /* default */]);
 
 /***/ }),
-/* 71 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -29849,7 +29878,7 @@ var createMemoryHistory = function createMemoryHistory() {
 exports.default = createMemoryHistory;
 
 /***/ }),
-/* 72 */
+/* 74 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29930,10 +29959,10 @@ NavLink.defaultProps = {
 /* harmony default export */ __webpack_exports__["a"] = (NavLink);
 
 /***/ }),
-/* 73 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isarray = __webpack_require__(74)
+var isarray = __webpack_require__(76)
 
 /**
  * Expose `pathToRegexp`.
@@ -30362,7 +30391,7 @@ function pathToRegexp (path, keys, options) {
 
 
 /***/ }),
-/* 74 */
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = Array.isArray || function (arr) {
@@ -30371,7 +30400,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 75 */
+/* 77 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30382,7 +30411,7 @@ module.exports = Array.isArray || function (arr) {
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Prompt__["a" /* default */]);
 
 /***/ }),
-/* 76 */
+/* 78 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30393,15 +30422,15 @@ module.exports = Array.isArray || function (arr) {
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Redirect__["a" /* default */]);
 
 /***/ }),
-/* 77 */
+/* 79 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createBrowserHistory__ = __webpack_require__(80);
 /* unused harmony reexport createBrowserHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__createHashHistory__ = __webpack_require__(81);
 /* unused harmony reexport createHashHistory */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__createMemoryHistory__ = __webpack_require__(82);
 /* unused harmony reexport createMemoryHistory */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(17);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
@@ -30420,7 +30449,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 78 */
+/* 80 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -30724,7 +30753,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createBrowserHistory);
 
 /***/ }),
-/* 79 */
+/* 81 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31045,7 +31074,7 @@ var createHashHistory = function createHashHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createHashHistory);
 
 /***/ }),
-/* 80 */
+/* 82 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31213,7 +31242,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* unused harmony default export */ var _unused_webpack_default_export = (createMemoryHistory);
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31224,7 +31253,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_StaticRouter__["a" /* default */]);
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31235,7 +31264,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_Switch__["a" /* default */]);
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31246,7 +31275,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_matchPath__["a" /* default */]);
 
 /***/ }),
-/* 84 */
+/* 86 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31257,7 +31286,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony default export */ __webpack_exports__["a"] = (__WEBPACK_IMPORTED_MODULE_0_react_router_es_withRouter__["a" /* default */]);
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -31335,7 +31364,7 @@ var createMemoryHistory = function createMemoryHistory() {
 
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31347,7 +31376,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\ROLES\\User\\Home.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\Roles\\User\\Home.js';
 
 var _react = __webpack_require__(0);
 
@@ -31363,6 +31392,10 @@ var _Footer = __webpack_require__(9);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
+var _Navigation = __webpack_require__(6);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31374,7 +31407,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var splashscreen = _react2.default.createElement(_LoaderOut2.default, {
     __source: {
         fileName: _jsxFileName,
-        lineNumber: 7
+        lineNumber: 8
     }
 });
 
@@ -31400,7 +31433,7 @@ var Home = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 19
+                        lineNumber: 20
                     }
                 },
                 _react2.default.createElement(
@@ -31408,21 +31441,27 @@ var Home = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 20
+                            lineNumber: 21
                         }
                     },
+                    _react2.default.createElement(_Navigation2.default, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 22
+                        }
+                    }),
                     _react2.default.createElement(
                         _reactstrap.Container,
                         { fluid: true, className: 'container text-center app-title', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 21
+                                lineNumber: 23
                             }
                         },
                         _react2.default.createElement(
                             'h1',
                             { className: 'header1-size', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 22
+                                    lineNumber: 24
                                 }
                             },
                             'Hey, You are logged in !'
@@ -31431,7 +31470,7 @@ var Home = function (_Component) {
                     _react2.default.createElement(_Footer2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 24
+                            lineNumber: 26
                         }
                     })
                 ),
@@ -31446,7 +31485,7 @@ var Home = function (_Component) {
 exports.default = Home;
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -31501,7 +31540,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -31663,7 +31702,7 @@ module.exports = isFunction;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(42)))
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports) {
 
 /**
@@ -31706,7 +31745,7 @@ module.exports = isObject;
 
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31717,19 +31756,19 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Arrow = exports.Popper = exports.Target = exports.Manager = undefined;
 
-var _Manager2 = __webpack_require__(91);
+var _Manager2 = __webpack_require__(93);
 
 var _Manager3 = _interopRequireDefault(_Manager2);
 
-var _Target2 = __webpack_require__(92);
+var _Target2 = __webpack_require__(94);
 
 var _Target3 = _interopRequireDefault(_Target2);
 
-var _Popper2 = __webpack_require__(93);
+var _Popper2 = __webpack_require__(95);
 
 var _Popper3 = _interopRequireDefault(_Popper2);
 
-var _Arrow2 = __webpack_require__(95);
+var _Arrow2 = __webpack_require__(97);
 
 var _Arrow3 = _interopRequireDefault(_Arrow2);
 
@@ -31741,7 +31780,7 @@ exports.Popper = _Popper3.default;
 exports.Arrow = _Arrow3.default;
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31832,7 +31871,7 @@ Manager.defaultProps = {
 exports.default = Manager;
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31899,7 +31938,7 @@ Target.propTypes = {
 exports.default = Target;
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31919,7 +31958,7 @@ var _propTypes = __webpack_require__(1);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _popper = __webpack_require__(94);
+var _popper = __webpack_require__(96);
 
 var _popper2 = _interopRequireDefault(_popper);
 
@@ -32148,7 +32187,7 @@ Popper.defaultProps = {
 exports.default = Popper;
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34668,7 +34707,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(42)))
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34741,7 +34780,7 @@ Arrow.propTypes = {
 exports.default = Arrow;
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports) {
 
 /**
@@ -34912,396 +34951,6 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\ROLES\\Guest\\Login.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(1);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactRouter = __webpack_require__(43);
-
-var _Navigation = __webpack_require__(6);
-
-var _Navigation2 = _interopRequireDefault(_Navigation);
-
-var _reactstrap = __webpack_require__(5);
-
-var _Footer = __webpack_require__(9);
-
-var _Footer2 = _interopRequireDefault(_Footer);
-
-var _LoaderIn = __webpack_require__(49);
-
-var _LoaderIn2 = _interopRequireDefault(_LoaderIn);
-
-var _reactRouterDom = __webpack_require__(8);
-
-var _ajax = __webpack_require__(7);
-
-var _ajax2 = _interopRequireDefault(_ajax);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Login = function (_Component) {
-    _inherits(Login, _Component);
-
-    function Login(props) {
-        _classCallCheck(this, Login);
-
-        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
-
-        _this.state = {
-            email: '',
-            password: '',
-            err: false,
-            loading: false,
-            visible: false
-        };
-
-        _this.onChange = function (e) {
-            var _e$target = e.target,
-                name = _e$target.name,
-                value = _e$target.value;
-
-            _this.setState(_defineProperty({}, name, value));
-        };
-
-        _this.email = _react2.default.createRef();
-        _this.password = _react2.default.createRef();
-        return _this;
-    }
-
-    _createClass(Login, [{
-        key: 'onSubmit',
-        value: function onSubmit(e) {
-            var _this2 = this;
-
-            var _state = this.state,
-                email = _state.email,
-                password = _state.password;
-
-
-            this.setState({ loading: true });
-            return _ajax2.default.post('/user/login', { email: email, password: password, remember: true }).then(function () {
-                _this2.props.onUserLoginSucceed();
-            }).catch(function () {
-                _this2.setState({
-                    loading: false,
-                    err: true
-                });
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this3 = this;
-
-            var loading = this.state.loading;
-            var error = this.state.err;
-            var msg = !error ? 'Login Successful' : 'Wrong Credentials';
-            var visibility = error ? 'visible' : 'invisible';
-
-            var splashscreen = _react2.default.createElement(_LoaderIn2.default, {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 70
-                }
-            });
-
-            var login = _react2.default.createElement(
-                'div',
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 74
-                    }
-                },
-                _react2.default.createElement(_Navigation2.default, {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 75
-                    }
-                }),
-                _react2.default.createElement(
-                    _reactstrap.Container,
-                    { fluid: true, className: 'mt-7 container-customized', __source: {
-                            fileName: _jsxFileName,
-                            lineNumber: 76
-                        }
-                    },
-                    _react2.default.createElement(
-                        _reactstrap.Col,
-                        { xs: { size: 11, order: 2, offset: 4 }, sm: { size: 8, order: 2, offset: 4 }, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 77
-                            }
-                        },
-                        _react2.default.createElement(
-                            'h2',
-                            {
-                                __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 78
-                                }
-                            },
-                            'User Login'
-                        ),
-                        _react2.default.createElement(
-                            'form',
-                            { className: 'form-horizontal', role: 'form', method: 'POST',
-                                onSubmit: function onSubmit(e) {
-                                    return _this3.onSubmit(e);
-                                }, __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 82
-                                }
-                            },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'form-group', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 84
-                                    }
-                                },
-                                _react2.default.createElement(
-                                    _reactstrap.Col,
-                                    { md: { size: 8, order: 2 }, __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 85
-                                        }
-                                    },
-                                    _react2.default.createElement(
-                                        _reactstrap.InputGroup,
-                                        {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 86
-                                            }
-                                        },
-                                        _react2.default.createElement(
-                                            _reactstrap.InputGroupAddon,
-                                            { className: "login-icon", addonType: 'prepend', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 87
-                                                }
-                                            },
-                                            '@'
-                                        ),
-                                        _react2.default.createElement(_reactstrap.Input, {
-                                            id: 'email',
-                                            ref: this.email,
-                                            type: 'email',
-                                            className: 'form-control',
-                                            name: 'email',
-                                            onChange: function onChange(e) {
-                                                return _this3.onChange(e);
-                                            },
-                                            required: true,
-                                            placeholder: 'e-mail', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 88
-                                            }
-                                        })
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'form-group', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 100
-                                    }
-                                },
-                                _react2.default.createElement(
-                                    _reactstrap.Col,
-                                    { md: { size: 8, order: 2 }, __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 101
-                                        }
-                                    },
-                                    _react2.default.createElement(
-                                        _reactstrap.InputGroup,
-                                        {
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 102
-                                            }
-                                        },
-                                        _react2.default.createElement(
-                                            _reactstrap.InputGroupAddon,
-                                            { className: 'login-icon', addonType: 'prepend', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 103
-                                                }
-                                            },
-                                            '\u26BF'
-                                        ),
-                                        _react2.default.createElement(_reactstrap.Input, {
-                                            id: 'password',
-                                            type: 'password',
-                                            ref: this.password,
-                                            placeholder: 'password',
-                                            name: 'password',
-                                            required: true,
-                                            onChange: function onChange(e) {
-                                                return _this3.onChange(e);
-                                            },
-                                            __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 106
-                                            }
-                                        })
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'form-group', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 119
-                                    }
-                                },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-md-6 col-md-offset-4', __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 120
-                                        }
-                                    },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'checkbox', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 121
-                                            }
-                                        },
-                                        _react2.default.createElement(
-                                            'label',
-                                            {
-                                                __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 122
-                                                }
-                                            },
-                                            _react2.default.createElement('input', { type: 'checkbox', name: 'remember', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 123
-                                                }
-                                            }),
-                                            ' Remember Me'
-                                        )
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'form-group', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 131
-                                    }
-                                },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-md-8 col-md-offset-4', __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 132
-                                        }
-                                    },
-                                    _react2.default.createElement(
-                                        'button',
-                                        { type: 'submit', className: 'btn btn-success', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 135
-                                            }
-                                        },
-                                        'Login'
-                                    ),
-                                    _react2.default.createElement(
-                                        'li',
-                                        { className: 'btn btn-link', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 139
-                                            }
-                                        },
-                                        _react2.default.createElement(
-                                            _reactRouterDom.Link,
-                                            { to: 'forgotpassword', __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 140
-                                                }
-                                            },
-                                            'Forgot Your Password?'
-                                        )
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-md-offset-2 col-md-8 col-md-offset-2', __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 144
-                                    }
-                                },
-                                _react2.default.createElement(
-                                    _reactstrap.UncontrolledAlert,
-                                    { className: visibility, color: 'danger', __source: {
-                                            fileName: _jsxFileName,
-                                            lineNumber: 145
-                                        }
-                                    },
-                                    'Email or password doesn\'t exist !'
-                                )
-                            )
-                        )
-                    )
-                ),
-                _react2.default.createElement(_Footer2.default, {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 154
-                    }
-                })
-            );
-
-            return loading ? splashscreen : login;
-        }
-    }]);
-
-    return Login;
-}(_react.Component);
-
-exports.default = (0, _reactRouter.withRouter)(Login);
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(99);
-
-/***/ }),
 /* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35309,7 +34958,7 @@ module.exports = __webpack_require__(99);
 
 
 var utils = __webpack_require__(3);
-var bind = __webpack_require__(44);
+var bind = __webpack_require__(45);
 var Axios = __webpack_require__(101);
 var defaults = __webpack_require__(25);
 
@@ -35344,9 +34993,9 @@ axios.create = function create(instanceConfig) {
 };
 
 // Expose Cancel & CancelToken
-axios.Cancel = __webpack_require__(48);
+axios.Cancel = __webpack_require__(49);
 axios.CancelToken = __webpack_require__(116);
-axios.isCancel = __webpack_require__(47);
+axios.isCancel = __webpack_require__(48);
 
 // Expose all/spread
 axios.all = function all(promises) {
@@ -35689,7 +35338,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 "use strict";
 
 
-var createError = __webpack_require__(46);
+var createError = __webpack_require__(47);
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -36122,7 +35771,7 @@ module.exports = InterceptorManager;
 
 var utils = __webpack_require__(3);
 var transformData = __webpack_require__(113);
-var isCancel = __webpack_require__(47);
+var isCancel = __webpack_require__(48);
 var defaults = __webpack_require__(25);
 var isAbsoluteURL = __webpack_require__(114);
 var combineURLs = __webpack_require__(115);
@@ -36282,7 +35931,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 "use strict";
 
 
-var Cancel = __webpack_require__(48);
+var Cancel = __webpack_require__(49);
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -36383,7 +36032,392 @@ module.exports = function spread(callback) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\ROLES\\Guest\\Index.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\Roles\\Guest\\Login.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _reactRouter = __webpack_require__(50);
+
+var _Navigation = __webpack_require__(6);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+var _reactstrap = __webpack_require__(5);
+
+var _Footer = __webpack_require__(9);
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _LoaderIn = __webpack_require__(51);
+
+var _LoaderIn2 = _interopRequireDefault(_LoaderIn);
+
+var _reactRouterDom = __webpack_require__(8);
+
+var _ajax = __webpack_require__(7);
+
+var _ajax2 = _interopRequireDefault(_ajax);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Login = function (_Component) {
+    _inherits(Login, _Component);
+
+    function Login(props) {
+        _classCallCheck(this, Login);
+
+        var _this = _possibleConstructorReturn(this, (Login.__proto__ || Object.getPrototypeOf(Login)).call(this, props));
+
+        _this.state = {
+            email: '',
+            password: '',
+            err: false,
+            loading: false,
+            visible: false
+        };
+
+        _this.onChange = function (e) {
+            var _e$target = e.target,
+                name = _e$target.name,
+                value = _e$target.value;
+
+            _this.setState(_defineProperty({}, name, value));
+        };
+
+        _this.email = _react2.default.createRef();
+        _this.password = _react2.default.createRef();
+        return _this;
+    }
+
+    _createClass(Login, [{
+        key: 'onSubmit',
+        value: function onSubmit(e) {
+            var _this2 = this;
+
+            var _state = this.state,
+                email = _state.email,
+                password = _state.password;
+
+
+            this.setState({ loading: true });
+            return _ajax2.default.post('/user/login', { email: email, password: password, remember: true }).then(function () {
+                _this2.props.onUserLoginSucceed();
+            }).catch(function (err) {
+                console.log(err);
+                _this2.setState({
+                    loading: false,
+                    err: true
+                });
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            var loading = this.state.loading;
+            var error = this.state.err;
+            var msg = !error ? 'Login Successful' : 'Wrong Credentials';
+            var visibility = error ? 'visible' : 'invisible';
+
+            var splashscreen = _react2.default.createElement(_LoaderIn2.default, {
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 71
+                }
+            });
+
+            var login = _react2.default.createElement(
+                'div',
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 75
+                    }
+                },
+                _react2.default.createElement(_Navigation2.default, {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 76
+                    }
+                }),
+                _react2.default.createElement(
+                    _reactstrap.Container,
+                    { fluid: true, className: 'mt-7 container-customized', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 77
+                        }
+                    },
+                    _react2.default.createElement(
+                        _reactstrap.Col,
+                        { xs: { size: 11, order: 2, offset: 4 }, sm: { size: 8, order: 2, offset: 4 }, __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 78
+                            }
+                        },
+                        _react2.default.createElement(
+                            'h2',
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 79
+                                }
+                            },
+                            'User Login'
+                        ),
+                        _react2.default.createElement(
+                            'form',
+                            { className: 'form-horizontal', role: 'form', method: 'POST',
+                                onSubmit: function onSubmit(e) {
+                                    return _this3.onSubmit(e);
+                                }, __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 83
+                                }
+                            },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 85
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    _reactstrap.Col,
+                                    { md: { size: 8, order: 2 }, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 86
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        _reactstrap.InputGroup,
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 87
+                                            }
+                                        },
+                                        _react2.default.createElement(
+                                            _reactstrap.InputGroupAddon,
+                                            { className: "login-icon", addonType: 'prepend', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 88
+                                                }
+                                            },
+                                            '@'
+                                        ),
+                                        _react2.default.createElement(_reactstrap.Input, {
+                                            id: 'email',
+                                            ref: this.email,
+                                            type: 'email',
+                                            className: 'form-control',
+                                            name: 'email',
+                                            onChange: function onChange(e) {
+                                                return _this3.onChange(e);
+                                            },
+                                            required: true,
+                                            placeholder: 'e-mail', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 89
+                                            }
+                                        })
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 101
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    _reactstrap.Col,
+                                    { md: { size: 8, order: 2 }, __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 102
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        _reactstrap.InputGroup,
+                                        {
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 103
+                                            }
+                                        },
+                                        _react2.default.createElement(
+                                            _reactstrap.InputGroupAddon,
+                                            { className: 'login-icon', addonType: 'prepend', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 104
+                                                }
+                                            },
+                                            '\u26BF'
+                                        ),
+                                        _react2.default.createElement(_reactstrap.Input, {
+                                            id: 'password',
+                                            type: 'password',
+                                            ref: this.password,
+                                            placeholder: 'password',
+                                            name: 'password',
+                                            required: true,
+                                            onChange: function onChange(e) {
+                                                return _this3.onChange(e);
+                                            },
+                                            __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 107
+                                            }
+                                        })
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 120
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-6 col-md-offset-4', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 121
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'checkbox', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 122
+                                            }
+                                        },
+                                        _react2.default.createElement(
+                                            'label',
+                                            {
+                                                __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 123
+                                                }
+                                            },
+                                            _react2.default.createElement('input', { type: 'checkbox', name: 'remember', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 124
+                                                }
+                                            }),
+                                            ' Remember Me'
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'form-group', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 132
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-md-8 col-md-offset-4', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 133
+                                        }
+                                    },
+                                    _react2.default.createElement(
+                                        'button',
+                                        { type: 'submit', className: 'btn btn-success', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 136
+                                            }
+                                        },
+                                        'Login'
+                                    ),
+                                    _react2.default.createElement(
+                                        'li',
+                                        { className: 'btn btn-link', __source: {
+                                                fileName: _jsxFileName,
+                                                lineNumber: 140
+                                            }
+                                        },
+                                        _react2.default.createElement(
+                                            _reactRouterDom.Link,
+                                            { to: '/forgot-password', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 141
+                                                }
+                                            },
+                                            'Forgot Your Password?'
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-md-offset-2 col-md-8 col-md-offset-2', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 145
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    _reactstrap.UncontrolledAlert,
+                                    { className: visibility, color: 'danger', __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 146
+                                        }
+                                    },
+                                    'Email or password doesn\'t exist !'
+                                )
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(_Footer2.default, {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 155
+                    }
+                })
+            );
+
+            return loading ? splashscreen : login;
+        }
+    }]);
+
+    return Login;
+}(_react.Component);
+
+exports.default = (0, _reactRouter.withRouter)(Login);
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\Roles\\Guest\\Index.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -36468,7 +36502,7 @@ var Index = function (_Component) {
 exports.default = Index;
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36477,7 +36511,7 @@ exports.default = Index;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\ROLES\\Guest\\Register.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\Roles\\Guest\\Register.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -36797,7 +36831,7 @@ var Register = function (_Component) {
 exports.default = Register;
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36806,7 +36840,7 @@ exports.default = Register;
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\ROLES\\Guest\\Forgot.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\Roles\\Guest\\Forgot.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -37032,7 +37066,7 @@ var Forgot = function (_Component) {
 exports.default = Forgot;
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37041,7 +37075,7 @@ exports.default = Forgot;
 Object.defineProperty(exports, "__esModule", {
 			value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\ROLES\\Guest\\Reset.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\Roles\\Guest\\Reset.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -37334,7 +37368,7 @@ var Reset = function (_Component) {
 exports.default = Reset;
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37359,7 +37393,7 @@ var _Footer = __webpack_require__(9);
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _LoaderIn = __webpack_require__(49);
+var _LoaderIn = __webpack_require__(51);
 
 var _LoaderIn2 = _interopRequireDefault(_LoaderIn);
 
@@ -37443,7 +37477,7 @@ var AnimalRegistry = function (_Component) {
             var _this3 = this;
 
             var defaultImageUrl = 'http://www.zoozlin.eu';
-
+            console.log(this.props.isAdmin);
             var animals = this.state.animals;
             var isLoading = !animals.length;
             var imageStyle = "border border-circle";
@@ -37453,89 +37487,370 @@ var AnimalRegistry = function (_Component) {
             var loader = _react2.default.createElement(_LoaderIn2.default, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 94
+                    lineNumber: 90
                 }
             });
             var noAnimalImage = _react2.default.createElement(
                 'div',
                 { className: imageStyle + noAnimalImageStyle, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 96
+                        lineNumber: 92
                     }
                 },
                 _react2.default.createElement('span', { className: 'animal-icon text-center text-green ra ra-lion ra-rw', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 97
+                        lineNumber: 93
                     }
                 })
             );
 
-            var listing = null;
-
-            this.props.isAdmin ? listing = _react2.default.createElement(
-                'div',
-                {
+            if (isLoading) {
+                return _react2.default.createElement(_LoaderIn2.default, {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 107
+                        lineNumber: 98
                     }
-                },
-                _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 108
-                    }
-                }),
-                _react2.default.createElement(
-                    _reactstrap.Container,
-                    { className: 'mt-5', __source: {
+                });
+            }
+
+            //console.log("isAdmin "  + this.props.isAdmin);
+
+            if (this.props.isAdmin) {
+                return _react2.default.createElement(
+                    'div',
+                    {
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 109
+                            lineNumber: 104
                         }
                     },
+                    _react2.default.createElement(_Navigation2.default, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 105
+                        }
+                    }),
                     _react2.default.createElement(
-                        _reactstrap.Row,
-                        {
-                            __source: {
+                        _reactstrap.Container,
+                        { className: 'mt-5', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 110
+                                lineNumber: 106
                             }
                         },
                         _react2.default.createElement(
-                            _reactstrap.Col,
-                            { sm: '12', __source: {
+                            _reactstrap.Row,
+                            {
+                                __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 111
+                                    lineNumber: 107
                                 }
                             },
                             _react2.default.createElement(
-                                _reactstrap.CardColumns,
-                                {
-                                    __source: {
+                                _reactstrap.Col,
+                                { sm: '12', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 112
+                                        lineNumber: 108
                                     }
                                 },
-                                animals.map(function (animal) {
+                                _react2.default.createElement(
+                                    _reactstrap.CardColumns,
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 109
+                                        }
+                                    },
+                                    animals.map(function (animal) {
 
-                                    return _react2.default.createElement(
-                                        'div',
-                                        { key: animal.id, __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 116
-                                            }
-                                        },
-                                        _react2.default.createElement(
-                                            _reactstrap.Card,
-                                            { className: 'animal-card mt-3 ml-2 mb-2', __source: {
+                                        return _react2.default.createElement(
+                                            'div',
+                                            { key: animal.id, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 117
+                                                    lineNumber: 113
+                                                }
+                                            },
+                                            _react2.default.createElement(
+                                                _reactstrap.Card,
+                                                { className: 'animal-card mt-3 ml-2 mb-2', __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 114
+                                                    }
+                                                },
+                                                animal.imageurl === noImage ? noAnimalImage : _react2.default.createElement(_reactstrap.CardImg, { className: imageStyle + noAnimalImageStyle, top: true, width: '50%',
+                                                    src: defaultImageUrl + animal.imageurl,
+                                                    alt: 'Card animal image cap', __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 117
+                                                    }
+                                                }),
+                                                _react2.default.createElement(
+                                                    _reactstrap.CardBody,
+                                                    {
+                                                        __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 121
+                                                        }
+                                                    },
+                                                    _react2.default.createElement(
+                                                        _reactstrap.CardTitle,
+                                                        { className: 'font-weight-bold', __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 122
+                                                            }
+                                                        },
+                                                        ' ',
+                                                        animal.name
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        _reactstrap.CardSubtitle,
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 123
+                                                            }
+                                                        },
+                                                        ' ',
+                                                        animal.latinname
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        _reactstrap.CardText,
+                                                        {
+                                                            __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 124
+                                                            }
+                                                        },
+                                                        'Po\u010Det: ',
+                                                        animal.count
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        _reactstrap.Button,
+                                                        { to: '/animals/' + animal.id + '/edit',
+                                                            tag: _reactRouterDom.Link,
+                                                            className: 'mr-2',
+                                                            color: 'btn btn-success',
+                                                            onClick: _this3.toggle, __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 126
+                                                            }
+                                                        },
+                                                        'Edit'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        _reactstrap.Button,
+                                                        { onClick: function onClick() {
+                                                                return _this3.onDeleteSubmit(event, animal.id);
+                                                            }, type: 'submit', color: 'danger', __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 132
+                                                            }
+                                                        },
+                                                        'Delete'
+                                                    )
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                _reactstrap.Modal,
+                                                { isOpen: _this3.state.modal, toggle: _this3.toggle, __source: {
+                                                        fileName: _jsxFileName,
+                                                        lineNumber: 137
+                                                    }
+                                                },
+                                                _react2.default.createElement(
+                                                    'button',
+                                                    { className: 'close', style: { position: 'absolute', top: '15px', right: '15px' }, onClick: _this3.toggle, __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 138
+                                                        }
+                                                    },
+                                                    '\xD7'
+                                                ),
+                                                ';',
+                                                _react2.default.createElement(
+                                                    _reactstrap.ModalHeader,
+                                                    {
+                                                        __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 139
+                                                        }
+                                                    },
+                                                    'Update the animal'
+                                                ),
+                                                _react2.default.createElement(
+                                                    _reactstrap.ModalBody,
+                                                    { className: 'mb-2', __source: {
+                                                            fileName: _jsxFileName,
+                                                            lineNumber: 140
+                                                        }
+                                                    },
+                                                    _react2.default.createElement(
+                                                        'form',
+                                                        { className: 'form-horizontal', role: 'form', method: 'POST', onSubmit: function onSubmit() {
+                                                                return _this3.onPutSubmit(animal.id);
+                                                            }, __source: {
+                                                                fileName: _jsxFileName,
+                                                                lineNumber: 141
+                                                            }
+                                                        },
+                                                        _react2.default.createElement(
+                                                            'div',
+                                                            { className: 'form-group', __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 143
+                                                                }
+                                                            },
+                                                            _react2.default.createElement(
+                                                                _reactstrap.Col,
+                                                                { md: { size: 8, order: 2 }, __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 144
+                                                                    }
+                                                                },
+                                                                _react2.default.createElement(_reactstrap.Input, { placeholder: 'edit name',
+                                                                    type: 'text',
+                                                                    className: 'form-control',
+                                                                    ref: 'name', name: 'name',
+                                                                    onChange: function onChange() {
+                                                                        return _this3.onChange;
+                                                                    },
+                                                                    required: true,
+                                                                    autoFocus: true, __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 145
+                                                                    }
+                                                                })
+                                                            )
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'div',
+                                                            { className: 'form-group', __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 155
+                                                                }
+                                                            },
+                                                            _react2.default.createElement(
+                                                                _reactstrap.Col,
+                                                                { md: { size: 8, order: 2 }, __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 157
+                                                                    }
+                                                                },
+                                                                _react2.default.createElement(_reactstrap.Input, { placeholder: 'edit latin name',
+                                                                    type: 'text',
+                                                                    className: 'form-control',
+                                                                    ref: 'age',
+                                                                    name: 'age',
+                                                                    onChange: function onChange() {
+                                                                        return _this3.onChange;
+                                                                    },
+                                                                    required: true, autoFocus: true, __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 158
+                                                                    }
+                                                                })
+                                                            )
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'div',
+                                                            { className: 'form-group', __source: {
+                                                                    fileName: _jsxFileName,
+                                                                    lineNumber: 169
+                                                                }
+                                                            },
+                                                            _react2.default.createElement(
+                                                                'div',
+                                                                { className: 'col-md-6 col-md-offset-4', __source: {
+                                                                        fileName: _jsxFileName,
+                                                                        lineNumber: 170
+                                                                    }
+                                                                },
+                                                                _react2.default.createElement(
+                                                                    _reactstrap.Button,
+                                                                    { type: 'submit',
+                                                                        color: 'success',
+                                                                        className: 'align-self-center',
+                                                                        onClick: _this3.toggle, __source: {
+                                                                            fileName: _jsxFileName,
+                                                                            lineNumber: 171
+                                                                        }
+                                                                    },
+                                                                    'Update'
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        );
+                                    })
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(_Footer2.default, {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 192
+                        }
+                    })
+                );
+            } else {
+                return _react2.default.createElement(
+                    'div',
+                    {
+                        __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 196
+                        }
+                    },
+                    _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 197
+                        }
+                    }),
+                    _react2.default.createElement(
+                        _reactstrap.Container,
+                        { className: 'mt-5', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 198
+                            }
+                        },
+                        _react2.default.createElement(
+                            _reactstrap.Row,
+                            {
+                                __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 199
+                                }
+                            },
+                            _react2.default.createElement(
+                                _reactstrap.Col,
+                                { sm: '12', __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 200
+                                    }
+                                },
+                                _react2.default.createElement(
+                                    _reactstrap.CardColumns,
+                                    {
+                                        __source: {
+                                            fileName: _jsxFileName,
+                                            lineNumber: 201
+                                        }
+                                    },
+                                    animals.map(function (animal) {
+                                        return _react2.default.createElement(
+                                            _reactstrap.Card,
+                                            { key: animal.id, className: 'animal-card mt-3 ml-2 mb-2', __source: {
+                                                    fileName: _jsxFileName,
+                                                    lineNumber: 204
                                                 }
                                             },
                                             animal.imageurl === noImage ? noAnimalImage : _react2.default.createElement(_reactstrap.CardImg, { className: imageStyle + noAnimalImageStyle, top: true, width: '50%',
                                                 src: defaultImageUrl + animal.imageurl,
                                                 alt: 'Card animal image cap', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 120
+                                                    lineNumber: 207
                                                 }
                                             }),
                                             _react2.default.createElement(
@@ -37543,14 +37858,14 @@ var AnimalRegistry = function (_Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 124
+                                                        lineNumber: 211
                                                     }
                                                 },
                                                 _react2.default.createElement(
                                                     _reactstrap.CardTitle,
                                                     { className: 'font-weight-bold', __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 125
+                                                            lineNumber: 212
                                                         }
                                                     },
                                                     ' ',
@@ -37561,7 +37876,7 @@ var AnimalRegistry = function (_Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 126
+                                                            lineNumber: 213
                                                         }
                                                     },
                                                     ' ',
@@ -37572,296 +37887,27 @@ var AnimalRegistry = function (_Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 127
+                                                            lineNumber: 214
                                                         }
                                                     },
-                                                    'Po\u010Det: ',
+                                                    'Count: ',
                                                     animal.count
-                                                ),
-                                                _react2.default.createElement(
-                                                    _reactstrap.Button,
-                                                    { to: "animals/edit/" + animal.id,
-                                                        tag: _reactRouterDom.Link,
-                                                        className: 'mr-2',
-                                                        color: 'btn btn-success',
-                                                        onClick: _this3.toggle, __source: {
-                                                            fileName: _jsxFileName,
-                                                            lineNumber: 129
-                                                        }
-                                                    },
-                                                    'Edit'
-                                                ),
-                                                _react2.default.createElement(
-                                                    _reactstrap.Button,
-                                                    { onClick: function onClick() {
-                                                            return _this3.onDeleteSubmit(event, animal.id);
-                                                        }, type: 'submit', color: 'danger', __source: {
-                                                            fileName: _jsxFileName,
-                                                            lineNumber: 136
-                                                        }
-                                                    },
-                                                    'Delete'
                                                 )
                                             )
-                                        ),
-                                        _react2.default.createElement(
-                                            _reactstrap.Modal,
-                                            { isOpen: _this3.state.modal, toggle: _this3.toggle, __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 141
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                'button',
-                                                { className: 'close', style: { position: 'absolute', top: '15px', right: '15px' }, onClick: _this3.toggle, __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 142
-                                                    }
-                                                },
-                                                '\xD7'
-                                            ),
-                                            ';',
-                                            _react2.default.createElement(
-                                                _reactstrap.ModalHeader,
-                                                {
-                                                    __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 143
-                                                    }
-                                                },
-                                                'Update the animal'
-                                            ),
-                                            _react2.default.createElement(
-                                                _reactstrap.ModalBody,
-                                                { className: 'mb-2', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 144
-                                                    }
-                                                },
-                                                _react2.default.createElement(
-                                                    'form',
-                                                    { className: 'form-horizontal', role: 'form', method: 'POST', onSubmit: function onSubmit() {
-                                                            return _this3.onPutSubmit(animal.id);
-                                                        }, __source: {
-                                                            fileName: _jsxFileName,
-                                                            lineNumber: 145
-                                                        }
-                                                    },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'form-group', __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 147
-                                                            }
-                                                        },
-                                                        _react2.default.createElement(
-                                                            _reactstrap.Col,
-                                                            { md: { size: 8, order: 2 }, __source: {
-                                                                    fileName: _jsxFileName,
-                                                                    lineNumber: 148
-                                                                }
-                                                            },
-                                                            _react2.default.createElement(_reactstrap.Input, { placeholder: 'edit name',
-                                                                type: 'text',
-                                                                className: 'form-control',
-                                                                ref: 'name', name: 'name',
-                                                                onChange: function onChange() {
-                                                                    return _this3.onChange;
-                                                                },
-                                                                required: true,
-                                                                autoFocus: true, __source: {
-                                                                    fileName: _jsxFileName,
-                                                                    lineNumber: 149
-                                                                }
-                                                            })
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'form-group', __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 159
-                                                            }
-                                                        },
-                                                        _react2.default.createElement(
-                                                            _reactstrap.Col,
-                                                            { md: { size: 8, order: 2 }, __source: {
-                                                                    fileName: _jsxFileName,
-                                                                    lineNumber: 161
-                                                                }
-                                                            },
-                                                            _react2.default.createElement(_reactstrap.Input, { placeholder: 'edit latin name',
-                                                                type: 'text',
-                                                                className: 'form-control',
-                                                                ref: 'age',
-                                                                name: 'age',
-                                                                onChange: function onChange() {
-                                                                    return _this3.onChange;
-                                                                },
-                                                                required: true, autoFocus: true, __source: {
-                                                                    fileName: _jsxFileName,
-                                                                    lineNumber: 162
-                                                                }
-                                                            })
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'form-group', __source: {
-                                                                fileName: _jsxFileName,
-                                                                lineNumber: 173
-                                                            }
-                                                        },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'col-md-6 col-md-offset-4', __source: {
-                                                                    fileName: _jsxFileName,
-                                                                    lineNumber: 174
-                                                                }
-                                                            },
-                                                            _react2.default.createElement(
-                                                                _reactstrap.Button,
-                                                                { type: 'submit',
-                                                                    color: 'success',
-                                                                    className: 'align-self-center',
-                                                                    onClick: _this3.toggle, __source: {
-                                                                        fileName: _jsxFileName,
-                                                                        lineNumber: 175
-                                                                    }
-                                                                },
-                                                                'Update'
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    );
-                                })
+                                        );
+                                    })
+                                )
                             )
                         )
-                    )
-                ),
-                _react2.default.createElement(_Footer2.default, {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 196
-                    }
-                })
-            ) : _react2.default.createElement(
-                'div',
-                {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 199
-                    }
-                },
-                _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 200
-                    }
-                }),
-                _react2.default.createElement(
-                    _reactstrap.Container,
-                    { className: 'mt-5', __source: {
+                    ),
+                    _react2.default.createElement(_Footer2.default, {
+                        __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 201
+                            lineNumber: 225
                         }
-                    },
-                    _react2.default.createElement(
-                        _reactstrap.Row,
-                        {
-                            __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 202
-                            }
-                        },
-                        _react2.default.createElement(
-                            _reactstrap.Col,
-                            { sm: '12', __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 203
-                                }
-                            },
-                            _react2.default.createElement(
-                                _reactstrap.CardColumns,
-                                {
-                                    __source: {
-                                        fileName: _jsxFileName,
-                                        lineNumber: 204
-                                    }
-                                },
-                                animals.map(function (animal) {
-                                    return _react2.default.createElement(
-                                        _reactstrap.Card,
-                                        { key: animal.id, className: 'animal-card mt-3 ml-2 mb-2', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 207
-                                            }
-                                        },
-                                        animal.imageurl === noImage ? noAnimalImage : _react2.default.createElement(_reactstrap.CardImg, { className: imageStyle + noAnimalImageStyle, top: true, width: '50%',
-                                            src: defaultImageUrl + animal.imageurl,
-                                            alt: 'Card animal image cap', __source: {
-                                                fileName: _jsxFileName,
-                                                lineNumber: 210
-                                            }
-                                        }),
-                                        _react2.default.createElement(
-                                            _reactstrap.CardBody,
-                                            {
-                                                __source: {
-                                                    fileName: _jsxFileName,
-                                                    lineNumber: 214
-                                                }
-                                            },
-                                            _react2.default.createElement(
-                                                _reactstrap.CardTitle,
-                                                { className: 'font-weight-bold', __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 215
-                                                    }
-                                                },
-                                                ' ',
-                                                animal.name
-                                            ),
-                                            _react2.default.createElement(
-                                                _reactstrap.CardSubtitle,
-                                                {
-                                                    __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 216
-                                                    }
-                                                },
-                                                ' ',
-                                                animal.latinname
-                                            ),
-                                            _react2.default.createElement(
-                                                _reactstrap.CardText,
-                                                {
-                                                    __source: {
-                                                        fileName: _jsxFileName,
-                                                        lineNumber: 217
-                                                    }
-                                                },
-                                                'Count: ',
-                                                animal.count
-                                            )
-                                        )
-                                    );
-                                })
-                            )
-                        )
-                    )
-                ),
-                _react2.default.createElement(_Footer2.default, {
-                    __source: {
-                        fileName: _jsxFileName,
-                        lineNumber: 228
-                    }
-                })
-            );
-
-            return isLoading ? loader : listing;
+                    })
+                );
+            }
         }
     }]);
 
@@ -37871,7 +37917,7 @@ var AnimalRegistry = function (_Component) {
 exports.default = (0, _reactRouterDom.withRouter)(AnimalRegistry);
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37880,7 +37926,7 @@ exports.default = (0, _reactRouterDom.withRouter)(AnimalRegistry);
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\ROLES\\Admin\\AdminMain.js';
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\Roles\\Admin\\AdminMain.js';
 
 var _react = __webpack_require__(0);
 
@@ -37952,7 +37998,7 @@ var AdminMain = function AdminMain(props) {
 exports.default = AdminMain;
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37973,7 +38019,7 @@ var _Navigation2 = _interopRequireDefault(_Navigation);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NotFound = function NotFound(props) {
+var NotFound = function NotFound() {
     return _react2.default.createElement(
         "div",
         { className: "body-color", __source: {
@@ -37981,7 +38027,8 @@ var NotFound = function NotFound(props) {
                 lineNumber: 5
             }
         },
-        _react2.default.createElement(_Navigation2.default, { logoutLink: props.authorized, __source: {
+        _react2.default.createElement(_Navigation2.default, {
+            __source: {
                 fileName: _jsxFileName,
                 lineNumber: 6
             }
@@ -38009,27 +38056,7 @@ var NotFound = function NotFound(props) {
 exports.default = NotFound;
 
 /***/ }),
-/* 125 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 126 */,
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38048,7 +38075,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(98);
+var _axios = __webpack_require__(44);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -38062,9 +38089,9 @@ var _ajax = __webpack_require__(7);
 
 var _ajax2 = _interopRequireDefault(_ajax);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _reactstrap = __webpack_require__(5);
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -38080,12 +38107,28 @@ var EditAnimal = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (EditAnimal.__proto__ || Object.getPrototypeOf(EditAnimal)).call(this, props));
 
-        _this.handleChange = function (e) {
+        _this.handleNameChange = function (e) {
             var _e$target = e.target,
                 name = _e$target.name,
                 value = _e$target.value;
 
-            _this.setState(_defineProperty({}, name, value));
+            _this.setState({ name: value });
+        };
+
+        _this.handleLatinnameChange = function (e) {
+            var _e$target2 = e.target,
+                latinname = _e$target2.latinname,
+                value = _e$target2.value;
+
+            _this.setState({ latinname: value });
+        };
+
+        _this.handleCountChange = function (e) {
+            var _e$target3 = e.target,
+                count = _e$target3.count,
+                value = _e$target3.value;
+
+            _this.setState({ count: value });
         };
 
         _this.state = {
@@ -38121,28 +38164,30 @@ var EditAnimal = function (_Component) {
             var _this3 = this;
 
             event.preventDefault();
-            var products = {
+            var animals = {
                 name: this.state.name,
                 latinname: this.state.latinname,
                 count: this.state.count
             };
 
-            var uri = '/animals/' + this.props.match.params.id;
+            var uri = 'user/animals/' + this.props.match.params.id;
 
-            _axios2.default.patch(uri, products).then(function (response) {
+            _ajax2.default.patch(uri, animals).then(function (response) {
                 _this3.props.history.push('/animals');
             });
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this4 = this;
+
             if (this.state.status === "LOADING") {
                 return _react2.default.createElement(
                     'div',
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 58
+                            lineNumber: 69
                         }
                     },
                     'Loading.'
@@ -38150,7 +38195,7 @@ var EditAnimal = function (_Component) {
             } else if (this.state.status === "NOT_FOUND") {
                 return _react2.default.createElement(Redirect, { to: "/404", __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 61
+                        lineNumber: 72
                     }
                 });
             }
@@ -38159,43 +38204,43 @@ var EditAnimal = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 64
+                        lineNumber: 75
                     }
                 },
-                _react2.default.createElement(_Navigation2.default, { logoutLink: true, __source: {
+                _react2.default.createElement(_Navigation2.default, {
+                    __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 65
+                        lineNumber: 76
                     }
                 }),
                 _react2.default.createElement(
                     'h1',
-                    {
-                        __source: {
+                    { className: 'mt-2', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 66
+                            lineNumber: 77
                         }
                     },
-                    'Update Item'
+                    'Update Animal'
                 ),
                 _react2.default.createElement(
                     'div',
                     { className: 'row', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 67
+                            lineNumber: 78
                         }
                     },
                     _react2.default.createElement(
                         'div',
                         { className: 'mt-2 col-md-2', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 68
+                                lineNumber: 79
                             }
                         },
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/animals', className: 'btn btn-success', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 69
+                                    lineNumber: 80
                                 }
                             },
                             'Zp\u011Bt'
@@ -38203,102 +38248,96 @@ var EditAnimal = function (_Component) {
                     )
                 ),
                 _react2.default.createElement(
-                    'form',
-                    { onSubmit: this.handleSubmit, __source: {
+                    'div',
+                    { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 72
+                            lineNumber: 83
                         }
                     },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'form-group', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 73
-                            }
-                        },
-                        _react2.default.createElement(
-                            'label',
-                            { id: 'name', __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 74
-                                }
-                            },
-                            'Name'
-                        ),
-                        _react2.default.createElement('input', { name: 'name',
-                            type: 'text',
-                            className: 'form-control',
-                            value: this.state.name,
-                            onChange: this.handleChange, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 75
-                            }
-                        })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'form-group', __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 82
-                            }
-                        },
-                        _react2.default.createElement(
-                            'label',
-                            { id: 'latinname', __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 83
-                                }
-                            },
-                            'Latin name'
-                        ),
-                        _react2.default.createElement('input', { id: 'latinname', type: 'text', className: 'form-control',
-                            value: this.state.latinname,
-                            onChange: this.handleChange, __source: {
+                        'label',
+                        { id: 'name', __source: {
                                 fileName: _jsxFileName,
                                 lineNumber: 84
                             }
-                        })
+                        },
+                        'Name'
                     ),
+                    _react2.default.createElement('input', { name: 'name',
+                        type: 'text',
+                        className: 'form-control',
+                        value: this.state.name,
+                        onChange: this.handleNameChange, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 85
+                        }
+                    })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 92
+                        }
+                    },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'form-group', __source: {
+                        'label',
+                        { id: 'latinname', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 89
+                                lineNumber: 93
                             }
                         },
-                        _react2.default.createElement(
-                            'label',
-                            { id: 'count', __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 90
-                                }
-                            },
-                            'Count'
-                        ),
-                        _react2.default.createElement('input', { id: 'count', type: 'text', className: 'form-control',
-                            value: this.state.latinname,
-                            onChange: this.handleChange, __source: {
-                                fileName: _jsxFileName,
-                                lineNumber: 91
-                            }
-                        })
+                        'Latin name'
                     ),
+                    _react2.default.createElement('input', { id: 'latinname', type: 'text', className: 'form-control',
+                        value: this.state.latinname,
+                        onChange: this.handleLatinnameChange, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 94
+                        }
+                    })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 99
+                        }
+                    },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'form-group', __source: {
+                        'label',
+                        { id: 'count', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 96
+                                lineNumber: 100
                             }
                         },
-                        _react2.default.createElement(
-                            'button',
-                            { type: 'submit', className: 'btn btn-success', __source: {
-                                    fileName: _jsxFileName,
-                                    lineNumber: 97
-                                }
-                            },
-                            'Update'
-                        )
+                        'Count'
+                    ),
+                    _react2.default.createElement('input', { id: 'count', type: 'number', className: 'form-control',
+                        value: this.state.count,
+                        onChange: this.handleCountChange, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 101
+                        }
+                    })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 106
+                        }
+                    },
+                    _react2.default.createElement(
+                        'button',
+                        { onClick: function onClick() {
+                                return _this4.handleSubmit(event);
+                            }, type: 'submit', className: 'btn btn-success', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 107
+                            }
+                        },
+                        'Update'
                     )
                 )
             );
@@ -38309,6 +38348,281 @@ var EditAnimal = function (_Component) {
 }(_react.Component);
 
 exports.default = EditAnimal;
+
+/***/ }),
+/* 127 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var _jsxFileName = 'D:\\code\\react-laravel-zoo-admin\\frontend\\UI\\react\\app\\components\\NewAnimal.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(44);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _reactRouterDom = __webpack_require__(8);
+
+var _Navigation = __webpack_require__(6);
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+var _ajax = __webpack_require__(7);
+
+var _ajax2 = _interopRequireDefault(_ajax);
+
+var _reactstrap = __webpack_require__(5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var NewAnimal = function (_Component) {
+    _inherits(NewAnimal, _Component);
+
+    function NewAnimal(props) {
+        _classCallCheck(this, NewAnimal);
+
+        var _this = _possibleConstructorReturn(this, (NewAnimal.__proto__ || Object.getPrototypeOf(NewAnimal)).call(this, props));
+
+        _this.handleNameChange = function (e) {
+            var _e$target = e.target,
+                name = _e$target.name,
+                value = _e$target.value;
+
+            _this.setState({ name: value });
+        };
+
+        _this.handleLatinnameChange = function (e) {
+            var _e$target2 = e.target,
+                latinname = _e$target2.latinname,
+                value = _e$target2.value;
+
+            _this.setState({ latinname: value });
+        };
+
+        _this.handleCountChange = function (e) {
+            var _e$target3 = e.target,
+                count = _e$target3.count,
+                value = _e$target3.value;
+
+            _this.setState({ count: value });
+        };
+
+        _this.state = {
+            name: '',
+            latinname: '',
+            count: ''
+        };
+        return _this;
+    }
+
+    _createClass(NewAnimal, [{
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {
+            var _this2 = this;
+
+            event.preventDefault();
+            var animals = {
+                name: this.state.name,
+                latinname: this.state.latinname,
+                count: this.state.count
+            };
+
+            var uri = 'user/animals';
+
+            _ajax2.default.post(uri, animals).then(function (response) {
+                _this2.props.history.push('/animals');
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this3 = this;
+
+            return _react2.default.createElement(
+                'div',
+                {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 52
+                    }
+                },
+                _react2.default.createElement(_Navigation2.default, {
+                    __source: {
+                        fileName: _jsxFileName,
+                        lineNumber: 53
+                    }
+                }),
+                _react2.default.createElement(
+                    'h1',
+                    { className: 'mt-2', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 54
+                        }
+                    },
+                    'Create animal'
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'row', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 55
+                        }
+                    },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'mb-2 col-md-2', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 56
+                            }
+                        },
+                        _react2.default.createElement(
+                            _reactRouterDom.Link,
+                            { to: '/animals', className: 'btn btn-success', __source: {
+                                    fileName: _jsxFileName,
+                                    lineNumber: 57
+                                }
+                            },
+                            'Zp\u011Bt'
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 60
+                        }
+                    },
+                    _react2.default.createElement(
+                        'label',
+                        { id: 'name', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 61
+                            }
+                        },
+                        'Name'
+                    ),
+                    _react2.default.createElement('input', { name: 'name',
+                        type: 'text',
+                        className: 'form-control',
+                        value: this.state.name,
+                        onChange: this.handleNameChange, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 62
+                        }
+                    })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 69
+                        }
+                    },
+                    _react2.default.createElement(
+                        'label',
+                        { id: 'latinname', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 70
+                            }
+                        },
+                        'Latin name'
+                    ),
+                    _react2.default.createElement('input', { id: 'latinname', type: 'text', className: 'form-control',
+                        value: this.state.latinname,
+                        onChange: this.handleLatinnameChange, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 71
+                        }
+                    })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 76
+                        }
+                    },
+                    _react2.default.createElement(
+                        'label',
+                        { id: 'count', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 77
+                            }
+                        },
+                        'Count'
+                    ),
+                    _react2.default.createElement('input', { id: 'count', type: 'number', className: 'form-control',
+                        value: this.state.count,
+                        onChange: this.handleCountChange, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 78
+                        }
+                    })
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'form-group', __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 83
+                        }
+                    },
+                    _react2.default.createElement(
+                        'button',
+                        { onClick: function onClick() {
+                                return _this3.handleSubmit(event);
+                            }, className: 'btn btn-success', __source: {
+                                fileName: _jsxFileName,
+                                lineNumber: 84
+                            }
+                        },
+                        'Create'
+                    )
+                )
+            );
+        }
+    }]);
+
+    return NewAnimal;
+}(_react.Component);
+
+exports.default = NewAnimal;
 
 /***/ })
 /******/ ]);

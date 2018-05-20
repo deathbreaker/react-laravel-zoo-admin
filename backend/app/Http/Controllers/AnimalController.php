@@ -29,9 +29,13 @@ class AnimalController extends Controller
             'name' => 'required|unique:animals',
             'latinname' => 'required',
             'count' => 'integer',
-            'imageurl' => 'string',
         ]);
-        $animal = Animal::create($request->all());
+        $animal = new Animal();
+        $animal->name = $request->name;
+        $animal->latinname = $request->latinname;
+        $animal->count = $request->count;
+        $animal->imageurl = '/fassets/images/seznam-zvirat/empty.jpg';
+        $animal->save();
 
         return response()->json($animal, 201);
     }
@@ -60,6 +64,7 @@ class AnimalController extends Controller
         $animal = Animal::find($id);
         $animal->name = $request->name;
         $animal->latinname = $request->latinname;
+        $animal->count = $request->count;
         $animal->save();
         return response()->json($animal, 200);
     }

@@ -4,30 +4,26 @@ import {
     Navbar,
     NavLink,
     NavItem,
-    UncontrolledDropdown,
     NavbarBrand,
     Nav,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
 } from 'reactstrap';
+import PropTypes from "prop-types";
 
 import ajax from '../utils/ajax';
 
 class Navigation extends Component {
 
 
-    state = ({
-        loading: false
-    });
+
+
+
 
     logout = (e) => {
         e.preventDefault();
         this.setState({loading: true});
-        console.log(this.props.history);
         ajax.post('/user/logout')
             .then(response => {
-                this.props.history.push('/');
+                this.context.router.history.push("/");
                 window.location.reload(true);
             })
             .catch(error => {

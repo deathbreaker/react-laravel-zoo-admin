@@ -46,7 +46,8 @@ class Login extends Component {
             .then(() => {
                 this.props.onUserLoginSucceed();
             })
-            .catch(() => {
+            .catch((err) => {
+                console.log(err);
                 this.setState({
                     loading: false,
                     err: true

@@ -6,7 +6,7 @@ import Navigation from '../../Navigation';
 import Footer from '../../Footer';
 
 
-class AdminAnimalRegistry extends Component{
+class UserControl extends Component{
 
 
 

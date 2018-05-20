@@ -12,13 +12,9 @@ import {
     Button,
     Row,
     Col,
-    Pagination,
-    PaginationItem,
-    PaginationLink,
     Modal,
     ModalHeader,
     ModalBody,
-    ModalFooter,
     Input,
     Form
 
@@ -84,7 +80,7 @@ class AnimalRegistry extends Component{
 
     render(){
         const defaultImageUrl = 'http://www.zoozlin.eu';
-
+        console.log( this.props.isAdmin);
         const animals = this.state.animals;
         let isLoading = !animals.length ;
         const imageStyle = "border border-circle";
@@ -98,14 +94,15 @@ class AnimalRegistry extends Component{
             </div>
         ;
 
-        let listing = null;
+        if(isLoading){
+            return <LoaderIn/>
+        }
 
+        //console.log("isAdmin "  + this.props.isAdmin);
 
-
-        this.props.isAdmin ?
-        listing =
-        <div>
-            <Navigation logoutLink="true"/>
+        if(this.props.isAdmin){
+                return <div>
+                    <Navigation/>
                     <Container className="mt-5">
                         <Row>
                             <Col sm="12">
@@ -126,12 +123,11 @@ class AnimalRegistry extends Component{
                                                         <CardSubtitle> { animal.latinname }</CardSubtitle>
                                                         <CardText>Počet: {animal.count }</CardText>
 
-                                                        <Button to={"animals/edit/"+ animal.id}
+                                                        <Button to={`/animals/${animal.id}/edit`}
                                                                 tag={Link}
                                                                 className="mr-2"
                                                                 color="btn btn-success"
-                                                                onClick={this.toggle}>
-                                                                Edit
+                                                                onClick={this.toggle}>Edit
                                                         </Button>
                                                         <Button onClick={() => this.onDeleteSubmit(event,  animal.id)} type="submit" color="danger">Delete</Button>
 
@@ -193,10 +189,11 @@ class AnimalRegistry extends Component{
                             </Col>
                         </Row>
                     </Container>
-            <Footer/>
-        </div>
-        :
-        <div>
+                    <Footer/>
+                </div>
+            }
+            else{
+            return <div>
                 <Navigation logoutLink="true"/>
                 <Container className="mt-5">
                     <Row>
@@ -226,10 +223,12 @@ class AnimalRegistry extends Component{
                     </Row>
                 </Container>
                 <Footer/>
-        </div>
-        ;
+            </div>
+            }
 
-        return isLoading ? loader : listing;
+
+
+
 
     }
 
