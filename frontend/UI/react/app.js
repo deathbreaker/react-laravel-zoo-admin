@@ -1,12 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Root from './root/Root'
+import React from 'react';
+import {render} from 'react-dom';
+import App from "./app/App";
+import {BrowserRouter} from 'react-router-dom';
+//window._ = require('lodash');
 
-window._ = require('lodash');
-
-ReactDOM.render(
-    <div className="body"><Root/></div>,
-    document.getElementById('app')
+const Application= () => (
+    <div className="body">
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+    </div>
 );
 
 
+render(
+    <Application/>,
+    document.getElementById('app')
+);

@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'https://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -177,10 +177,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        /*
-         * Roles and permissions service...
-        */
-        Spatie\Permission\PermissionServiceProvider::class,
 
 
     ],

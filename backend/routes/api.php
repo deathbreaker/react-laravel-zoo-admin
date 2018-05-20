@@ -9,29 +9,24 @@ Route::group(['middleware' => ['web']], function () {
        /*
        * AUTH routes
        */
-       Route::get('auth', 'Auth\User\UserAuthController@auth');
-       Route::get('/token/refresh', 'Auth\User\UserAuthController@refresh');
-       Route::post('login', 'Auth\User\UserAuthController@login');
-       Route::post('register','Auth\User\UserAuthController@register');
-       Route::post('logout', 'Auth\User\UserAuthController@logout');
-       Route::post('password/email', 'Auth\User\UserAuthController@sendResetLinkEmail');
-       Route::post('password/reset', 'Auth\User\UserAuthController@reset');
+       Route::get('auth', 'Auth\AuthController@auth');
+       Route::get('/token/refresh', 'Auth\AuthController@refresh');
+       Route::post('login', 'Auth\AuthController@login');
+       Route::post('register','Auth\AuthController@register');
+       Route::post('logout', 'Auth\AuthController@logout');
+       Route::post('password/email', 'Auth\AuthController@sendResetLinkEmail');
+       Route::post('password/reset', 'Auth\AuthController@reset');
 
 
        /*
        * Animals CRUD routes
        */
-       Route::get('animals', 'AnimalsController@index');
-       Route::get('animals/{id}', 'AnimalsController@show');
-       Route::post('animals','AnimalsController@store');
-       Route::put('animals/{id}','AnimalsController@update');
-       Route::delete('animals/{id}', 'AnimalsController@delete');
-   });
 
-    /* Admin API */
-   Route::prefix('admin')->group(function () {
-       Route::post('login','Auth\Admin\AdminAuthController@login');
-       Route::post('logout','Auth\Admin\AdminAuthController@logout');
+       Route::get('animals', 'AnimalController@index');
+       Route::get('animals/{id}', 'AnimalController@show');
+       Route::post('animals','AnimalController@store');
+       Route::patch('animals/{id}','AnimalController@update');
+       Route::delete('animals/{id}', 'AnimalController@destroy');
    });
 
 });

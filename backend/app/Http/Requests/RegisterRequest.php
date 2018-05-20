@@ -12,6 +12,8 @@ use Illuminate\Foundation\Http\FormRequest;
  * @property string $email
  * @property string $password
  * @property integer $age
+ * @property integer $phonenumber
+ * @property string $role
  */
 class RegisterRequest extends FormRequest
 {
@@ -36,7 +38,9 @@ class RegisterRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
-            'age' => 'required'
+            'age' => 'required',
+            'phonenumber' => 'nullable',
+            'role' => 'nullable',
         ];
     }
 }

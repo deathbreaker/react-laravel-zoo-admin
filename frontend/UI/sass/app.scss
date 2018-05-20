@@ -16,11 +16,14 @@
 // rpg-awesome
 @import "~rpg-awesome/scss/rpg-awesome";
 
+
+@import "~font-awesome/scss/font-awesome";
 // Variables
 @import "_variables";
 
 // UI styles
 @import "root/root.sass";
+@import "root/responsive";
 @import "root/components/Index";
 @import "root/components/Loader";
 @import "root/components/AnimalRegistry";

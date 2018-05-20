@@ -10,7 +10,7 @@ class DropTables extends Command
      *
      * @var string
      */
-    protected $signature = 'droptables';
+    protected $signature = 'db:drop';
 
     /**
      * The console command description.

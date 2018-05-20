@@ -56,7 +56,9 @@ class Handler extends ExceptionHandler
     {
 
         if ($exception instanceof \Illuminate\Validation\ValidationException){
-            return response()->json(['error' => 'Invalid user name or password.'], 500);
+            return response()->json([
+                'error' => 'Invalid user name or password.',
+                'exception' => $exception], 500);
         }
 
         if ($exception instanceof \Illuminate\Database\Eloquent\ModelNotFoundException)
