@@ -17,20 +17,28 @@ import {
     ModalBody,
     Input,
     Form
-
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
 import LoaderIn from './Loader/LoaderIn';
 import ajax from '../utils/ajax';
 import Navigation from './Navigation';
+import SearchInput, {createFilter} from 'react-search-input'
+
+const KEYS_TO_FILTERS = ['name', 'latinname', 'count', 'dest.name'];
+
 
 class AnimalRegistry extends Component{
 
-    state = {
-        animals: [],
+    constructor(props){
+        super(props);
+        this.state = {
+            animals: [],
+            searchTerm: ''
+        };
 
-    };
+    }
+
 
 
     componentDidMount() {
@@ -77,6 +85,10 @@ class AnimalRegistry extends Component{
                     });
     };
 
+    searchUpdated = (term) => {
+        this.setState({searchTerm: term})
+    };
+
 
     render(){
         const defaultImageUrl = 'http://www.zoozlin.eu';
@@ -93,6 +105,8 @@ class AnimalRegistry extends Component{
                 <span className="animal-icon text-center text-green ra ra-lion ra-rw"></span>
             </div>
         ;
+        const filteredAnimals = animals.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
+
 
         if(isLoading){
             return <LoaderIn/>
@@ -106,8 +120,10 @@ class AnimalRegistry extends Component{
                     <Container className="mt-5">
                         <Row>
                             <Col sm="12">
+                                <SearchInput class="mt-3 form-control search-input" placeholder="Search.." onChange={this.searchUpdated} />
+
                                 <CardColumns>
-                                    { animals.map(animal => {
+                                    { filteredAnimals.map(animal => {
 
                                         return (
                                             <div key={animal.id} >
@@ -198,8 +214,9 @@ class AnimalRegistry extends Component{
                 <Container className="mt-5">
                     <Row>
                         <Col sm="12">
+                            <SearchInput className="mt-2 search-input" onChange={this.searchUpdated} />
                             <CardColumns>
-                                { animals.map(animal => {
+                                { filteredAnimals.map(animal => {
                                     return (
                                         <Card key={animal.id} className="animal-card mt-3 ml-2 mb-2">
                                             { animal.imageurl === noImage
@@ -225,11 +242,6 @@ class AnimalRegistry extends Component{
                 <Footer/>
             </div>
             }
-
-
-
-
-
     }
 
 }

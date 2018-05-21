@@ -9580,7 +9580,7 @@ const Home= Loadable({
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(53);
-module.exports = __webpack_require__(127);
+module.exports = __webpack_require__(128);
 
 
 /***/ }),
@@ -28161,7 +28161,7 @@ var _EditAnimal = __webpack_require__(126);
 
 var _EditAnimal2 = _interopRequireDefault(_EditAnimal);
 
-var _NewAnimal = __webpack_require__(142);
+var _NewAnimal = __webpack_require__(127);
 
 var _NewAnimal2 = _interopRequireDefault(_NewAnimal);
 
@@ -37405,6 +37405,10 @@ var _Navigation = __webpack_require__(6);
 
 var _Navigation2 = _interopRequireDefault(_Navigation);
 
+var _reactSearchInput = __webpack_require__(143);
+
+var _reactSearchInput2 = _interopRequireDefault(_reactSearchInput);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37413,24 +37417,17 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var KEYS_TO_FILTERS = ['name', 'latinname', 'count', 'dest.name'];
+
 var AnimalRegistry = function (_Component) {
     _inherits(AnimalRegistry, _Component);
 
-    function AnimalRegistry() {
-        var _ref;
-
-        var _temp, _this, _ret;
-
+    function AnimalRegistry(props) {
         _classCallCheck(this, AnimalRegistry);
 
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-        }
+        var _this = _possibleConstructorReturn(this, (AnimalRegistry.__proto__ || Object.getPrototypeOf(AnimalRegistry)).call(this, props));
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AnimalRegistry.__proto__ || Object.getPrototypeOf(AnimalRegistry)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            animals: []
-
-        }, _this.onDeleteSubmit = function (event, id) {
+        _this.onDeleteSubmit = function (event, id) {
             _ajax2.default.delete("/user/animals/" + id).then(function () {
                 _this.props.history.push("/animals");
                 /*                const animals = [...this.state.animals];
@@ -37439,12 +37436,16 @@ var AnimalRegistry = function (_Component) {
             }).catch(function (error) {
                 console.log(error);
             });
-        }, _this.toggle = function () {
+        };
+
+        _this.toggle = function () {
             console.log("uwdhwdah");
             _this.setState({
                 modal: !_this.state.modal
             });
-        }, _this.onPutSubmit = function (id) {
+        };
+
+        _this.onPutSubmit = function (id) {
             console.log(id);
             var _this$state = _this.state,
                 name = _this$state.name,
@@ -37455,7 +37456,18 @@ var AnimalRegistry = function (_Component) {
             }).catch(function (err) {
                 console.log(err);
             });
-        }, _temp), _possibleConstructorReturn(_this, _ret);
+        };
+
+        _this.searchUpdated = function (term) {
+            _this.setState({ searchTerm: term });
+        };
+
+        _this.state = {
+            animals: [],
+            searchTerm: ''
+        };
+
+        return _this;
     }
 
     _createClass(AnimalRegistry, [{
@@ -37487,28 +37499,29 @@ var AnimalRegistry = function (_Component) {
             var loader = _react2.default.createElement(_LoaderIn2.default, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 90
+                    lineNumber: 102
                 }
             });
             var noAnimalImage = _react2.default.createElement(
                 'div',
                 { className: imageStyle + noAnimalImageStyle, __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 92
+                        lineNumber: 104
                     }
                 },
                 _react2.default.createElement('span', { className: 'animal-icon text-center text-green ra ra-lion ra-rw', __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 93
+                        lineNumber: 105
                     }
                 })
             );
+            var filteredAnimals = animals.filter((0, _reactSearchInput.createFilter)(this.state.searchTerm, KEYS_TO_FILTERS));
 
             if (isLoading) {
                 return _react2.default.createElement(_LoaderIn2.default, {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 98
+                        lineNumber: 112
                     }
                 });
             }
@@ -37521,20 +37534,20 @@ var AnimalRegistry = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 104
+                            lineNumber: 118
                         }
                     },
                     _react2.default.createElement(_Navigation2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 105
+                            lineNumber: 119
                         }
                     }),
                     _react2.default.createElement(
                         _reactstrap.Container,
                         { className: 'mt-5', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 106
+                                lineNumber: 120
                             }
                         },
                         _react2.default.createElement(
@@ -37542,45 +37555,50 @@ var AnimalRegistry = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 107
+                                    lineNumber: 121
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.Col,
                                 { sm: '12', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 108
+                                        lineNumber: 122
                                     }
                                 },
+                                _react2.default.createElement(_reactSearchInput2.default, { 'class': 'mt-3 form-control search-input', placeholder: 'Search..', onChange: this.searchUpdated, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 123
+                                    }
+                                }),
                                 _react2.default.createElement(
                                     _reactstrap.CardColumns,
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 109
+                                            lineNumber: 125
                                         }
                                     },
-                                    animals.map(function (animal) {
+                                    filteredAnimals.map(function (animal) {
 
                                         return _react2.default.createElement(
                                             'div',
                                             { key: animal.id, __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 113
+                                                    lineNumber: 129
                                                 }
                                             },
                                             _react2.default.createElement(
                                                 _reactstrap.Card,
                                                 { className: 'animal-card mt-3 ml-2 mb-2', __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 114
+                                                        lineNumber: 130
                                                     }
                                                 },
                                                 animal.imageurl === noImage ? noAnimalImage : _react2.default.createElement(_reactstrap.CardImg, { className: imageStyle + noAnimalImageStyle, top: true, width: '50%',
                                                     src: defaultImageUrl + animal.imageurl,
                                                     alt: 'Card animal image cap', __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 117
+                                                        lineNumber: 133
                                                     }
                                                 }),
                                                 _react2.default.createElement(
@@ -37588,14 +37606,14 @@ var AnimalRegistry = function (_Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 121
+                                                            lineNumber: 137
                                                         }
                                                     },
                                                     _react2.default.createElement(
                                                         _reactstrap.CardTitle,
                                                         { className: 'font-weight-bold', __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 122
+                                                                lineNumber: 138
                                                             }
                                                         },
                                                         ' ',
@@ -37606,7 +37624,7 @@ var AnimalRegistry = function (_Component) {
                                                         {
                                                             __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 123
+                                                                lineNumber: 139
                                                             }
                                                         },
                                                         ' ',
@@ -37617,7 +37635,7 @@ var AnimalRegistry = function (_Component) {
                                                         {
                                                             __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 124
+                                                                lineNumber: 140
                                                             }
                                                         },
                                                         'Po\u010Det: ',
@@ -37631,7 +37649,7 @@ var AnimalRegistry = function (_Component) {
                                                             color: 'btn btn-success',
                                                             onClick: _this3.toggle, __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 126
+                                                                lineNumber: 142
                                                             }
                                                         },
                                                         'Edit'
@@ -37642,7 +37660,7 @@ var AnimalRegistry = function (_Component) {
                                                                 return _this3.onDeleteSubmit(event, animal.id);
                                                             }, type: 'submit', color: 'danger', __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 132
+                                                                lineNumber: 148
                                                             }
                                                         },
                                                         'Delete'
@@ -37653,14 +37671,14 @@ var AnimalRegistry = function (_Component) {
                                                 _reactstrap.Modal,
                                                 { isOpen: _this3.state.modal, toggle: _this3.toggle, __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 137
+                                                        lineNumber: 153
                                                     }
                                                 },
                                                 _react2.default.createElement(
                                                     'button',
                                                     { className: 'close', style: { position: 'absolute', top: '15px', right: '15px' }, onClick: _this3.toggle, __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 138
+                                                            lineNumber: 154
                                                         }
                                                     },
                                                     '\xD7'
@@ -37671,7 +37689,7 @@ var AnimalRegistry = function (_Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 139
+                                                            lineNumber: 155
                                                         }
                                                     },
                                                     'Update the animal'
@@ -37680,7 +37698,7 @@ var AnimalRegistry = function (_Component) {
                                                     _reactstrap.ModalBody,
                                                     { className: 'mb-2', __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 140
+                                                            lineNumber: 156
                                                         }
                                                     },
                                                     _react2.default.createElement(
@@ -37689,21 +37707,21 @@ var AnimalRegistry = function (_Component) {
                                                                 return _this3.onPutSubmit(animal.id);
                                                             }, __source: {
                                                                 fileName: _jsxFileName,
-                                                                lineNumber: 141
+                                                                lineNumber: 157
                                                             }
                                                         },
                                                         _react2.default.createElement(
                                                             'div',
                                                             { className: 'form-group', __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 143
+                                                                    lineNumber: 159
                                                                 }
                                                             },
                                                             _react2.default.createElement(
                                                                 _reactstrap.Col,
                                                                 { md: { size: 8, order: 2 }, __source: {
                                                                         fileName: _jsxFileName,
-                                                                        lineNumber: 144
+                                                                        lineNumber: 160
                                                                     }
                                                                 },
                                                                 _react2.default.createElement(_reactstrap.Input, { placeholder: 'edit name',
@@ -37716,7 +37734,7 @@ var AnimalRegistry = function (_Component) {
                                                                     required: true,
                                                                     autoFocus: true, __source: {
                                                                         fileName: _jsxFileName,
-                                                                        lineNumber: 145
+                                                                        lineNumber: 161
                                                                     }
                                                                 })
                                                             )
@@ -37725,14 +37743,14 @@ var AnimalRegistry = function (_Component) {
                                                             'div',
                                                             { className: 'form-group', __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 155
+                                                                    lineNumber: 171
                                                                 }
                                                             },
                                                             _react2.default.createElement(
                                                                 _reactstrap.Col,
                                                                 { md: { size: 8, order: 2 }, __source: {
                                                                         fileName: _jsxFileName,
-                                                                        lineNumber: 157
+                                                                        lineNumber: 173
                                                                     }
                                                                 },
                                                                 _react2.default.createElement(_reactstrap.Input, { placeholder: 'edit latin name',
@@ -37745,7 +37763,7 @@ var AnimalRegistry = function (_Component) {
                                                                     },
                                                                     required: true, autoFocus: true, __source: {
                                                                         fileName: _jsxFileName,
-                                                                        lineNumber: 158
+                                                                        lineNumber: 174
                                                                     }
                                                                 })
                                                             )
@@ -37754,14 +37772,14 @@ var AnimalRegistry = function (_Component) {
                                                             'div',
                                                             { className: 'form-group', __source: {
                                                                     fileName: _jsxFileName,
-                                                                    lineNumber: 169
+                                                                    lineNumber: 185
                                                                 }
                                                             },
                                                             _react2.default.createElement(
                                                                 'div',
                                                                 { className: 'col-md-6 col-md-offset-4', __source: {
                                                                         fileName: _jsxFileName,
-                                                                        lineNumber: 170
+                                                                        lineNumber: 186
                                                                     }
                                                                 },
                                                                 _react2.default.createElement(
@@ -37771,7 +37789,7 @@ var AnimalRegistry = function (_Component) {
                                                                         className: 'align-self-center',
                                                                         onClick: _this3.toggle, __source: {
                                                                             fileName: _jsxFileName,
-                                                                            lineNumber: 171
+                                                                            lineNumber: 187
                                                                         }
                                                                     },
                                                                     'Update'
@@ -37790,7 +37808,7 @@ var AnimalRegistry = function (_Component) {
                     _react2.default.createElement(_Footer2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 192
+                            lineNumber: 208
                         }
                     })
                 );
@@ -37800,19 +37818,19 @@ var AnimalRegistry = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 196
+                            lineNumber: 212
                         }
                     },
                     _react2.default.createElement(_Navigation2.default, { logoutLink: 'true', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 197
+                            lineNumber: 213
                         }
                     }),
                     _react2.default.createElement(
                         _reactstrap.Container,
                         { className: 'mt-5', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 198
+                                lineNumber: 214
                             }
                         },
                         _react2.default.createElement(
@@ -37820,37 +37838,42 @@ var AnimalRegistry = function (_Component) {
                             {
                                 __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 199
+                                    lineNumber: 215
                                 }
                             },
                             _react2.default.createElement(
                                 _reactstrap.Col,
                                 { sm: '12', __source: {
                                         fileName: _jsxFileName,
-                                        lineNumber: 200
+                                        lineNumber: 216
                                     }
                                 },
+                                _react2.default.createElement(_reactSearchInput2.default, { className: 'mt-2 search-input', onChange: this.searchUpdated, __source: {
+                                        fileName: _jsxFileName,
+                                        lineNumber: 217
+                                    }
+                                }),
                                 _react2.default.createElement(
                                     _reactstrap.CardColumns,
                                     {
                                         __source: {
                                             fileName: _jsxFileName,
-                                            lineNumber: 201
+                                            lineNumber: 218
                                         }
                                     },
-                                    animals.map(function (animal) {
+                                    filteredAnimals.map(function (animal) {
                                         return _react2.default.createElement(
                                             _reactstrap.Card,
                                             { key: animal.id, className: 'animal-card mt-3 ml-2 mb-2', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 204
+                                                    lineNumber: 221
                                                 }
                                             },
                                             animal.imageurl === noImage ? noAnimalImage : _react2.default.createElement(_reactstrap.CardImg, { className: imageStyle + noAnimalImageStyle, top: true, width: '50%',
                                                 src: defaultImageUrl + animal.imageurl,
                                                 alt: 'Card animal image cap', __source: {
                                                     fileName: _jsxFileName,
-                                                    lineNumber: 207
+                                                    lineNumber: 224
                                                 }
                                             }),
                                             _react2.default.createElement(
@@ -37858,14 +37881,14 @@ var AnimalRegistry = function (_Component) {
                                                 {
                                                     __source: {
                                                         fileName: _jsxFileName,
-                                                        lineNumber: 211
+                                                        lineNumber: 228
                                                     }
                                                 },
                                                 _react2.default.createElement(
                                                     _reactstrap.CardTitle,
                                                     { className: 'font-weight-bold', __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 212
+                                                            lineNumber: 229
                                                         }
                                                     },
                                                     ' ',
@@ -37876,7 +37899,7 @@ var AnimalRegistry = function (_Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 213
+                                                            lineNumber: 230
                                                         }
                                                     },
                                                     ' ',
@@ -37887,7 +37910,7 @@ var AnimalRegistry = function (_Component) {
                                                     {
                                                         __source: {
                                                             fileName: _jsxFileName,
-                                                            lineNumber: 214
+                                                            lineNumber: 231
                                                         }
                                                     },
                                                     'Count: ',
@@ -37903,7 +37926,7 @@ var AnimalRegistry = function (_Component) {
                     _react2.default.createElement(_Footer2.default, {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 225
+                            lineNumber: 242
                         }
                     })
                 );
@@ -38075,10 +38098,6 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(44);
-
-var _axios2 = _interopRequireDefault(_axios);
-
 var _reactRouterDom = __webpack_require__(8);
 
 var _Navigation = __webpack_require__(6);
@@ -38187,7 +38206,7 @@ var EditAnimal = function (_Component) {
                     {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 69
+                            lineNumber: 68
                         }
                     },
                     'Loading.'
@@ -38195,7 +38214,7 @@ var EditAnimal = function (_Component) {
             } else if (this.state.status === "NOT_FOUND") {
                 return _react2.default.createElement(Redirect, { to: "/404", __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 72
+                        lineNumber: 71
                     }
                 });
             }
@@ -38204,20 +38223,20 @@ var EditAnimal = function (_Component) {
                 {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 75
+                        lineNumber: 74
                     }
                 },
                 _react2.default.createElement(_Navigation2.default, {
                     __source: {
                         fileName: _jsxFileName,
-                        lineNumber: 76
+                        lineNumber: 75
                     }
                 }),
                 _react2.default.createElement(
                     'h1',
                     { className: 'mt-2', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 77
+                            lineNumber: 76
                         }
                     },
                     'Update Animal'
@@ -38226,21 +38245,21 @@ var EditAnimal = function (_Component) {
                     'div',
                     { className: 'row', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 78
+                            lineNumber: 77
                         }
                     },
                     _react2.default.createElement(
                         'div',
                         { className: 'mt-2 col-md-2', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 79
+                                lineNumber: 78
                             }
                         },
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/animals', className: 'btn btn-success', __source: {
                                     fileName: _jsxFileName,
-                                    lineNumber: 80
+                                    lineNumber: 79
                                 }
                             },
                             'Zp\u011Bt'
@@ -38251,14 +38270,14 @@ var EditAnimal = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 83
+                            lineNumber: 82
                         }
                     },
                     _react2.default.createElement(
                         'label',
                         { id: 'name', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 84
+                                lineNumber: 83
                             }
                         },
                         'Name'
@@ -38269,7 +38288,7 @@ var EditAnimal = function (_Component) {
                         value: this.state.name,
                         onChange: this.handleNameChange, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 85
+                            lineNumber: 84
                         }
                     })
                 ),
@@ -38277,14 +38296,14 @@ var EditAnimal = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 92
+                            lineNumber: 91
                         }
                     },
                     _react2.default.createElement(
                         'label',
                         { id: 'latinname', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 93
+                                lineNumber: 92
                             }
                         },
                         'Latin name'
@@ -38293,7 +38312,7 @@ var EditAnimal = function (_Component) {
                         value: this.state.latinname,
                         onChange: this.handleLatinnameChange, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 94
+                            lineNumber: 93
                         }
                     })
                 ),
@@ -38301,14 +38320,14 @@ var EditAnimal = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 99
+                            lineNumber: 98
                         }
                     },
                     _react2.default.createElement(
                         'label',
                         { id: 'count', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 100
+                                lineNumber: 99
                             }
                         },
                         'Count'
@@ -38317,7 +38336,7 @@ var EditAnimal = function (_Component) {
                         value: this.state.count,
                         onChange: this.handleCountChange, __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 101
+                            lineNumber: 100
                         }
                     })
                 ),
@@ -38325,7 +38344,7 @@ var EditAnimal = function (_Component) {
                     'div',
                     { className: 'form-group', __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 106
+                            lineNumber: 105
                         }
                     },
                     _react2.default.createElement(
@@ -38334,7 +38353,7 @@ var EditAnimal = function (_Component) {
                                 return _this4.handleSubmit(event);
                             }, type: 'submit', className: 'btn btn-success', __source: {
                                 fileName: _jsxFileName,
-                                lineNumber: 107
+                                lineNumber: 106
                             }
                         },
                         'Update'
@@ -38351,26 +38370,6 @@ exports.default = EditAnimal;
 
 /***/ }),
 /* 127 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38623,6 +38622,1328 @@ var NewAnimal = function (_Component) {
 }(_react.Component);
 
 exports.default = NewAnimal;
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createFilter = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(1);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _util = __webpack_require__(144);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Search = function (_Component) {
+  _inherits(Search, _Component);
+
+  function Search(props) {
+    _classCallCheck(this, Search);
+
+    var _this = _possibleConstructorReturn(this, (Search.__proto__ || Object.getPrototypeOf(Search)).call(this, props));
+
+    _this.state = {
+      searchTerm: _this.props.value || ''
+    };
+    _this.updateSearch = _this.updateSearch.bind(_this);
+    _this.filter = _this.filter.bind(_this);
+    return _this;
+  }
+
+  _createClass(Search, [{
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (typeof nextProps.value !== 'undefined' && nextProps.value !== this.props.value) {
+        var e = {
+          target: {
+            value: nextProps.value
+          }
+        };
+        this.updateSearch(e);
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          className = _props.className,
+          onChange = _props.onChange,
+          caseSensitive = _props.caseSensitive,
+          sortResults = _props.sortResults,
+          throttle = _props.throttle,
+          filterKeys = _props.filterKeys,
+          value = _props.value,
+          fuzzy = _props.fuzzy,
+          inputClassName = _props.inputClassName,
+          inputProps = _objectWithoutProperties(_props, ['className', 'onChange', 'caseSensitive', 'sortResults', 'throttle', 'filterKeys', 'value', 'fuzzy', 'inputClassName']); // eslint-disable-line no-unused-vars
+
+
+      inputProps.type = inputProps.type || 'search';
+      inputProps.value = this.state.searchTerm;
+      inputProps.onChange = this.updateSearch;
+      inputProps.className = inputClassName;
+      inputProps.placeholder = inputProps.placeholder || 'Search';
+      return _react2.default.createElement(
+        'div',
+        { className: className },
+        _react2.default.createElement('input', inputProps)
+      );
+    }
+  }, {
+    key: 'updateSearch',
+    value: function updateSearch(e) {
+      var _this2 = this;
+
+      var searchTerm = e.target.value;
+      this.setState({
+        searchTerm: searchTerm
+      }, function () {
+        if (_this2._throttleTimeout) {
+          clearTimeout(_this2._throttleTimeout);
+        }
+
+        _this2._throttleTimeout = setTimeout(function () {
+          return _this2.props.onChange(searchTerm);
+        }, _this2.props.throttle);
+      });
+    }
+  }, {
+    key: 'filter',
+    value: function filter(keys) {
+      var _props2 = this.props,
+          filterKeys = _props2.filterKeys,
+          caseSensitive = _props2.caseSensitive,
+          fuzzy = _props2.fuzzy,
+          sortResults = _props2.sortResults;
+
+      return (0, _util.createFilter)(this.state.searchTerm, keys || filterKeys, {
+        caseSensitive: caseSensitive,
+        fuzzy: fuzzy,
+        sortResults: sortResults
+      });
+    }
+  }]);
+
+  return Search;
+}(_react.Component);
+
+Search.defaultProps = {
+  className: '',
+  onChange: function onChange() {},
+
+  caseSensitive: false,
+  fuzzy: false,
+  throttle: 200
+};
+
+Search.propTypes = {
+  className: _propTypes2.default.string,
+  inputClassName: _propTypes2.default.string,
+  onChange: _propTypes2.default.func,
+  caseSensitive: _propTypes2.default.bool,
+  sortResults: _propTypes2.default.bool,
+  fuzzy: _propTypes2.default.bool,
+  throttle: _propTypes2.default.number,
+  filterKeys: _propTypes2.default.oneOf([_propTypes2.default.string, _propTypes2.default.arrayOf(_propTypes2.default.string)]),
+  value: _propTypes2.default.string
+};
+
+exports.default = Search;
+exports.createFilter = _util.createFilter;
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getValuesForKey = getValuesForKey;
+exports.searchStrings = searchStrings;
+exports.createFilter = createFilter;
+
+var _fuse = __webpack_require__(145);
+
+var _fuse2 = _interopRequireDefault(_fuse);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function flatten(array) {
+  return array.reduce(function (flat, toFlatten) {
+    return flat.concat(Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten);
+  }, []);
+}
+
+function getValuesForKey(key, item) {
+  var keys = key.split('.');
+  var results = [item];
+  keys.forEach(function (_key) {
+    var tmp = [];
+    results.forEach(function (result) {
+      if (result) {
+        if (result instanceof Array) {
+          var index = parseInt(_key, 10);
+          if (!isNaN(index)) {
+            return tmp.push(result[index]);
+          }
+          result.forEach(function (res) {
+            tmp.push(res[_key]);
+          });
+        } else if (result && typeof result.get === 'function') {
+          tmp.push(result.get(_key));
+        } else {
+          tmp.push(result[_key]);
+        }
+      }
+    });
+
+    results = tmp;
+  });
+
+  // Support arrays and Immutable lists.
+  results = results.map(function (r) {
+    return r && r.push && r.toArray ? r.toArray() : r;
+  });
+  results = flatten(results);
+
+  return results.filter(function (r) {
+    return typeof r === 'string' || typeof r === 'number';
+  });
+}
+
+function searchStrings(strings, term) {
+  var _ref = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {},
+      caseSensitive = _ref.caseSensitive,
+      fuzzy = _ref.fuzzy,
+      sortResults = _ref.sortResults,
+      exactMatch = _ref.exactMatch;
+
+  strings = strings.map(function (e) {
+    return e.toString();
+  });
+
+  try {
+    if (fuzzy) {
+      if (typeof strings.toJS === 'function') {
+        strings = strings.toJS();
+      }
+      var fuse = new _fuse2.default(strings.map(function (s) {
+        return { id: s };
+      }), { keys: ['id'], id: 'id', caseSensitive: caseSensitive, shouldSort: sortResults });
+      return fuse.search(term).length;
+    }
+    return strings.some(function (value) {
+      try {
+        if (!caseSensitive) {
+          value = value.toLowerCase();
+        }
+        if (exactMatch) {
+          term = new RegExp('^' + term + '$', 'i');
+        }
+        if (value && value.search(term) !== -1) {
+          return true;
+        }
+        return false;
+      } catch (e) {
+        return false;
+      }
+    });
+  } catch (e) {
+    return false;
+  }
+}
+
+function createFilter(term, keys) {
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+  return function (item) {
+    if (term === '') {
+      return true;
+    }
+
+    if (!options.caseSensitive) {
+      term = term.toLowerCase();
+    }
+
+    var terms = term.split(' ');
+
+    if (!keys) {
+      return terms.every(function (term) {
+        return searchStrings([item], term, options);
+      });
+    }
+
+    if (typeof keys === 'string') {
+      keys = [keys];
+    }
+
+    return terms.every(function (term) {
+      // allow search in specific fields with the syntax `field:search`
+      var currentKeys = void 0;
+      if (term.indexOf(':') !== -1) {
+        var searchedField = term.split(':')[0];
+        term = term.split(':')[1];
+        currentKeys = keys.filter(function (key) {
+          return key.toLowerCase().indexOf(searchedField) > -1;
+        });
+      } else {
+        currentKeys = keys;
+      }
+
+      return currentKeys.some(function (key) {
+        var values = getValuesForKey(key, item);
+        return searchStrings(values, term, options);
+      });
+    });
+  };
+}
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * Fuse.js v3.2.0 - Lightweight fuzzy-search (http://fusejs.io)
+ * 
+ * Copyright (c) 2012-2017 Kirollos Risk (http://kiro.me)
+ * All Rights Reserved. Apache Software License 2.0
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define("Fuse", [], factory);
+	else if(typeof exports === 'object')
+		exports["Fuse"] = factory();
+	else
+		root["Fuse"] = factory();
+})(this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (obj) {
+  return Object.prototype.toString.call(obj) === '[object Array]';
+};
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var bitapRegexSearch = __webpack_require__(5);
+var bitapSearch = __webpack_require__(7);
+var patternAlphabet = __webpack_require__(4);
+
+var Bitap = function () {
+  function Bitap(pattern, _ref) {
+    var _ref$location = _ref.location,
+        location = _ref$location === undefined ? 0 : _ref$location,
+        _ref$distance = _ref.distance,
+        distance = _ref$distance === undefined ? 100 : _ref$distance,
+        _ref$threshold = _ref.threshold,
+        threshold = _ref$threshold === undefined ? 0.6 : _ref$threshold,
+        _ref$maxPatternLength = _ref.maxPatternLength,
+        maxPatternLength = _ref$maxPatternLength === undefined ? 32 : _ref$maxPatternLength,
+        _ref$isCaseSensitive = _ref.isCaseSensitive,
+        isCaseSensitive = _ref$isCaseSensitive === undefined ? false : _ref$isCaseSensitive,
+        _ref$tokenSeparator = _ref.tokenSeparator,
+        tokenSeparator = _ref$tokenSeparator === undefined ? / +/g : _ref$tokenSeparator,
+        _ref$findAllMatches = _ref.findAllMatches,
+        findAllMatches = _ref$findAllMatches === undefined ? false : _ref$findAllMatches,
+        _ref$minMatchCharLeng = _ref.minMatchCharLength,
+        minMatchCharLength = _ref$minMatchCharLeng === undefined ? 1 : _ref$minMatchCharLeng;
+
+    _classCallCheck(this, Bitap);
+
+    this.options = {
+      location: location,
+      distance: distance,
+      threshold: threshold,
+      maxPatternLength: maxPatternLength,
+      isCaseSensitive: isCaseSensitive,
+      tokenSeparator: tokenSeparator,
+      findAllMatches: findAllMatches,
+      minMatchCharLength: minMatchCharLength
+    };
+
+    this.pattern = this.options.isCaseSensitive ? pattern : pattern.toLowerCase();
+
+    if (this.pattern.length <= maxPatternLength) {
+      this.patternAlphabet = patternAlphabet(this.pattern);
+    }
+  }
+
+  _createClass(Bitap, [{
+    key: 'search',
+    value: function search(text) {
+      if (!this.options.isCaseSensitive) {
+        text = text.toLowerCase();
+      }
+
+      // Exact match
+      if (this.pattern === text) {
+        return {
+          isMatch: true,
+          score: 0,
+          matchedIndices: [[0, text.length - 1]]
+        };
+      }
+
+      // When pattern length is greater than the machine word length, just do a a regex comparison
+      var _options = this.options,
+          maxPatternLength = _options.maxPatternLength,
+          tokenSeparator = _options.tokenSeparator;
+
+      if (this.pattern.length > maxPatternLength) {
+        return bitapRegexSearch(text, this.pattern, tokenSeparator);
+      }
+
+      // Otherwise, use Bitap algorithm
+      var _options2 = this.options,
+          location = _options2.location,
+          distance = _options2.distance,
+          threshold = _options2.threshold,
+          findAllMatches = _options2.findAllMatches,
+          minMatchCharLength = _options2.minMatchCharLength;
+
+      return bitapSearch(text, this.pattern, this.patternAlphabet, {
+        location: location,
+        distance: distance,
+        threshold: threshold,
+        findAllMatches: findAllMatches,
+        minMatchCharLength: minMatchCharLength
+      });
+    }
+  }]);
+
+  return Bitap;
+}();
+
+// let x = new Bitap("od mn war", {})
+// let result = x.search("Old Man's War")
+// console.log(result)
+
+module.exports = Bitap;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isArray = __webpack_require__(0);
+
+var deepValue = function deepValue(obj, path, list) {
+  if (!path) {
+    // If there's no path left, we've gotten to the object we care about.
+    list.push(obj);
+  } else {
+    var dotIndex = path.indexOf('.');
+    var firstSegment = path;
+    var remaining = null;
+
+    if (dotIndex !== -1) {
+      firstSegment = path.slice(0, dotIndex);
+      remaining = path.slice(dotIndex + 1);
+    }
+
+    var value = obj[firstSegment];
+
+    if (value !== null && value !== undefined) {
+      if (!remaining && (typeof value === 'string' || typeof value === 'number')) {
+        list.push(value.toString());
+      } else if (isArray(value)) {
+        // Search each item in the array.
+        for (var i = 0, len = value.length; i < len; i += 1) {
+          deepValue(value[i], remaining, list);
+        }
+      } else if (remaining) {
+        // An object. Recurse further.
+        deepValue(value, remaining, list);
+      }
+    }
+  }
+
+  return list;
+};
+
+module.exports = function (obj, path) {
+  return deepValue(obj, path, []);
+};
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function () {
+  var matchmask = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  var minMatchCharLength = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+
+  var matchedIndices = [];
+  var start = -1;
+  var end = -1;
+  var i = 0;
+
+  for (var len = matchmask.length; i < len; i += 1) {
+    var match = matchmask[i];
+    if (match && start === -1) {
+      start = i;
+    } else if (!match && start !== -1) {
+      end = i - 1;
+      if (end - start + 1 >= minMatchCharLength) {
+        matchedIndices.push([start, end]);
+      }
+      start = -1;
+    }
+  }
+
+  // (i-1 - start) + 1 => i - start
+  if (matchmask[i - 1] && i - start >= minMatchCharLength) {
+    matchedIndices.push([start, i - 1]);
+  }
+
+  return matchedIndices;
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (pattern) {
+  var mask = {};
+  var len = pattern.length;
+
+  for (var i = 0; i < len; i += 1) {
+    mask[pattern.charAt(i)] = 0;
+  }
+
+  for (var _i = 0; _i < len; _i += 1) {
+    mask[pattern.charAt(_i)] |= 1 << len - _i - 1;
+  }
+
+  return mask;
+};
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var SPECIAL_CHARS_REGEX = /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;
+
+module.exports = function (text, pattern) {
+  var tokenSeparator = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : / +/g;
+
+  var regex = new RegExp(pattern.replace(SPECIAL_CHARS_REGEX, '\\$&').replace(tokenSeparator, '|'));
+  var matches = text.match(regex);
+  var isMatch = !!matches;
+  var matchedIndices = [];
+
+  if (isMatch) {
+    for (var i = 0, matchesLen = matches.length; i < matchesLen; i += 1) {
+      var match = matches[i];
+      matchedIndices.push([text.indexOf(match), match.length - 1]);
+    }
+  }
+
+  return {
+    // TODO: revisit this score
+    score: isMatch ? 0.5 : 1,
+    isMatch: isMatch,
+    matchedIndices: matchedIndices
+  };
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function (pattern, _ref) {
+  var _ref$errors = _ref.errors,
+      errors = _ref$errors === undefined ? 0 : _ref$errors,
+      _ref$currentLocation = _ref.currentLocation,
+      currentLocation = _ref$currentLocation === undefined ? 0 : _ref$currentLocation,
+      _ref$expectedLocation = _ref.expectedLocation,
+      expectedLocation = _ref$expectedLocation === undefined ? 0 : _ref$expectedLocation,
+      _ref$distance = _ref.distance,
+      distance = _ref$distance === undefined ? 100 : _ref$distance;
+
+  var accuracy = errors / pattern.length;
+  var proximity = Math.abs(expectedLocation - currentLocation);
+
+  if (!distance) {
+    // Dodge divide by zero error.
+    return proximity ? 1.0 : accuracy;
+  }
+
+  return accuracy + proximity / distance;
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var bitapScore = __webpack_require__(6);
+var matchedIndices = __webpack_require__(3);
+
+module.exports = function (text, pattern, patternAlphabet, _ref) {
+  var _ref$location = _ref.location,
+      location = _ref$location === undefined ? 0 : _ref$location,
+      _ref$distance = _ref.distance,
+      distance = _ref$distance === undefined ? 100 : _ref$distance,
+      _ref$threshold = _ref.threshold,
+      threshold = _ref$threshold === undefined ? 0.6 : _ref$threshold,
+      _ref$findAllMatches = _ref.findAllMatches,
+      findAllMatches = _ref$findAllMatches === undefined ? false : _ref$findAllMatches,
+      _ref$minMatchCharLeng = _ref.minMatchCharLength,
+      minMatchCharLength = _ref$minMatchCharLeng === undefined ? 1 : _ref$minMatchCharLeng;
+
+  var expectedLocation = location;
+  // Set starting location at beginning text and initialize the alphabet.
+  var textLen = text.length;
+  // Highest score beyond which we give up.
+  var currentThreshold = threshold;
+  // Is there a nearby exact match? (speedup)
+  var bestLocation = text.indexOf(pattern, expectedLocation);
+
+  var patternLen = pattern.length;
+
+  // a mask of the matches
+  var matchMask = [];
+  for (var i = 0; i < textLen; i += 1) {
+    matchMask[i] = 0;
+  }
+
+  if (bestLocation !== -1) {
+    var score = bitapScore(pattern, {
+      errors: 0,
+      currentLocation: bestLocation,
+      expectedLocation: expectedLocation,
+      distance: distance
+    });
+    currentThreshold = Math.min(score, currentThreshold);
+
+    // What about in the other direction? (speed up)
+    bestLocation = text.lastIndexOf(pattern, expectedLocation + patternLen);
+
+    if (bestLocation !== -1) {
+      var _score = bitapScore(pattern, {
+        errors: 0,
+        currentLocation: bestLocation,
+        expectedLocation: expectedLocation,
+        distance: distance
+      });
+      currentThreshold = Math.min(_score, currentThreshold);
+    }
+  }
+
+  // Reset the best location
+  bestLocation = -1;
+
+  var lastBitArr = [];
+  var finalScore = 1;
+  var binMax = patternLen + textLen;
+
+  var mask = 1 << patternLen - 1;
+
+  for (var _i = 0; _i < patternLen; _i += 1) {
+    // Scan for the best match; each iteration allows for one more error.
+    // Run a binary search to determine how far from the match location we can stray
+    // at this error level.
+    var binMin = 0;
+    var binMid = binMax;
+
+    while (binMin < binMid) {
+      var _score3 = bitapScore(pattern, {
+        errors: _i,
+        currentLocation: expectedLocation + binMid,
+        expectedLocation: expectedLocation,
+        distance: distance
+      });
+
+      if (_score3 <= currentThreshold) {
+        binMin = binMid;
+      } else {
+        binMax = binMid;
+      }
+
+      binMid = Math.floor((binMax - binMin) / 2 + binMin);
+    }
+
+    // Use the result from this iteration as the maximum for the next.
+    binMax = binMid;
+
+    var start = Math.max(1, expectedLocation - binMid + 1);
+    var finish = findAllMatches ? textLen : Math.min(expectedLocation + binMid, textLen) + patternLen;
+
+    // Initialize the bit array
+    var bitArr = Array(finish + 2);
+
+    bitArr[finish + 1] = (1 << _i) - 1;
+
+    for (var j = finish; j >= start; j -= 1) {
+      var currentLocation = j - 1;
+      var charMatch = patternAlphabet[text.charAt(currentLocation)];
+
+      if (charMatch) {
+        matchMask[currentLocation] = 1;
+      }
+
+      // First pass: exact match
+      bitArr[j] = (bitArr[j + 1] << 1 | 1) & charMatch;
+
+      // Subsequent passes: fuzzy match
+      if (_i !== 0) {
+        bitArr[j] |= (lastBitArr[j + 1] | lastBitArr[j]) << 1 | 1 | lastBitArr[j + 1];
+      }
+
+      if (bitArr[j] & mask) {
+        finalScore = bitapScore(pattern, {
+          errors: _i,
+          currentLocation: currentLocation,
+          expectedLocation: expectedLocation,
+          distance: distance
+        });
+
+        // This match will almost certainly be better than any existing match.
+        // But check anyway.
+        if (finalScore <= currentThreshold) {
+          // Indeed it is
+          currentThreshold = finalScore;
+          bestLocation = currentLocation;
+
+          // Already passed `loc`, downhill from here on in.
+          if (bestLocation <= expectedLocation) {
+            break;
+          }
+
+          // When passing `bestLocation`, don't exceed our current distance from `expectedLocation`.
+          start = Math.max(1, 2 * expectedLocation - bestLocation);
+        }
+      }
+    }
+
+    // No hope for a (better) match at greater error levels.
+    var _score2 = bitapScore(pattern, {
+      errors: _i + 1,
+      currentLocation: expectedLocation,
+      expectedLocation: expectedLocation,
+      distance: distance
+    });
+
+    if (_score2 > currentThreshold) {
+      break;
+    }
+
+    lastBitArr = bitArr;
+  }
+
+  // Count exact matches (those with a score of 0) to be "almost" exact
+  return {
+    isMatch: bestLocation >= 0,
+    score: finalScore === 0 ? 0.001 : finalScore,
+    matchedIndices: matchedIndices(matchMask, minMatchCharLength)
+  };
+};
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Bitap = __webpack_require__(1);
+var deepValue = __webpack_require__(2);
+var isArray = __webpack_require__(0);
+
+var Fuse = function () {
+  function Fuse(list, _ref) {
+    var _ref$location = _ref.location,
+        location = _ref$location === undefined ? 0 : _ref$location,
+        _ref$distance = _ref.distance,
+        distance = _ref$distance === undefined ? 100 : _ref$distance,
+        _ref$threshold = _ref.threshold,
+        threshold = _ref$threshold === undefined ? 0.6 : _ref$threshold,
+        _ref$maxPatternLength = _ref.maxPatternLength,
+        maxPatternLength = _ref$maxPatternLength === undefined ? 32 : _ref$maxPatternLength,
+        _ref$caseSensitive = _ref.caseSensitive,
+        caseSensitive = _ref$caseSensitive === undefined ? false : _ref$caseSensitive,
+        _ref$tokenSeparator = _ref.tokenSeparator,
+        tokenSeparator = _ref$tokenSeparator === undefined ? / +/g : _ref$tokenSeparator,
+        _ref$findAllMatches = _ref.findAllMatches,
+        findAllMatches = _ref$findAllMatches === undefined ? false : _ref$findAllMatches,
+        _ref$minMatchCharLeng = _ref.minMatchCharLength,
+        minMatchCharLength = _ref$minMatchCharLeng === undefined ? 1 : _ref$minMatchCharLeng,
+        _ref$id = _ref.id,
+        id = _ref$id === undefined ? null : _ref$id,
+        _ref$keys = _ref.keys,
+        keys = _ref$keys === undefined ? [] : _ref$keys,
+        _ref$shouldSort = _ref.shouldSort,
+        shouldSort = _ref$shouldSort === undefined ? true : _ref$shouldSort,
+        _ref$getFn = _ref.getFn,
+        getFn = _ref$getFn === undefined ? deepValue : _ref$getFn,
+        _ref$sortFn = _ref.sortFn,
+        sortFn = _ref$sortFn === undefined ? function (a, b) {
+      return a.score - b.score;
+    } : _ref$sortFn,
+        _ref$tokenize = _ref.tokenize,
+        tokenize = _ref$tokenize === undefined ? false : _ref$tokenize,
+        _ref$matchAllTokens = _ref.matchAllTokens,
+        matchAllTokens = _ref$matchAllTokens === undefined ? false : _ref$matchAllTokens,
+        _ref$includeMatches = _ref.includeMatches,
+        includeMatches = _ref$includeMatches === undefined ? false : _ref$includeMatches,
+        _ref$includeScore = _ref.includeScore,
+        includeScore = _ref$includeScore === undefined ? false : _ref$includeScore,
+        _ref$verbose = _ref.verbose,
+        verbose = _ref$verbose === undefined ? false : _ref$verbose;
+
+    _classCallCheck(this, Fuse);
+
+    this.options = {
+      location: location,
+      distance: distance,
+      threshold: threshold,
+      maxPatternLength: maxPatternLength,
+      isCaseSensitive: caseSensitive,
+      tokenSeparator: tokenSeparator,
+      findAllMatches: findAllMatches,
+      minMatchCharLength: minMatchCharLength,
+      id: id,
+      keys: keys,
+      includeMatches: includeMatches,
+      includeScore: includeScore,
+      shouldSort: shouldSort,
+      getFn: getFn,
+      sortFn: sortFn,
+      verbose: verbose,
+      tokenize: tokenize,
+      matchAllTokens: matchAllTokens
+    };
+
+    this.setCollection(list);
+  }
+
+  _createClass(Fuse, [{
+    key: 'setCollection',
+    value: function setCollection(list) {
+      this.list = list;
+      return list;
+    }
+  }, {
+    key: 'search',
+    value: function search(pattern) {
+      this._log('---------\nSearch pattern: "' + pattern + '"');
+
+      var _prepareSearchers2 = this._prepareSearchers(pattern),
+          tokenSearchers = _prepareSearchers2.tokenSearchers,
+          fullSearcher = _prepareSearchers2.fullSearcher;
+
+      var _search2 = this._search(tokenSearchers, fullSearcher),
+          weights = _search2.weights,
+          results = _search2.results;
+
+      this._computeScore(weights, results);
+
+      if (this.options.shouldSort) {
+        this._sort(results);
+      }
+
+      return this._format(results);
+    }
+  }, {
+    key: '_prepareSearchers',
+    value: function _prepareSearchers() {
+      var pattern = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      var tokenSearchers = [];
+
+      if (this.options.tokenize) {
+        // Tokenize on the separator
+        var tokens = pattern.split(this.options.tokenSeparator);
+        for (var i = 0, len = tokens.length; i < len; i += 1) {
+          tokenSearchers.push(new Bitap(tokens[i], this.options));
+        }
+      }
+
+      var fullSearcher = new Bitap(pattern, this.options);
+
+      return { tokenSearchers: tokenSearchers, fullSearcher: fullSearcher };
+    }
+  }, {
+    key: '_search',
+    value: function _search() {
+      var tokenSearchers = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      var fullSearcher = arguments[1];
+
+      var list = this.list;
+      var resultMap = {};
+      var results = [];
+
+      // Check the first item in the list, if it's a string, then we assume
+      // that every item in the list is also a string, and thus it's a flattened array.
+      if (typeof list[0] === 'string') {
+        // Iterate over every item
+        for (var i = 0, len = list.length; i < len; i += 1) {
+          this._analyze({
+            key: '',
+            value: list[i],
+            record: i,
+            index: i
+          }, {
+            resultMap: resultMap,
+            results: results,
+            tokenSearchers: tokenSearchers,
+            fullSearcher: fullSearcher
+          });
+        }
+
+        return { weights: null, results: results };
+      }
+
+      // Otherwise, the first item is an Object (hopefully), and thus the searching
+      // is done on the values of the keys of each item.
+      var weights = {};
+      for (var _i = 0, _len = list.length; _i < _len; _i += 1) {
+        var item = list[_i];
+        // Iterate over every key
+        for (var j = 0, keysLen = this.options.keys.length; j < keysLen; j += 1) {
+          var key = this.options.keys[j];
+          if (typeof key !== 'string') {
+            weights[key.name] = {
+              weight: 1 - key.weight || 1
+            };
+            if (key.weight <= 0 || key.weight > 1) {
+              throw new Error('Key weight has to be > 0 and <= 1');
+            }
+            key = key.name;
+          } else {
+            weights[key] = {
+              weight: 1
+            };
+          }
+
+          this._analyze({
+            key: key,
+            value: this.options.getFn(item, key),
+            record: item,
+            index: _i
+          }, {
+            resultMap: resultMap,
+            results: results,
+            tokenSearchers: tokenSearchers,
+            fullSearcher: fullSearcher
+          });
+        }
+      }
+
+      return { weights: weights, results: results };
+    }
+  }, {
+    key: '_analyze',
+    value: function _analyze(_ref2, _ref3) {
+      var key = _ref2.key,
+          _ref2$arrayIndex = _ref2.arrayIndex,
+          arrayIndex = _ref2$arrayIndex === undefined ? -1 : _ref2$arrayIndex,
+          value = _ref2.value,
+          record = _ref2.record,
+          index = _ref2.index;
+      var _ref3$tokenSearchers = _ref3.tokenSearchers,
+          tokenSearchers = _ref3$tokenSearchers === undefined ? [] : _ref3$tokenSearchers,
+          _ref3$fullSearcher = _ref3.fullSearcher,
+          fullSearcher = _ref3$fullSearcher === undefined ? [] : _ref3$fullSearcher,
+          _ref3$resultMap = _ref3.resultMap,
+          resultMap = _ref3$resultMap === undefined ? {} : _ref3$resultMap,
+          _ref3$results = _ref3.results,
+          results = _ref3$results === undefined ? [] : _ref3$results;
+
+      // Check if the texvaluet can be searched
+      if (value === undefined || value === null) {
+        return;
+      }
+
+      var exists = false;
+      var averageScore = -1;
+      var numTextMatches = 0;
+
+      if (typeof value === 'string') {
+        this._log('\nKey: ' + (key === '' ? '-' : key));
+
+        var mainSearchResult = fullSearcher.search(value);
+        this._log('Full text: "' + value + '", score: ' + mainSearchResult.score);
+
+        if (this.options.tokenize) {
+          var words = value.split(this.options.tokenSeparator);
+          var scores = [];
+
+          for (var i = 0; i < tokenSearchers.length; i += 1) {
+            var tokenSearcher = tokenSearchers[i];
+
+            this._log('\nPattern: "' + tokenSearcher.pattern + '"');
+
+            // let tokenScores = []
+            var hasMatchInText = false;
+
+            for (var j = 0; j < words.length; j += 1) {
+              var word = words[j];
+              var tokenSearchResult = tokenSearcher.search(word);
+              var obj = {};
+              if (tokenSearchResult.isMatch) {
+                obj[word] = tokenSearchResult.score;
+                exists = true;
+                hasMatchInText = true;
+                scores.push(tokenSearchResult.score);
+              } else {
+                obj[word] = 1;
+                if (!this.options.matchAllTokens) {
+                  scores.push(1);
+                }
+              }
+              this._log('Token: "' + word + '", score: ' + obj[word]);
+              // tokenScores.push(obj)
+            }
+
+            if (hasMatchInText) {
+              numTextMatches += 1;
+            }
+          }
+
+          averageScore = scores[0];
+          var scoresLen = scores.length;
+          for (var _i2 = 1; _i2 < scoresLen; _i2 += 1) {
+            averageScore += scores[_i2];
+          }
+          averageScore = averageScore / scoresLen;
+
+          this._log('Token score average:', averageScore);
+        }
+
+        var finalScore = mainSearchResult.score;
+        if (averageScore > -1) {
+          finalScore = (finalScore + averageScore) / 2;
+        }
+
+        this._log('Score average:', finalScore);
+
+        var checkTextMatches = this.options.tokenize && this.options.matchAllTokens ? numTextMatches >= tokenSearchers.length : true;
+
+        this._log('\nCheck Matches: ' + checkTextMatches);
+
+        // If a match is found, add the item to <rawResults>, including its score
+        if ((exists || mainSearchResult.isMatch) && checkTextMatches) {
+          // Check if the item already exists in our results
+          var existingResult = resultMap[index];
+          if (existingResult) {
+            // Use the lowest score
+            // existingResult.score, bitapResult.score
+            existingResult.output.push({
+              key: key,
+              arrayIndex: arrayIndex,
+              value: value,
+              score: finalScore,
+              matchedIndices: mainSearchResult.matchedIndices
+            });
+          } else {
+            // Add it to the raw result list
+            resultMap[index] = {
+              item: record,
+              output: [{
+                key: key,
+                arrayIndex: arrayIndex,
+                value: value,
+                score: finalScore,
+                matchedIndices: mainSearchResult.matchedIndices
+              }]
+            };
+
+            results.push(resultMap[index]);
+          }
+        }
+      } else if (isArray(value)) {
+        for (var _i3 = 0, len = value.length; _i3 < len; _i3 += 1) {
+          this._analyze({
+            key: key,
+            arrayIndex: _i3,
+            value: value[_i3],
+            record: record,
+            index: index
+          }, {
+            resultMap: resultMap,
+            results: results,
+            tokenSearchers: tokenSearchers,
+            fullSearcher: fullSearcher
+          });
+        }
+      }
+    }
+  }, {
+    key: '_computeScore',
+    value: function _computeScore(weights, results) {
+      this._log('\n\nComputing score:\n');
+
+      for (var i = 0, len = results.length; i < len; i += 1) {
+        var output = results[i].output;
+        var scoreLen = output.length;
+
+        var totalScore = 0;
+        var bestScore = 1;
+
+        for (var j = 0; j < scoreLen; j += 1) {
+          var weight = weights ? weights[output[j].key].weight : 1;
+          var score = weight === 1 ? output[j].score : output[j].score || 0.001;
+          var nScore = score * weight;
+
+          if (weight !== 1) {
+            bestScore = Math.min(bestScore, nScore);
+          } else {
+            output[j].nScore = nScore;
+            totalScore += nScore;
+          }
+        }
+
+        results[i].score = bestScore === 1 ? totalScore / scoreLen : bestScore;
+
+        this._log(results[i]);
+      }
+    }
+  }, {
+    key: '_sort',
+    value: function _sort(results) {
+      this._log('\n\nSorting....');
+      results.sort(this.options.sortFn);
+    }
+  }, {
+    key: '_format',
+    value: function _format(results) {
+      var finalOutput = [];
+
+      this._log('\n\nOutput:\n\n', JSON.stringify(results));
+
+      var transformers = [];
+
+      if (this.options.includeMatches) {
+        transformers.push(function (result, data) {
+          var output = result.output;
+          data.matches = [];
+
+          for (var i = 0, len = output.length; i < len; i += 1) {
+            var item = output[i];
+
+            if (item.matchedIndices.length === 0) {
+              continue;
+            }
+
+            var obj = {
+              indices: item.matchedIndices,
+              value: item.value
+            };
+            if (item.key) {
+              obj.key = item.key;
+            }
+            if (item.hasOwnProperty('arrayIndex') && item.arrayIndex > -1) {
+              obj.arrayIndex = item.arrayIndex;
+            }
+            data.matches.push(obj);
+          }
+        });
+      }
+
+      if (this.options.includeScore) {
+        transformers.push(function (result, data) {
+          data.score = result.score;
+        });
+      }
+
+      for (var i = 0, len = results.length; i < len; i += 1) {
+        var result = results[i];
+
+        if (this.options.id) {
+          result.item = this.options.getFn(result.item, this.options.id)[0];
+        }
+
+        if (!transformers.length) {
+          finalOutput.push(result.item);
+          continue;
+        }
+
+        var data = {
+          item: result.item
+        };
+
+        for (var j = 0, _len2 = transformers.length; j < _len2; j += 1) {
+          transformers[j](result, data);
+        }
+
+        finalOutput.push(data);
+      }
+
+      return finalOutput;
+    }
+  }, {
+    key: '_log',
+    value: function _log() {
+      if (this.options.verbose) {
+        var _console;
+
+        (_console = console).log.apply(_console, arguments);
+      }
+    }
+  }]);
+
+  return Fuse;
+}();
+
+module.exports = Fuse;
+
+/***/ })
+/******/ ]);
+});
+//# sourceMappingURL=fuse.js.map
 
 /***/ })
 /******/ ]);
