@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet"  href="{{ mix('css/app.css')}}">
+    <link rel="stylesheet"  href="{{mix('/dist/bundle.css')}}">>
     <title>Zoo App</title>
 </head>
 <body>
 <div id="app"></div>
 
-{{--<script src="{{ass http://localhost:8080/js/bundle.js"></script>--}}
-<script src="{{ mix('js/app.js')}}"></script>
+<script src="{{mix('/dist/bundle.js')}}"></script>
+{{--<script src="{{ mix('dist/app.js')}}"></script>--}}
 
 </body>
 </html>

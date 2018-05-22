@@ -46,13 +46,6 @@ class AuthController extends Controller
         Auth::logout();
 
     }
-    protected function authenticated(Request $request, $user)
-    {
-
-        $request->session()->put('name', $user->name);
-        $request->session()->save();
-        return response('', 200);
-    }
 
 
     protected function sendFailedLoginResponse(Request $request)
@@ -72,5 +65,13 @@ class AuthController extends Controller
 
     }
 
+
+    protected function authenticated(Request $request, $user)
+    {
+
+        $request->session()->put('name', $user->name);
+        $request->session()->save();
+        return response('', 200);
+    }
 
 }

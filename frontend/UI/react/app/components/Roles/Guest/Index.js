@@ -10,7 +10,7 @@ class Index extends Component {
        <div>
            <Navigation />
            <Container className="text-center app-title">
-               <h1 className="header1-size">Basic admin zoo app</h1>
+               <h1 className="header1-size">Basic admin zoo appaaaaa</h1>
            </Container>
            <Footer/>
        </div>   
