@@ -13,21 +13,20 @@ import {
     Input
 } from 'reactstrap';
 
-
+import UserContext from '../../../context/UserContext';
 import Footer from '../../Footer';
 import LoaderIn from '../../Loader/LoaderIn';
 
 import {Link} from 'react-router-dom';
 import ajax from '../../../utils/ajax';
 
-class Login extends Component {
+class Y extends Component {
 
     constructor(props) {
         super(props);
         this.email = React.createRef();
         this.password = React.createRef();
     }
-
 
     state = {
         email: '',
@@ -138,7 +137,7 @@ class Login extends Component {
                                                 </button>
 
                                                 <li className="btn btn-link">
-                                                    <Link to="forgotpassword">Forgot Your Password?</Link>
+                                                    <Link to="/forgot-password">Forgot Your Password?</Link>
                                                 </li>
                                             </div>
                                         </div>
@@ -159,6 +158,22 @@ class Login extends Component {
 
     }
 }
+
+
+class Login extends Component {
+
+    render() {
+        return <UserContext.Consumer>
+            {(userContext) => <Y {...userContext}/>}
+        </UserContext.Consumer>
+        /*
+                return <UserContext.Consumer>
+                    {(userContext) => <X {...userContext}/>}
+                </UserContext.Consumer>*/
+    }
+}
+
+
 
 export default withRouter(Login);
 

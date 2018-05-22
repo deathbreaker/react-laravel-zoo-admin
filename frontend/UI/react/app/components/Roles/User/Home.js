@@ -3,6 +3,7 @@ import LoaderOut from '../../Loader/LoaderOut';
 import { Container } from 'reactstrap';
 
 import Footer from '../../Footer';
+import Navigation from "../../Navigation";
 
 const splashscreen = <LoaderOut/>;
 
@@ -18,6 +19,7 @@ class Home extends Component {
       return (
           <div>
               <div>
+                  <Navigation />
                   <Container fluid className="container text-center app-title">
                       <h1 className="header1-size">Hey, You are logged in !</h1>
                   </Container>

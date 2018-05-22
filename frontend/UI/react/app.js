@@ -4,7 +4,7 @@ import App from "./app/App";
 import {BrowserRouter} from 'react-router-dom';
 //window._ = require('lodash');
 
-const Application= () => (
+const Application = () => (
     <div className="body">
         <BrowserRouter>
             <App />

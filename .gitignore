@@ -1,4 +1,4 @@
-#/node_modules
+/node_modules
 /frontend/public/hot
 /frontend/public/storage
 /backend/storage/oauth-private.key
