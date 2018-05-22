@@ -13,10 +13,11 @@ import { Link } from 'react-router-dom'
 import ajax from '../../../utils/ajax';
 import Navigation from '../../Navigation';
 import Footer from '../../Footer';
+import {withRouter} from "react-router";
+import UserContext from '../../../context/UserContext';
 
 
-
-class Register extends Component {
+class Z extends Component {
 
     constructor(props){
         super(props);
@@ -42,7 +43,7 @@ class Register extends Component {
           .then(response=> {
            console.log(response);
            this.setState({err: false});
-           this.props.onRegisterSuccess();
+           this.props.onUserLoginSucceed();
           })
           .catch(err=> {
             console.log(err);
@@ -137,4 +138,20 @@ class Register extends Component {
       }
 }
 
-export default Register;
+
+
+class Register extends Component {
+
+    render() {
+        return <UserContext.Consumer>
+            {(userContext) => <Z {...userContext}/>}
+        </UserContext.Consumer>
+        /*
+                return <UserContext.Consumer>
+                    {(userContext) => <X {...userContext}/>}
+                </UserContext.Consumer>*/
+    }
+}
+
+
+export default withRouter(Register);

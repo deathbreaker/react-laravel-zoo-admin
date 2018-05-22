@@ -528,7 +528,7 @@ class AnimalsTableSeeder extends Seeder
             '/media/photos/animal/item/gallery/images-632/b3e2ab3cfa030be517d684859afebaa3-t2.jpeg',
             '/media/photos/animal/item/gallery/images-633/fe7bc80af48f77bb7fc01975c67e4a15-t2.jpeg',
             '/fassets/images/seznam-zvirat/empty.jpg',
-            'http://www.zoozlin.eu/media/photos/animal/item/gallery/images-497/231f4027232404cd3d7fedf24ce7e019-t3.jpeg',
+            '/fassets/images/seznam-zvirat/empty.jpg',
             '/media/photos/animal/item/gallery/images-634/c515e1b2ccefd0854554b2807199d6bc-t2.jpeg',
             '/media/photos/animal/item/gallery/images-665/77e961953bc2accb350601fc35874b8c-t2.jpeg',
             '/media/photos/animal/item/gallery/images-636/ea440720555780482e2138f930926b00-t2.jpeg',

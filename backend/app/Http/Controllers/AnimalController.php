@@ -14,7 +14,8 @@ class AnimalController extends Controller
      */
     public function index()
     {
-        return Animal::limit(30)->get();
+//        return Animal::limit(30)->get();
+        return Animal::all();
     }
 
     /**

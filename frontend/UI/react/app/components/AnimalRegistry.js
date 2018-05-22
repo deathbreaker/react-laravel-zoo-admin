@@ -120,7 +120,7 @@ class AnimalRegistry extends Component{
                     <Container className="mt-5">
                         <Row>
                             <Col sm="12">
-                                <SearchInput class="mt-3 form-control search-input" placeholder="Search.." onChange={this.searchUpdated} />
+                                <SearchInput className="mt-4 search-input form-control " placeholder="Search.." onChange={this.searchUpdated} />
 
                                 <CardColumns>
                                     { filteredAnimals.map(animal => {
@@ -149,52 +149,6 @@ class AnimalRegistry extends Component{
 
                                                     </CardBody>
                                                 </Card>
-
-                                                <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                                                    <button className="close" style={{ position: 'absolute', top: '15px', right: '15px' }} onClick={this.toggle}>&times;</button>;
-                                                    <ModalHeader>Update the animal</ModalHeader>
-                                                    <ModalBody className="mb-2">
-                                                        <form className="form-horizontal" role="form" method="POST" onSubmit= {() => this.onPutSubmit(animal.id) }>
-
-                                                            <div className="form-group">
-                                                                <Col md={{size: 8, order: 2}}>
-                                                                    <Input placeholder="edit name"
-                                                                           type="text"
-                                                                           className="form-control"
-                                                                           ref="name" name="name"
-                                                                           onChange={(() => this.onChange)}
-                                                                           required
-                                                                           autoFocus />
-                                                                </Col>
-                                                            </div>
-
-                                                            <div className="form-group">
-
-                                                                <Col md={{size: 8, order: 2}}>
-                                                                    <Input placeholder="edit latin name"
-                                                                           type="text"
-                                                                           className="form-control"
-                                                                           ref="age"
-                                                                           name="age"
-                                                                           onChange={(() => this.onChange)}
-                                                                           required autoFocus />
-                                                                </Col>
-                                                            </div>
-
-
-                                                            <div className="form-group">
-                                                                <div className="col-md-6 col-md-offset-4">
-                                                                    <Button type="submit"
-                                                                            color="success"
-                                                                            className="align-self-center"
-                                                                            onClick={this.toggle}>
-                                                                        Update
-                                                                    </Button>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </ModalBody>
-                                                </Modal>
                                             </div>
                                         )
                                     })

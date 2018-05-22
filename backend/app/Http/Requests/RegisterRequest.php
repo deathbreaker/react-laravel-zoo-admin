@@ -38,9 +38,9 @@ class RegisterRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
-            'age' => 'required',
-            'phonenumber' => 'nullable',
-            'role' => 'nullable',
+            'age' => 'alpha_num',
+            'phonenumber' => 'integer',
+            'role' => 'alpha_num',
         ];
     }
 }

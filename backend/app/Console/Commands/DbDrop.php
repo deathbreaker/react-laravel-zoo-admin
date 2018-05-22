@@ -3,7 +3,7 @@
 use DB;
 use Illuminate\Console\Command;
 
-class DropTables extends Command
+class DbDrop extends Command
 {
     /**
      * The name and signature of the console command.

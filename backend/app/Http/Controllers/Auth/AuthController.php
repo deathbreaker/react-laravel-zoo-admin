@@ -63,15 +63,12 @@ class AuthController extends Controller
 
     public function auth()
     {
-
         if (Auth::check()) {
             $role = Auth::user()->role;
             return response()->json(["auth" => $role ], 200);
         }
 
         return response()->json(["auth" => null], 403);
-
-
 
     }
 
