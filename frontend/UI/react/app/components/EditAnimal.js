@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import ajax from '../utils/ajax';
+import { Container } from 'reactstrap';
 import {Form} from 'reactstrap';
 
 class EditAnimal extends Component {
@@ -65,7 +66,7 @@ class EditAnimal extends Component {
 
     render(){
         if(this.state.status === "LOADING"){
-            return <div>Loading.</div>
+            return <div className="loading">Loading ...</div>
         }
         else if(this.state.status === "NOT_FOUND"){
             return <Redirect to={"/404"}/>
@@ -73,12 +74,16 @@ class EditAnimal extends Component {
         return (
             <div>
                 <Navigation/>
-                <h1 className="mt-2">Update Animal</h1>
+                <Container className="container-customized">
+
                 <div className="row">
-                    <div className="mt-2 col-md-2">
-                        <Link to="/animals" className="btn btn-success">Zpět</Link>
-                    </div>
+                        <div className="mt-7 col-md-2">
+                            <Link to="/animals" className="btn btn-success">Zpět</Link>
+                        </div>
                 </div>
+
+                <h2 className="mt-2" >Update Animal</h2>
+
                     <div className="form-group">
                         <label id="name">Name</label>
                         <input name="name"
@@ -105,6 +110,7 @@ class EditAnimal extends Component {
                     <div className="form-group">
                         <button onClick={() => this.handleSubmit(event)} type="submit" className="btn btn-success">Update</button>
                     </div>
+                </Container>
             </div>
         )
     }

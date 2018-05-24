@@ -26,7 +26,7 @@ import Navigation from './Navigation';
 import SearchInput, {createFilter} from 'react-search-input'
 
 const KEYS_TO_FILTERS = ['name', 'latinname', 'count', 'dest.name'];
-
+const caseSensitive =  true;
 
 class AnimalRegistry extends Component{
 
@@ -105,7 +105,7 @@ class AnimalRegistry extends Component{
                 <span className="animal-icon text-center text-green ra ra-lion ra-rw"></span>
             </div>
         ;
-        const filteredAnimals = animals.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS));
+        const filteredAnimals = animals.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS, [{caseSensitive: true, fuzzy: false, sortResults: false}] ));
 
 
         if(isLoading){
@@ -120,7 +120,7 @@ class AnimalRegistry extends Component{
                     <Container className="mt-5">
                         <Row>
                             <Col sm="12">
-                                <SearchInput className="mt-4 search-input form-control " placeholder="Search.." onChange={this.searchUpdated} />
+                                <SearchInput className="mt-4 search-input form-control " caseSensitive={true} placeholder="Search.." onChange={this.searchUpdated} />
 
                                 <CardColumns>
                                     { filteredAnimals.map(animal => {

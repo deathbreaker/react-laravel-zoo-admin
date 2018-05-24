@@ -8,3 +8,4 @@
 /.vagrant
 npm-debug.log
 /public/hot
+yarn.lock

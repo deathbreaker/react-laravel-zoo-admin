@@ -17,5 +17,3 @@ render(
     <Application/>,
     document.getElementById('app')
 );
-
-module.hot.accept();

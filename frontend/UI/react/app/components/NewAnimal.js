@@ -3,8 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Navigation from './Navigation';
 import ajax from '../utils/ajax';
-import {Form} from 'reactstrap';
-
+import { Container } from 'reactstrap';
 class NewAnimal extends Component {
     constructor(props) {
         super(props);
@@ -51,12 +50,16 @@ class NewAnimal extends Component {
         return (
             <div>
                 <Navigation/>
-                <h1 className="mt-2">Create animal</h1>
+                <Container className="container-customized">
+
                 <div className="row">
-                    <div className="mb-2 col-md-2">
-                        <Link to="/animals" className="btn btn-success">Zpět</Link>
-                    </div>
+                   <div className="mt-7 col-md-2">
+                       <Link to="/animals" className="btn btn-success">Zpět</Link>
+                   </div>
                 </div>
+
+                <h2 className="mt-2">Create animal</h2>
+
                 <div className="form-group">
                     <label id="name">Name</label>
                     <input name="name"
@@ -83,6 +86,8 @@ class NewAnimal extends Component {
                 <div className="form-group">
                     <button onClick={() => this.handleSubmit(event)} className="btn btn-success">Create</button>
                 </div>
+
+                </Container>
             </div>
         )
     }
