@@ -19,6 +19,7 @@
     "laravel-mix": "^2.0"
   },
   "dependencies": {
+    "availity-reactstrap-validation": "^2.0.2",
     "axios": "^0.18",
     "babel-preset-stage-2": "^6.24.1",
     "bootstrap": "^4.0.0",

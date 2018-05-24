@@ -23,11 +23,6 @@ class AuthController extends Controller
     }
 
 
-    /**
-     * @param RegisterRequest $request
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|Response
-     * @throws \Illuminate\Validation\ValidationException
-     */
     protected function register(RegisterRequest $request)
     {
         $user = new User();
@@ -48,11 +43,11 @@ class AuthController extends Controller
     }
 
 
+
     protected function sendFailedLoginResponse(Request $request)
     {
         return response('', 500);
     }
-
 
     public function auth()
     {
