@@ -1,7 +1,5 @@
 <?php
 
-
-
 Route::group(['middleware' => ['web']], function () {
 
     /* User API */
