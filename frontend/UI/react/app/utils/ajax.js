@@ -1,18 +1,9 @@
 import axios from 'axios';
 
 
-let token = document.head.querySelector('meta[name="csrf-token"]');
-
-if (!token){
-    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
-}
-
 const ajax = axios.create({
-    baseURL: process.env.NODE_ENV === "production" ? "http://zoo-admin.eu/api" : "http://localhost:8000/api",
+    baseURL: process.env.NODE_ENV === "production" ? "http://159.65.87.193/api" : "http://localhost:8000/api",
     withCredentials: true,
-    headers: {
-        'X-CSRF-TOKEN': token.content,
-    },
 });
 
 export default ajax;
