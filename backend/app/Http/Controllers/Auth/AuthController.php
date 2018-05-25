@@ -56,7 +56,7 @@ class AuthController extends Controller
             return response()->json(["auth" => $role ], 200);
         }
 
-        return response()->json(["auth" => null], 403);
+        return response()->json(["auth" => null], 200);
 
     }
 
