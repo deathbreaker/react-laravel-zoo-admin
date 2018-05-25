@@ -1,0 +1,68 @@
+[2018-05-25 06:55:35] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:181)
+[stacktrace]
+#0 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(113): Illuminate\\Log\\LogManager->error('chdir(): No suc...', Array)
+#4 D:\\code\eact-laravel-zoo-admin\\backend\\app\\Exceptions\\Handler.php(45): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(ErrorException))
+#5 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\
+unomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php(60): App\\Exceptions\\Handler->report(Object(ErrorException))
+#6 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(353): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report(Object(ErrorException))
+#7 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(ErrorException))
+#8 D:\\code\eact-laravel-zoo-admin\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 {main}
+"} 
+[2018-05-25 06:55:35] laravel.ERROR: chdir(): No such file or directory (errno 2) {"exception":"[object] (ErrorException(code: 0): chdir(): No such file or directory (errno 2) at D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ServeCommand.php:35)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'chdir(): No suc...', 'D:\\\\code\\\eact-l...', 35, Array)
+#1 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ServeCommand.php(35): chdir('D:\\\\code\\\eact-l...')
+#2 [internal function]: Illuminate\\Foundation\\Console\\ServeCommand->handle()
+#3 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#4 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#5 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(App\\Application), Array, Object(Closure))
+#6 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(App\\Application), Array, Array, NULL)
+#7 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#8 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Command\\Command.php(251): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php(865): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php(241): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\ServeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 D:\\code\eact-laravel-zoo-admin\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 {main}
+"} 
+[2018-05-25 06:56:02] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:181)
+[stacktrace]
+#0 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(113): Illuminate\\Log\\LogManager->error('chdir(): No suc...', Array)
+#4 D:\\code\eact-laravel-zoo-admin\\backend\\app\\Exceptions\\Handler.php(45): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(ErrorException))
+#5 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\
+unomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php(60): App\\Exceptions\\Handler->report(Object(ErrorException))
+#6 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(353): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report(Object(ErrorException))
+#7 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(ErrorException))
+#8 D:\\code\eact-laravel-zoo-admin\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 {main}
+"} 
+[2018-05-25 06:56:02] laravel.ERROR: chdir(): No such file or directory (errno 2) {"exception":"[object] (ErrorException(code: 0): chdir(): No such file or directory (errno 2) at D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ServeCommand.php:35)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'chdir(): No suc...', 'D:\\\\code\\\eact-l...', 35, Array)
+#1 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\ServeCommand.php(35): chdir('D:\\\\code\\\eact-l...')
+#2 [internal function]: Illuminate\\Foundation\\Console\\ServeCommand->handle()
+#3 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#4 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#5 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(App\\Application), Array, Object(Closure))
+#6 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(App\\Application), Array, Array, NULL)
+#7 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#8 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Command\\Command.php(251): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#9 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#10 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php(865): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php(241): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\ServeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#12 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#13 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#14 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 D:\\code\eact-laravel-zoo-admin\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#16 {main}
+"} 
