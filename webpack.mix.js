@@ -13,8 +13,8 @@ let mix = require('laravel-mix');
 
  /*.copy('node_modules/rpg-awesome/fonts', 'public/fonts/rpg-awesome');*/
 
-mix.react('frontend/UI/react/app.js', 'js/app.js')
-   .sass('frontend/UI/sass/app.scss', 'css/app.css');
+mix.react('frontend/UI/react/app.js', 'public/js/app.js')
+   .sass('frontend/UI/sass/app.scss', 'public/css/app.css');
 
 
 
