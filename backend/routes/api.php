@@ -19,11 +19,11 @@ Route::group(['middleware' => ['web']], function () {
        /*
        * Animals CRUD routes
        */
-       Route::get('animals/{id}', 'AnimalController@get');
-       Route::get('animals', 'AnimalController@index');
-       Route::post('animals','AnimalController@store');
-       Route::patch('animals/{id}','AnimalController@update');
-       Route::delete('animals/{id}', 'AnimalController@destroy');
+       Route::get('animals/{id}', 'Resource\AnimalController@get');
+       Route::get('animals', 'Resource\AnimalController@index');
+       Route::post('animals','Resource\AnimalController@store');
+       Route::patch('animals/{id}','Resource\AnimalController@update');
+       Route::delete('animals/{id}', 'Resource\AnimalController@destroy');
    });
 
 });

@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Request;
 use Illuminate\Auth\AuthenticationException;
@@ -66,6 +67,11 @@ class Handler extends ExceptionHandler
             return response()->json([
                 'message' => 'Resource not found'
             ], 404);
+        }
+
+        if ($exception instanceof AuthorizationException)
+        {
+            return response()->json(['error' => 'Not authorized.'],403);
         }
 
        if ($exception){

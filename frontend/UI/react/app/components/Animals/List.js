@@ -12,34 +12,28 @@ import {
     Button,
     Row,
     Col,
-    Modal,
-    ModalHeader,
-    ModalBody,
     Input,
     Form
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Footer from './Footer';
-import LoaderIn from './Loader/LoaderIn';
-import ajax from '../utils/ajax';
-import Navigation from './Navigation';
+import Footer from '../Common/Footer';
+import LoaderIn from '../Loader/LoaderIn';
+import ajax from '../../utils/ajax';
+import Navigation from '../Common/Navigation';
 import SearchInput, {createFilter} from 'react-search-input'
 
 const KEYS_TO_FILTERS = ['name', 'latinname', 'count', 'dest.name'];
-const caseSensitive =  true;
 
-class AnimalRegistry extends Component{
+class List extends Component{
 
     constructor(props){
         super(props);
-        this.state = {
-            animals: [],
-            searchTerm: ''
-        };
-
     }
 
-
+    state = {
+        animals: [],
+        searchTerm: ''
+    };
 
     componentDidMount() {
         ajax.get("/user/animals")
@@ -57,9 +51,6 @@ class AnimalRegistry extends Component{
         ajax.delete("/user/animals/" + id )
             .then( () => {
                 this.props.history.push("/animals");
-/*                const animals = [...this.state.animals];
-                animals.splice(id, 1);
-                this.setState({animals: animals})*/
             })
             .catch((error)  => {
                 console.log(error)
@@ -105,7 +96,7 @@ class AnimalRegistry extends Component{
                 <span className="animal-icon text-center text-green ra ra-lion ra-rw"></span>
             </div>
         ;
-        const filteredAnimals = animals.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS, [{caseSensitive: true, fuzzy: false, sortResults: false}] ));
+        const filteredAnimals = animals.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS ));
 
 
         if(isLoading){
@@ -168,7 +159,7 @@ class AnimalRegistry extends Component{
                 <Container className="mt-5">
                     <Row>
                         <Col sm="12">
-                            <SearchInput className="mt-2 search-input" onChange={this.searchUpdated} />
+                            <SearchInput className="mt-2 search-input" exactMatch={true} onChange={this.searchUpdated} />
                             <CardColumns>
                                 { filteredAnimals.map(animal => {
                                     return (
@@ -200,4 +191,4 @@ class AnimalRegistry extends Component{
 
 }
 
-export default withRouter(AnimalRegistry);
+export default withRouter(List);

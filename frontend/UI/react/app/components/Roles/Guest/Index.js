@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container } from "reactstrap";
-import Navigation from '../../Navigation';
-import Footer from '../../Footer';
+import Navigation from '../../Common/Navigation';
+import Footer from '../../Common/Footer';
 
-class Index extends Component {
-
-  render() {
-    return (
+const Index = () => (
        <div>
            <Navigation />
            <Container className="text-center app-title">
@@ -14,9 +11,6 @@ class Index extends Component {
            </Container>
            <Footer/>
        </div>   
-    )
-  }
-
-}
+);
 
 export default Index

@@ -10,7 +10,7 @@ class DbDrop extends Command
      *
      * @var string
      */
-    protected $signature = 'db:drop';
+    protected $signature = 'db:clean';
 
     /**
      * The console command description.

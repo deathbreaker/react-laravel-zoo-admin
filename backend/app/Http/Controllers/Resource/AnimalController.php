@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Resource;
 
 use Illuminate\Http\Request;
 use App\Models\Animal;
+use App\Http\Controllers\Controller;
 
 class AnimalController extends Controller
 {
@@ -27,7 +28,7 @@ class AnimalController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|unique:animals',
+            'name' => 'required',
             'latinname' => 'required',
             'count' => 'integer',
         ]);

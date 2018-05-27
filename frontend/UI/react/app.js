@@ -1,19 +1,17 @@
 import React from 'react';
 import {render} from 'react-dom';
-import App from "./app/App";
+import Root from "./app/Root";
 import {BrowserRouter} from 'react-router-dom';
-//window._ = require('lodash');
 
-const Application = () => (
+const App = () => (
     <div className="body">
         <BrowserRouter>
-            <App />
+            <Root/>
         </BrowserRouter>
     </div>
 );
 
-
 render(
-    <Application/>,
+    <App/>,
     document.getElementById('app')
 );

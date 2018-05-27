@@ -9,10 +9,10 @@ import {
 } from 'reactstrap';
 import PropTypes from "prop-types";
 
-import UserContext from '../context/UserContext'
-import ajax from '../utils/ajax';
+import UserContext from '../../context/UserContext'
+import ajax from '../../utils/ajax';
 
-class X extends Component {
+class NavigationReadyForContext extends Component {
 
     static contextTypes = {
         router: PropTypes.object
@@ -80,12 +80,8 @@ class Navigation extends Component {
 
     render() {
         return <UserContext.Consumer>
-            {(userContext) => <X {...userContext}/>}
+            {(userContext) => <NavigationReadyForContext {...userContext}/>}
         </UserContext.Consumer>
-/*
-        return <UserContext.Consumer>
-            {(userContext) => <X {...userContext}/>}
-        </UserContext.Consumer>*/
     }
 }
 

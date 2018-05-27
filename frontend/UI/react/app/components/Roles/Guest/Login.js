@@ -1,7 +1,6 @@
 import React, {Component,} from 'react';
-import PropTypes from 'prop-types';
 import {withRouter} from 'react-router';
-import Navigation from '../../Navigation';
+import Navigation from '../../Common/Navigation';
 import {
     Button,
     Container,
@@ -9,18 +8,15 @@ import {
     UncontrolledAlert,
     InputGroup,
     InputGroupAddon,
-    InputGroupText,
     Input
 } from 'reactstrap';
 
 import UserContext from '../../../context/UserContext';
-import Footer from '../../Footer';
+import Footer from '../../Common/Footer';
 import LoaderIn from '../../Loader/LoaderIn';
-
-import {Link} from 'react-router-dom';
 import ajax from '../../../utils/ajax';
 
-class Y extends Component {
+class LoginReadyForContext extends Component {
 
     constructor(props) {
         super(props);
@@ -93,7 +89,7 @@ class Y extends Component {
                                                            name="email"
                                                            onChange={e => this.onChange(e)}
                                                            required
-                                                           placeholder="e-mail" />
+                                                           placeholder="Email .." />
                                                 </InputGroup>
                                             </Col>
                                         </div>
@@ -107,7 +103,7 @@ class Y extends Component {
                                                            id="password"
                                                            type="password"
                                                            ref={this.password}
-                                                           placeholder="password"
+                                                           placeholder="Password .."
                                                            name="password"
                                                            required
                                                            onChange={e => this.onChange(e)}
@@ -116,34 +112,19 @@ class Y extends Component {
                                             </Col>
                                         </div>
 
-                                        <div className="form-group">
-                                            <div className="col-md-6 col-md-offset-4">
-                                                <div className="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="remember"/> Remember Me
-                                                    </label>
-                                                </div>
-
-                                            </div>
-                                        </div>
 
 
                                         <div className="form-group">
                                             <div className="col-md-8 col-md-offset-4">
-                                                {/*button with type submit */}
-                                                {/*<Button color="success">Login</Button>*/}
-                                                <button type="submit" className="btn btn-success">
+                                                <Button type="submit" color="success">
                                                     Login
-                                                </button>
+                                                </Button>
 
-                                                <li className="btn btn-link">
-                                                    <Link to="/forgot-password">Forgot Your Password?</Link>
-                                                </li>
                                             </div>
                                         </div>
                                         <div className="col-md-offset-2 col-md-8 col-md-offset-2">
                                             <UncontrolledAlert className={visibility} color="danger">
-                                                Email or password doesn't exist !
+                                                Name or password doesn't exist !
                                             </UncontrolledAlert>
                                         </div>
                                     </form>
@@ -164,12 +145,8 @@ class Login extends Component {
 
     render() {
         return <UserContext.Consumer>
-            {(userContext) => <Y {...userContext}/>}
+            {(userContext) => <LoginReadyForContext {...userContext}/>}
         </UserContext.Consumer>
-        /*
-                return <UserContext.Consumer>
-                    {(userContext) => <X {...userContext}/>}
-                </UserContext.Consumer>*/
     }
 }
 

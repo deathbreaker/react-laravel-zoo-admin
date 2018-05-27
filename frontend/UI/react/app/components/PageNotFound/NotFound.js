@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from "./../Navigation";
+import Navigation from "../Common/Navigation";
 
 const NotFound = () => (
     <div className="body-color">

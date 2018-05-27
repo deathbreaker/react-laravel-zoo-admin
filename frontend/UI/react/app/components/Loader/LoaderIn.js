@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LoaderIn = () => (
+const LoaderIn = (props) => (
     <div className="body-color">
         <div className="page-loader">
             <div className="border-radius-for-icon">

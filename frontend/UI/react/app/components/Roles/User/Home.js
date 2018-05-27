@@ -1,22 +1,9 @@
-import React, { Component } from 'react';
-import LoaderOut from '../../Loader/LoaderOut';
+import React from 'react';
 import { Container } from 'reactstrap';
+import Footer from '../../Common/Footer';
+import Navigation from "../../Common/Navigation";
 
-import Footer from '../../Footer';
-import Navigation from "../../Navigation";
-
-const splashscreen = <LoaderOut/>;
-
-
-
-
-class Home extends Component {
-
-    //loading ? splashscreen : home
-    //let {loading} = this.state;
-    //loading={loading}
-  render() {
-      return (
+const Home = () => (
           <div>
               <div>
                   <Navigation />
@@ -25,11 +12,9 @@ class Home extends Component {
                   </Container>
                   <Footer/>
               </div>;
-
           </div>
-      )
-  }
-}
+
+);
 
 
-export default Home
+export default Home;

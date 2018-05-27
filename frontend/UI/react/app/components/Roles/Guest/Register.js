@@ -11,13 +11,13 @@ import {
 } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import ajax from '../../../utils/ajax';
-import Navigation from '../../Navigation';
-import Footer from '../../Footer';
+import Navigation from '../../Common/Navigation';
+import Footer from '../../Common/Footer';
 import {withRouter} from "react-router";
 import UserContext from '../../../context/UserContext';
 
 
-class Z extends Component {
+class RegisterReadyForContext extends Component {
 
     constructor(props){
         super(props);
@@ -144,12 +144,8 @@ class Register extends Component {
 
     render() {
         return <UserContext.Consumer>
-            {(userContext) => <Z {...userContext}/>}
+            {(userContext) => <RegisterReadyForContext {...userContext}/>}
         </UserContext.Consumer>
-        /*
-                return <UserContext.Consumer>
-                    {(userContext) => <X {...userContext}/>}
-                </UserContext.Consumer>*/
     }
 }
 

@@ -1,32 +1,25 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-
 import {Switch, Route} from 'react-router-dom';
 
 import Home from './components/Roles/User/Home';
 import Login from './components/Roles/Guest/Login';
 import Index from './components/Roles/Guest/Index';
 import Register from './components/Roles/Guest/Register';
-import Forgot from './components/Roles/Guest/Forgot';
-import Reset from './components/Roles/Guest/Reset';
-import AnimalRegistry from './components/AnimalRegistry';
+import Forgot from './components/Roles/Guest/_Forgot';
+import Reset from './components/Roles/Guest/_Reset';
+import List from './components/Animals/List';
 import AdminMain from './components/Roles/Admin/AdminMain';
 import NotFound from './components/PageNotFound/NotFound';
-import EditAnimal from './components/EditAnimal';
-import NewAnimal from './components/NewAnimal';
+import Edit from './components/Animals/Edit';
+import Create from './components/Animals/Create';
 import UserContext from './context/UserContext';
 import ajax from "./utils/ajax";
 import {withRouter} from "react-router";
 
 
-class App extends Component {
+class Root extends Component {
 
     state = {
-        // auth: {
-        //     isAuthorized: null,
-        //     isAdmin: null,
-        //
-        // },
         isAuthorized: null,
         isAdmin: null,
         onUserLoginSucceed: (auth) => {
@@ -45,8 +38,6 @@ class App extends Component {
                 console.log("Authenticated: " +  auth);
                 console.log("Authenticated type: ", typeof auth);
 
-
-                // this.setState({ auth: {isAuthorized: auth !== null, isAdmin: auth === "admin" }});
                 this.setState({ isAuthorized: auth !== null, isAdmin: auth === "admin" });
 
             })
@@ -55,20 +46,10 @@ class App extends Component {
             })
     };
 
-/*
-    onUserLoginSucceed = (auth) => {
-        this.getAuthVerification().then(() => this.props.history.push("/"));
-    };*/
-
     render() {
-        // const {auth} = this.state;
 
         const {isAdmin} = this.state;
         const {isAuthorized} = this.state;
-        // console.log(auth);
-        //
-        // console.log("isAuthorized: " + this.state.auth.isAuthorized);
-        // console.log("isAdmin: " +  this.state.auth.isAdmin);
 
         if (!isAuthorized) {
             return <UserContext.Provider value={this.state}>
@@ -82,14 +63,11 @@ class App extends Component {
                 </Switch>
             </UserContext.Provider>;
         }
-
-        // const {isAdmin} = this.state.auth;
-
         return <UserContext.Provider value={this.state}>
             <Switch>
-                {isAdmin && <Route path='/animals/:id/edit' component={ EditAnimal } />}
-                {isAdmin && <Route path='/animals/new' component={ NewAnimal } />}
-                <Route path='/animals' component={() => <AnimalRegistry isAdmin={isAdmin}/>} />
+                {isAdmin && <Route path='/animals/:id/edit' component={ Edit } />}
+                {isAdmin && <Route path='/animals/new' component={ Create } />}
+                <Route path='/animals' component={() => <List isAdmin={isAdmin}/>} />
                 <Route exact path='/' component={isAdmin ? AdminMain : Home} />}/>
                 <Route component={NotFound}/>
             </Switch>
@@ -97,4 +75,4 @@ class App extends Component {
     }
 }
 
-export default withRouter(App);
+export default withRouter(Root);
