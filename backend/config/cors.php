@@ -18,7 +18,7 @@ return [
     'default_profile' => [
 
         'allow_origins' => [
-            '*',
+            'http://159.65.87.193',
         ],
 
         'allow_methods' => [
