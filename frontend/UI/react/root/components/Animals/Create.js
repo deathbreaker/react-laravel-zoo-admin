@@ -106,7 +106,7 @@ class Create extends Component {
                         />
                         <br />
 
-                        <Button onClick={() => this.handleSubmit(event)} type="submit" color="success">Update</Button>
+                        <Button onClick={(e) => this.handleSubmit(e)} type="submit" color="success">Update</Button>
 
                     <br />
                     { this.state.visibleErr &&

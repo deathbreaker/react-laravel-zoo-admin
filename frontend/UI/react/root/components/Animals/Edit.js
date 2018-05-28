@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '../Common/Navigation';
+import {Redirect } from 'react-router-dom';
 import ajax from '../../utils/ajax';
 import {
+    Alert,
     Container,
     Button,
     Input
@@ -47,7 +49,7 @@ class Edit extends Component {
             count: this.state.count
         };
 
-        let uri = 'user/animals/'+  this.props.match.params.id ;
+
 
         animal.name !== '' &&  animal.latinname !== '' && animal.count !== ''
             ? this.sendDataToServer(animal)
@@ -57,6 +59,8 @@ class Edit extends Component {
     }
 
     sendDataToServer(animal){
+        let uri = 'user/animals/'+  this.props.match.params.id ;
+
         ajax.patch(uri, animal).then((response) => {
             this.props.history.push('/animals');
         });
@@ -126,7 +130,7 @@ class Edit extends Component {
                     />
                     <br />
 
-                    <Button onClick={() => this.handleSubmit(event)} type="submit" color="success">Update</Button>
+                    <Button onClick={(event) => this.handleSubmit(event)} type="submit" color="success">Update</Button>
 
                     <br />
                     { this.state.visibleErr &&

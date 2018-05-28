@@ -136,7 +136,7 @@ class List extends Component{
                                                                 color="btn btn-success"
                                                                 onClick={this.toggle}>Edit
                                                         </Button>
-                                                        <Button onClick={() => this.onDeleteSubmit(event,  animal.id)} type="submit" color="danger">Delete</Button>
+                                                        <Button onClick={(event) => this.onDeleteSubmit(event,  animal.id)} type="submit" color="danger">Delete</Button>
 
                                                     </CardBody>
                                                 </Card>
