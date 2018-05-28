@@ -10,7 +10,7 @@ return [
      * You can easily create your own cors profile.
      * More info: https://github.com/spatie/laravel-cors/#creating-your-own-cors-profile
      */
-     'cors_profile' => App\Services\Cors\UserBasedCorsProfile::class,
+    'cors_profile' => Spatie\Cors\CorsProfile\DefaultProfile::class,
 
     /*
      * This configuration is used by `DefaultProfile`.
