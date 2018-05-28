@@ -796,3 +796,103 @@ Did you mean one of these?
 #59 D:\\code\eact-laravel-zoo-admin\\backend\\server.php(20): require_once('D:\\\\code\\\eact-l...')
 #60 {main}
 "} 
+[2018-05-28 07:26:57] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:181)
+[stacktrace]
+#0 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(113): Illuminate\\Log\\LogManager->error('The configured ...', Array)
+#4 D:\\code\eact-laravel-zoo-admin\\backend\\app\\Exceptions\\Handler.php(46): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Spatie\\Cors\\Exceptions\\InvalidCorsProfile))
+#5 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(353): App\\Exceptions\\Handler->report(Object(Spatie\\Cors\\Exceptions\\InvalidCorsProfile))
+#6 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Spatie\\Cors\\Exceptions\\InvalidCorsProfile))
+#7 D:\\code\eact-laravel-zoo-admin\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 {main}
+"} 
+[2018-05-28 07:26:57] laravel.ERROR: The configured cors profile in `App\Services\Cors\UserBasedCorsProfile` is invalid. A valid cors profile extends `Spatie\Cors\CorsProfile\DefaultProfile` {"exception":"[object] (Spatie\\Cors\\Exceptions\\InvalidCorsProfile(code: 0): The configured cors profile in `App\\Services\\Cors\\UserBasedCorsProfile` is invalid. A valid cors profile extends `Spatie\\Cors\\CorsProfile\\DefaultProfile` at D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\spatie\\laravel-cors\\src\\Exceptions\\InvalidCorsProfile.php:14)
+[stacktrace]
+#0 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\spatie\\laravel-cors\\src\\CorsServiceProvider.php(23): Spatie\\Cors\\Exceptions\\InvalidCorsProfile::profileDoesNotExtendDefaultProfile('App\\\\Services\\\\Co...')
+#1 [internal function]: Spatie\\Cors\\CorsServiceProvider->boot()
+#2 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#3 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#4 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(App\\Application), Array, Object(Closure))
+#5 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(564): Illuminate\\Container\\BoundMethod::call(Object(App\\Application), Array, Array, NULL)
+#6 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(794): Illuminate\\Container\\Container->call(Array)
+#7 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(777): Illuminate\\Foundation\\Application->bootProvider(Object(Spatie\\Cors\\CorsServiceProvider))
+#8 [internal function]: Illuminate\\Foundation\\Application->Illuminate\\Foundation\\{closure}(Object(Spatie\\Cors\\CorsServiceProvider), 15)
+#9 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(778): array_walk(Array, Object(Closure))
+#10 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\BootProviders.php(17): Illuminate\\Foundation\\Application->boot()
+#11 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(206): Illuminate\\Foundation\\Bootstrap\\BootProviders->bootstrap(Object(App\\Application))
+#12 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(297): Illuminate\\Foundation\\Application->bootstrapWith(Array)
+#13 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(120): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#14 D:\\code\eact-laravel-zoo-admin\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#15 {main}
+"} 
+[2018-05-28 07:27:51] laravel.EMERGENCY: Unable to create configured logger. Using emergency logger. {"exception":"[object] (InvalidArgumentException(code: 0): Log [] is not defined. at D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php:181)
+[stacktrace]
+#0 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(115): Illuminate\\Log\\LogManager->resolve(NULL)
+#1 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(103): Illuminate\\Log\\LogManager->get(NULL)
+#2 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Log\\LogManager.php(519): Illuminate\\Log\\LogManager->driver()
+#3 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php(113): Illuminate\\Log\\LogManager->error('Command \"make:s...', Array)
+#4 D:\\code\eact-laravel-zoo-admin\\backend\\app\\Exceptions\\Handler.php(46): Illuminate\\Foundation\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#5 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\
+unomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php(60): App\\Exceptions\\Handler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#6 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(353): NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler->report(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#7 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(124): Illuminate\\Foundation\\Console\\Kernel->reportException(Object(Symfony\\Component\\Console\\Exception\\CommandNotFoundException))
+#8 D:\\code\eact-laravel-zoo-admin\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 {main}
+"} 
+[2018-05-28 07:27:51] laravel.ERROR: Command "make:service" is not defined.
+
+Did you mean one of these?
+    make:auth
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:service\" is not defined.
+
+Did you mean one of these?
+    make:auth
+    make:channel
+    make:command
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php:611)
+[stacktrace]
+#0 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php(224): Symfony\\Component\\Console\\Application->find('make:service')
+#1 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\symfony\\console\\Application.php(143): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#2 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#3 D:\\code\eact-laravel-zoo-admin\\backend\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#4 D:\\code\eact-laravel-zoo-admin\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
