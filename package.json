@@ -35,6 +35,7 @@
     "react-router-dom": "^4.1.1",
     "react-search-input": "^0.11.3",
     "reactstrap": "^5.0.0",
-    "rpg-awesome": "^0.1.1"
+    "rpg-awesome": "^0.1.1",
+    "cross-env": "^5.2.0"
   }
 }
