@@ -9,3 +9,4 @@
 npm-debug.log
 /public/hot
 yarn.lock
+package-lock.json
