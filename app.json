@@ -1,0 +1,18 @@
+{
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ],
+  "description": "",
+  "env": {
+  },
+  "formation": {
+  },
+  "name": "react-laravel-zoo-admin",
+  "scripts": {
+    "postdeploy": "npm start && composer install && php -S react-laravel-zoo-admin.herokuapp.com:80"
+  },
+  "stack": "container"
+}
