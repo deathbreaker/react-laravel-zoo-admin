@@ -18,7 +18,7 @@ $app = new Illuminate\Foundation\Application(
 
 
 $app = new App\Application(
-    realpath(__DIR__.'/../')
+    realpath(__DIR__ . '/react-laravel-zoo-admin/')
 );
 
 /*
